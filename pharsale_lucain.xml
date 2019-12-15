@@ -6,10 +6,18 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Pharsale de Lucain, chant 1 v. 183-203</title>
+            <title>Pharsale, chant 1 v. 183-203</title>
+            <author>Lucain</author>
+            <respStmt>
+               <resp>Encodage réalisé pour un TP du Master TNAH de l'École nationale des chartes.</resp>
+               <persName>
+                  <forename>Jean-Damien</forename>
+                  <surname>Généro</surname>
+               </persName>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <p>Texte édité dans le cadre d'un exercice du Master TNAH de l'École nationale des chartes.</p>
+            <p>Informations non communiquées dans l'exemplier.</p>
          </publicationStmt>
          <sourceDesc>
             <listWit>
