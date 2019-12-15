@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+   schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Pharsale de Lucain, chant 1 v. 183-203</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Texte édité dans le cadre d'un exercice du Master TNAH de l'École nationale des chartes.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <listWit>
+               <!-- Codices quorum varia lectiones in omnibus locislaudantur : -->
+               <witness xml:id="V">Vossianus XIX q. 51 saec. x.</witness>
+               <witness xml:id="M">Montepessulanus H 113 saec. IX aut X.</witness>
+               <witness xml:id="M1">M témoin 1</witness>
+               <witness xml:id="Z">Epternacensis sive Parisinus bibl. nat. lat. 10.314 saec.
+                  X.</witness>
+               <witness xml:id="Z1">Z témoin 1</witness>
+               <witness xml:id="P">Colbertinus sive Parisinus bibl. nat. lat. 7502 saec.
+                  X.</witness>
+               <witness xml:id="P1">P témoin 1</witness>
+               <witness xml:id="U">Vossianus alter XIX f. 63 saec. x.</witness>
+               <witness xml:id="G">Gemblacensis sive Bruxellensis bibl. Burgundicae 5330 saec. X aut
+                  XI.</witness>
+               <witness xml:id="&#937;">consensus codicum VMZPUG.</witness><!-- omega -->
+               <witness xml:id="S">Sangermanensis sive Parisinus bibl. nat. lat. 13045 saec.
+                  X.</witness>
+               <witness xml:id="Q">Puteanus sive Parisinus bibl. nat. 7900 A seac X.</witness>
+               <witness xml:id="C">lemmata codicis Bernensis 370 saec X [Ca prius lemma ; Cb alterum
+                  lemma eiusdem loci, cum discrepant].</witness>
+               <!-- Compendia -->
+               <witness xml:id="cett.">optimi codices [et correctores horum codicum] pareter eos
+                  quotum varia lectio laudatur.</witness>
+               <!-- Éditions -->
+               <witness xml:id="m">Édition de M.</witness>
+               <witness xml:id="p">Édition de P.</witness>
+               <witness xml:id="z">Édition de Z.</witness>
+            </listWit>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <head>Pharsale de Lucain, chant 1 v. 183-203</head>
+         <lg>
+            <l n="183">Iam gelidas Caesar cursu superauerat Alpes</l>
+            <l n="184">ingentisque animo motus bellumque futurum</l>
+            <l n="185">
+               <app>
+                  <lem>Ceperat</lem>
+                  <rdg wit="#S">coep-</rdg>
+               </app> . Vt uentum. est parui Rubiconis ad <app>
+                  <lem>undas</lem>
+                  <rdg wit="#Z1">endas</rdg>
+                  <rdg wit="#U"><!-- Ua -->undam</rdg>
+               </app> ,</l>
+            <l n="186">ingens uisa duci Patriae trepidantis imago</l>
+            <l n="187">clara per obscuram uoltu maestissima noctem,</l>
+            <l n="188">turrigero canos effundens uertice crines,</l>
+            <l n="189">caesarie lacera nudisque adstare lacertis</l>
+            <l n="190">et gemitu permixta loqui : "Quo tenditis <app>
+                  <lem>ultra</lem>
+                  <rdgGrp type="orthographic">
+                     <rdg wit="#p #m">ultro</rdg>
+                  </rdgGrp>
+               </app> ?</l>
+            <l n="191">quo fertis mea signa, <app>
+                  <lem>uiri</lem>
+                  <rdg wit="Z">ueri*</rdg>
+               </app> ? Si iure uenitis,</l>
+            <l n="192">si ciues, huc usque licet." <app>
+                  <lem wit="#Z #U">Tunc</lem>
+                  <rdg wit="#cett.">tum</rdg>
+               </app> perculit horror</l>
+            <l n="193">membra ducis, riguere cornac, <app>
+                  <lem>gressumque</lem>
+                  <rdg wit="#S">-susque</rdg>
+               </app> cohercens</l>
+            <l n="194">languor in extrema tenuit uestigia ripa,</l>
+            <l n="195">Mox <app>
+                  <lem>ait</lem>
+                  <rdg wit="#Z1">agit</rdg>
+               </app> : "O magnae qui moenia prospicis Vrbis</l>
+            <l n="196">Tarpeia de rupe, Tonans, Phrygiique penates</l>
+            <l n="197">genlis <app>
+                  <lem>Iuleae</lem>
+                  <rdg wit="#M1 #Q">iuliae</rdg>
+               </app> et rapti secreta Quirini</l>
+            <l n="198">et residens celsa <app>
+                  <lem wit="#Z1 #P1">Latiaris</lem>
+                  <rdgGrp type="orthographic">
+                     <rdg wit="#z">-nis</rdg>
+                     <rdg wit="#cett.">-lis</rdg>
+                     <rdg wit="#M">[ialis in rasura M]</rdg>
+                  </rdgGrp>
+               </app> Iuppiter <app>
+                  <lem>Alba</lem>
+                  <rdg wit="#M1">alua</rdg>
+               </app></l>
+            <l n="199">Vestalesque foci summique o numinis instar,</l>
+            <l n="200">Roma, faue coeptis; non te furialibus arrois</l>
+            <l n="201">persequor ; en adsum, uictor <app>
+                  <lem>terraque</lem>
+                  <rdg>terraeque</rdg>
+               </app> marique,</l>
+            <l n="202">Caesar, ubique tuus (liceat modo, nunc quoque), miles,</l>
+            <l n="203">Ille erit, ille nocens, qui me tibi fecerit hostem.</l>
+         </lg>
+      </body>
+   </text>
+</TEI>
