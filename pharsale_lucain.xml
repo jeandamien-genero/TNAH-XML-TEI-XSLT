@@ -24,14 +24,19 @@
                <!-- Codices quorum varia lectiones in omnibus locislaudantur : -->
                <witness xml:id="V">Vossianus XIX q. 51 saec. x.</witness>
                <witness xml:id="M">Montepessulanus H 113 saec. IX aut X.</witness>
-               <witness xml:id="M1">M témoin 1</witness>
+               <witness xml:id="M1">primitiva lectio correcta in vulgatam (sic A1, U1, rell.).</witness>
+               <witness xml:id="m">Varia lectio in eidem codici a manu secunda.</witness>
                <witness xml:id="Z">Epternacensis sive Parisinus bibl. nat. lat. 10.314 saec.
                   X.</witness>
-               <witness xml:id="Z1">Z témoin 1</witness>
+               <witness xml:id="Z1">primitiva lectio correcta in vulgatam</witness>
+               <witness xml:id="z">Varia lectio in eidem codici a manu secunda.</witness>
                <witness xml:id="P">Colbertinus sive Parisinus bibl. nat. lat. 7502 saec.
                   X.</witness>
-               <witness xml:id="P1">P témoin 1</witness>
+               <witness xml:id="p">Varia lectio in eidem codici a manu secunda.</witness>
+               <witness xml:id="P1">primitiva lectio correcta in vulgatam</witness>
                <witness xml:id="U">Vossianus alter XIX f. 63 saec. x.</witness>
+               <witness xml:id="U1">primitiva lectio correcta in vulgatam (sic M1, A1, rell.).</witness>
+               <witness xml:id="Ua"> commentum vel adnotationes in codici U.</witness>
                <witness xml:id="G">Gemblacensis sive Bruxellensis bibl. Burgundicae 5330 saec. X aut
                   XI.</witness>
                <witness xml:id="&#937;">consensus codicum VMZPUG.</witness><!-- omega -->
@@ -40,13 +45,10 @@
                <witness xml:id="Q">Puteanus sive Parisinus bibl. nat. 7900 A seac X.</witness>
                <witness xml:id="C">lemmata codicis Bernensis 370 saec X [Ca prius lemma ; Cb alterum
                   lemma eiusdem loci, cum discrepant].</witness>
+               <witness xml:id="A1">primitiva lectio correcta in vulgatam (sic M1, U1, rell.).</witness>
                <!-- Compendia -->
                <witness xml:id="cett.">optimi codices [et correctores horum codicum] pareter eos
                   quotum varia lectio laudatur.</witness>
-               <!-- Éditions -->
-               <witness xml:id="m">Édition de M.</witness>
-               <witness xml:id="p">Édition de P.</witness>
-               <witness xml:id="z">Édition de Z.</witness>
             </listWit>
          </sourceDesc>
       </fileDesc>
@@ -64,7 +66,7 @@
                </app> . Vt uentum. est parui Rubiconis ad <app>
                   <lem>undas</lem>
                   <rdg wit="#Z1">endas</rdg>
-                  <rdg wit="#U"><!-- Ua -->undam</rdg>
+                  <rdg wit="#Ua">undam</rdg>
                </app> ,</l>
             <l n="186">ingens uisa duci Patriae trepidantis imago</l>
             <l n="187">clara per obscuram uoltu maestissima noctem,</l>
