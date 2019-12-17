@@ -41,7 +41,7 @@
                   >Wikisource</distributor>
                <pubPlace>Paris</pubPlace>
                <date>1877</date>
-               <biblScope unit="volume"/>
+               <biblScope unit="volume">7</biblScope>
                <biblScope unit="page" from="78" to="82">p. 78-82</biblScope>
                <availability>
                   <licence target="https://creativecommons.org/licenses/by-sa/3.0/deed.fr">Licence
@@ -51,122 +51,231 @@
          </sourceDesc>
       </fileDesc>
       <profileDesc>
-         <!-- Pour l'index, j'ai choisi de ne pas relever les pronoms ou les périphrases et de me concentrer sur les toponymes et les anthroponymes. Il n'y a que deux cas où prendre en compte des périphrases me paraissaient nécessaires : M. Gaudron, qui n'est désigné que par "son mari", et Mme Lorilleux, désignée par "sa soeur [de Coupeau]". J'ai relevé Gaudron parce que c'est un invité du mariage et qu'il est partie prenante de l'action du chapitre, et Mme Lorilleux parce que c'est la soeur de Coupeau et qu'elle est un personnage récurent du roman. Je n'ai pas fait d'entrée d'index pour la mention "les Boche", car M. et Mme. Boche sont bien distingués dans la suite de l'extrait. Je n'ai pas non plus fait d'entrée pour les individus qui sont seulement signalés (le "vieux petit prêtre" avec qui Coupeau "marchande", son patron à qui il emprunte cinquante francs) ; leurs apparitions sont trop brèves et marginale dans le récit. Concernant la mère de Coupeau, je n'ai relevé que les formes "maman/mère Coupeau", parce que "maman" vaut pour "madame" et est le moyen courant par lequel Zola désigne ce personnage ; en revanche le "maman" simple du troisième paragraphe, sans le nom de famille, n'a pas été relevé ("[...] les mariés, la maman et les quatre témoins [...]"). -->
+         <!-- Pour l'index, j'ai choisi de ne pas relever les pronoms ou les périphrases et de me concentrer sur les toponymes et les anthroponymes.
+            Il n'y a que deux cas où prendre en compte des périphrases me paraissaient nécessaires : M. Gaudron, qui n'est désigné que par "son mari", 
+            et Mme Lorilleux, désignée par "sa soeur [de Coupeau]". J'ai relevé Gaudron parce que c'est un invité du mariage et qu'il est partie prenante de l'action du chapitre, 
+            et Mme Lorilleux parce que c'est la soeur de Coupeau et qu'elle est un personnage récurent du roman. Je n'ai pas fait d'entrée d'index pour la mention "les Boche", 
+            car M. et Mme. Boche sont bien distingués dans la suite de l'extrait. 
+            Je n'ai pas non plus fait d'entrée pour les individus qui sont seulement signalés (le "vieux petit prêtre" avec qui Coupeau "marchande", son patron à qui il emprunte cinquante francs) ; 
+            leurs apparitions sont trop brèves et marginale dans le récit. 
+            Concernant la mère de Coupeau, je n'ai relevé que les formes "maman/mère Coupeau", parce que "maman" vaut pour "madame" 
+            et est le moyen courant par lequel Zola désigne ce personnage ; en revanche le "maman" simple du troisième paragraphe, sans le nom de famille, 
+            n'a pas été relevé ("[...] les mariés, la maman et les quatre témoins [...]"). -->
          <settingDesc>
             <listPlace>
-               <place xml:id="bd_Chapelle">
-                  <placeName>boulevard de la Chapelle</placeName>
+               <place xml:id="bd_Chapelle" type="boulevard">
+                  <placeName>
+                     <country>France</country>
+                     <settlement type="ville">Paris</settlement>
+                     <distinct type="arrondissement" n="10">Xème</distinct>
+                     <distinct type="arrondissement" n="18">XVIIIème</distinct>
+                     <name>boulevard de la Chapelle</name>
+                  </placeName>
                   <note>Boulevard des Xe et XVIIIe arrondissements de Paris.</note>
                </place>
-               <place xml:id="Moulin_Argent">
-                  <placeName>Moulin-d’Argent</placeName>
+               <place xml:id="Moulin_Argent" type="restaurant">
+                  <placeName>
+                     <country>France</country>
+                     <settlement type="ville">Paris</settlement>
+                     <name>Moulin-d’Argent</name>
+                  </placeName>
                   <note>Marchand de vin sur le boulevard de la Chapelle, tenu par Auguste.</note>
                </place>
-               <place xml:id="r_Fbg_Poissonnière">
-                  <placeName>rue du Faubourg-Poissonnière</placeName>
-                  <note>Rue des IXe et Xe arrondissements de Paris.</note>
+               <place xml:id="r_Fbg_Poissonnière" type="rue">
+                  <placeName>
+                     <country>France</country>
+                     <settlement type="ville">Paris</settlement>
+                     <distinct type="arrondissement" n="9">IXème</distinct>
+                     <distinct type="arrondissement" n="10">Xème</distinct>
+                     <name>rue du Faubourg-Poissonnière</name>
+                  </placeName>
                </place>
-               <place xml:id="r_Goutte_Or">
-                  <placeName>rue de la Goutte-d’Or</placeName>
-                  <note>Rue du XVIIIe arrondissement de Paris.</note>
+               <place xml:id="r_Goutte_Or" type="rue">
+                  <placeName>
+                     <country>France</country>
+                     <settlement type="ville">Paris</settlement>
+                     <distinct type="arrondissement" n="18">XVIIIème</distinct>
+                     <name>rue de la Goutte-d’Or</name>
+                  </placeName>
                </place>
-               <place xml:id="r_Myrrha">
-                  <placeName>rue Myrrha</placeName>
-                  <note>Rue du XVIIIe arrondissement de Paris.</note>
+               <place xml:id="r_Myrrha" type="rue">
+                  <placeName>
+                     <country>France</country>
+                     <settlement type="ville">Paris</settlement>
+                     <distinct type="arrondissement" n="18">XVIIIème</distinct>
+                     <name>rue Myrrha</name>
+                  </placeName>
                </place>
-               <place xml:id="plaine_Saint_Denis">
-                  <placeName>plaine Saint-Denis</placeName>
-                  <note>Lieu situé au nord de Paris.</note>
+               <place xml:id="plaine_Saint_Denis" type="plaine">
+                  <placeName>
+                     <country>France</country>
+                     <settlement type="ville">Paris</settlement>
+                     <name>plaine Saint-Denis</name>
+                  </placeName>
                </place>
             </listPlace>
          </settingDesc>
          <particDesc>
-            <listPerson>
-               <person xml:id="Auguste">
-                  <persName>Auguste</persName>
-                  <note>Marchand de vin, patron du Moulin-d'Argent sur le boulevard de la
-                     Chapelle.</note>
-               </person>
-               <person xml:id="Bibi_Grillade">
-                  <persName>Bibi-la-Grillade</persName>
-                  <note>Ouvrier tanneur, ami de Coupeau, invité à son mariage avec Gervaise.</note>
-               </person>
-               <person xml:id="Mme_Boche">
-                  <persName>Boche (Madame)</persName>
-                  <note>Amie de Gervaise, invitée à son mariage avec Coupeau.</note>
-               </person>
-               <person xml:id="M_Boche">
-                  <persName>Boche (Monsieur)</persName>
-                  <note>Ami de Gervaise, invité à son mariage avec Coupeau.</note>
-               </person>
-               <person xml:id="Coupeau">
-                  <persName>Coupeau</persName>
-                  <note>Ouvrier zingueur, mari de Gervaise à partir du chapitre III.</note>
-               </person>
-               <person xml:id="Maman_Coupeau">
-                  <persName>Coupeau (Maman)</persName>
-                  <note>Mère de Coupeau et de Mme Lorilleux, belle-mère de Gervaise et de M.
-                     Lorilleux.</note>
-               </person>
-               <person xml:id="Fauconnier">
-                  <persName>Fauconnier (Madame)</persName>
-                  <note>Patronne de Gervaise, invitée à son mariage avec Coupeau.</note>
-               </person>
-               <person xml:id="Mme_Gaudron">
-                  <persName>Gaudron (Madame)</persName>
-                  <note>Habitante le même immeuble que les Lorilleux, rue de la Goutte-d’Or, invitée
-                     par Coupeau à son mariage.</note>
-               </person>
-               <person xml:id="M_Gaudron">
-                  <persName>Gaudron (Monsieur)</persName>
-                  <note>Habitant le même immeuble que les Lorilleux, rue de la Goutte-d’Or, invité
-                     par Coupeau à son mariage.</note>
-               </person>
-               <person xml:id="Gervaise_Macquart">
-                  <persName>Gervaise</persName>
+            <listPerson type="famille_Macquart">
+               <person xml:id="Gervaise_Macquart" sex="femme">
+                  <persName>
+                     <surname type="nom_naissance">Macquart</surname>
+                     <surname type="nom_mariage">Coupeau</surname>
+                     <forename>Gervaise</forename>
+                  </persName>
                   <note>Personnage principale du roman, d'abord en couple avec Lantier, elle se
                      marie avec Coupeau dans le chapitre III. Mère de Claude et Etienne Lantier, et
                      de Nana Coupeau.</note>
                </person>
-               <person xml:id="Lantier_Claude">
-                  <persName>Claude Lantier</persName>
+               <person xml:id="Lantier_Claude" sex="homme">
+                  <persName>
+                     <surname>Claude</surname>
+                     <forename>Étienne</forename>
+                  </persName>
                   <note>Fils aîné de Lantier et Gervaise.</note>
                </person>
-               <person xml:id="Lantier_Etienne">
-                  <persName>Etienne Lantier</persName>
+               <person xml:id="Lantier_Etienne" sex="homme">
+                  <persName>
+                     <surname>Lantier</surname>
+                     <forename>Étienne</forename>
+                  </persName>
                   <note>Fils cadet de Lantier et Gervaise.</note>
                </person>
-               <person xml:id="Mme_Lorilleux">
-                  <persName>Lorilleux (Madame)</persName>
+               <listRelation>
+                  <relation name="mère_enfants" active="#Gervaise_Macquart"
+                     passive="#Lantier_Claude #Lantier_Etienne"/>
+                  <relation name="fraterie" mutual="#Lantier_Etienne #Lantier_Claude"/>
+                  <relation name="époux" mutual="#Coupeau #Gervaise_Macquart"/>
+               </listRelation>
+            </listPerson>
+            <listPerson type="famille_Couleau_Lorilleux">
+               <person xml:id="Coupeau" sex="homme">
+                  <persName>Coupeau</persName>
+                  <note>Ouvrier zingueur, mari de Gervaise à partir du chapitre III.</note>
+               </person>
+               <person xml:id="Maman_Coupeau" sex="femme">
+                  <persName>
+                     <addName type="nickname">Maman</addName>
+                     <surname>Coupeau</surname>
+                  </persName>
+                  <note>Mère de Coupeau et de Mme Lorilleux, belle-mère de Gervaise et de M.
+                     Lorilleux.</note>
+               </person>
+               <person xml:id="Mme_Lorilleux" sex="femme">
+                  <persName>
+                     <addName>Monsieur</addName>
+                     <surname>Lorilleux</surname>
+                  </persName>
                   <note>Soeur de Coupeau, mariée à un ouvrier bijoutier.</note>
                </person>
-               <person xml:id="M_Lorilleux">
-                  <persName>Lorilleux (Monsieur)</persName>
+               <person xml:id="M_Lorilleux" sex="homme">
+                  <persName>
+                     <addName>Monsieur</addName>
+                     <surname>Lorilleux</surname>
+                  </persName>
                   <note>Beau-frère de Coupeau, ouvrier bijoutier.</note>
                </person>
-               <person xml:id="Madinier">
-                  <persName>Madinier (Monsieur)</persName>
-                  <note>Habitant le même immeuble que les Lorilleux, rue de la Goutte-d’Or, invitée
-                     par Coupeau à son mariage.</note>
+               <listRelation>
+                  <relation name="mère-enfants" active="#Maman_Coupeau"
+                     passive="#Coupeau #Mme_Lorilleux"/>
+                  <relation name="fraterie" mutual="#Mme_Lorilleux #Coupeau"/>
+                  <relation name="époux" mutual="#Mme_Lorilleux #M_Lorilleux"/>
+               </listRelation>
+            </listPerson>
+            <listPerson type="amis_Gervaise_Coupeau">
+               <person xml:id="Auguste" sex="homme">
+                  <persName>
+                     <forename>Auguste</forename>
+                  </persName>
+                  <note>Marchand de vin, patron du Moulin-d'Argent sur le boulevard de la
+                     Chapelle.</note>
                </person>
-               <person xml:id="Mes_Bottes">
-                  <persName>Mes-Bottes</persName>
-                  <note>Ami de Coupeau, invité à son mariage avec Gervaise.</note>
+               <person xml:id="Bibi_Grillade" sex="homme">
+                  <persName>
+                     <addName type="nickname">Bibi-la-Grillade</addName>
+                  </persName>
+                  <note>Ouvrier tanneur, ami de Coupeau, invité à son mariage avec Gervaise.</note>
                </person>
-               <person xml:id="Ramanjou">
-                  <persName>Remanjou (Mademoiselle)</persName>
+               <person xml:id="Mme_Boche" sex="femme">
+                  <persName>
+                     <addName>Madame</addName>
+                     <surname>Boche</surname>
+                  </persName>
+                  <note>Amie de Gervaise, invitée à son mariage avec Coupeau.</note>
+               </person>
+               <person xml:id="M_Boche" sex="homme">
+                  <persName>
+                     <addName>Monsieur</addName>
+                     <surname>Boche</surname>
+                  </persName>
+                  <note>Ami de Gervaise, invité à son mariage avec Coupeau.</note>
+               </person>
+               <person xml:id="Fauconnier" sex="femme">
+                  <persName>
+                     <addName>Madame</addName>
+                     <surname>Fauconnier</surname>
+                  </persName>
+                  <note>Patronne de Gervaise, invitée à son mariage avec Coupeau.</note>
+               </person>
+               <person xml:id="Mme_Gaudron" sex="femme">
+                  <persName>
+                     <addName>Madame</addName>
+                     <surname>Gaudron</surname>
+                  </persName>
                   <note>Habitante le même immeuble que les Lorilleux, rue de la Goutte-d’Or, invitée
                      par Coupeau à son mariage.</note>
                </person>
+               <person xml:id="M_Gaudron" sex="homme">
+                  <persName>
+                     <addName>Monsieur</addName>
+                     <surname>Gaudron</surname>
+                  </persName>
+                  <note>Habitant le même immeuble que les Lorilleux, rue de la Goutte-d’Or, invité
+                     par Coupeau à son mariage.</note>
+               </person>
+               <person xml:id="Madinier" sex="homme">
+                  <persName>
+                     <addName>Monsieur</addName>
+                     <surname>Madinier</surname>
+                  </persName>
+                  <note>Habitant le même immeuble que les Lorilleux, rue de la Goutte-d’Or, invitée
+                     par Coupeau à son mariage.</note>
+               </person>
+               <person xml:id="Mes_Bottes" sex="homme">
+                  <persName>
+                     <addName type="nickname">Mes-Bottes</addName>
+                  </persName>
+                  <note>Ami de Coupeau, invité à son mariage avec Gervaise.</note>
+               </person>
+               <person xml:id="Ramanjou" sex="femme">
+                  <persName>
+                     <addName>Mademoiselle</addName>
+                     <surname>Remanjou</surname>
+                  </persName>
+                  <note>Habitante le même immeuble que les Lorilleux, rue de la Goutte-d’Or, invitée
+                     par Coupeau à son mariage.</note>
+               </person>
+               <listRelation>
+                  <relation name="époux" mutual="#M_Boche #Mme_Boche"/>
+                  <relation name="époux" mutual="#M_Gaudron #Mme_Gaudron"/>
+                  <relation name="amis" mutual="#Coupeau #Mes_Bottes #Bibi_Grillade"/>
+                  <relation name="temoins" active="#Bibi_Grillade #Madinier" passive="#Coupeau"/>
+                  <relation name="temoins" active="#Mme_Boche #Mme_Lorilleux"
+                     passive="#Gervaise_Macquart"/>
+               </listRelation>
             </listPerson>
          </particDesc>
       </profileDesc>
    </teiHeader>
-   <!-- Pour la structuration du texte, j'ai fait une <div> contenant l'intitulé du chapitre dans <head> et les paragraphes dans des <p>. J'ai signalé les débuts de page avec <pg> (https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-pb.html). Je n'ai pas mis de <head> avec le titre du roman ni de <div> vides pour les chapitres non-encodés (ex. : <div type="chapter" n="1"/>) dans la mesure où j'ai précisé dans le sourceDesc que l'encodage ne concernait que les pages 78 à 82 du roman.  -->
+   <!-- Pour la structuration du texte, j'ai fait une <div> contenant l'intitulé du chapitre dans <head> et les paragraphes dans des <p>. 
+      J'ai signalé les débuts de page avec <pb>. 
+      Je n'ai pas mis de <head> avec le titre du roman ni de <div> vides pour les chapitres non-encodés (ex. : <div type="chapter" n="1"/>) 
+      dans la mesure où j'ai précisé dans le sourceDesc que l'encodage ne concernait que les pages 78 à 82 du roman.  -->
    <text>
       <body>
          <div type="chapter" n="3">
-            <head><pb n="78"/>Chapitre III</head>
+            <pb n="78"/>
+            <head>Chapitre III</head>
             <p><persName ref="#Gervaise_Macquart">Gervaise</persName> ne voulait pas de noce. À quoi
                bon dépenser de l’argent ? Puis, elle restait un peu honteuse ; il lui semblait
                inutile d’étaler le mariage devant tout le quartier. Mais <persName ref="#Coupeau"
