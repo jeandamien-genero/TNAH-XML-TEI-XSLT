@@ -21,29 +21,30 @@
          </publicationStmt>
          <sourceDesc>
             <listWit>
+               <!-- @facs permet d'ajouter le lien vers la numérisation (ex. Gallica) -->
                <!-- Codices quorum varia lectiones in omnibus locislaudantur : -->
-               <witness xml:id="V">Vossianus XIX q. 51 saec. x.</witness>
-               <witness xml:id="M">Montepessulanus H 113 saec. IX aut X.</witness>
+               <witness xml:id="V">Vossianus XIX q. 51 <date when="0900">saec. x</date>.</witness>
+               <witness xml:id="M">Montepessulanus H 113 <date notBefore="0800" notAfter="1000">saec. IX aut X.</date></witness>
                <witness xml:id="M1">primitiva lectio correcta in vulgatam (sic A1, U1, rell.).</witness>
                <witness xml:id="m">Varia lectio in eidem codici a manu secunda.</witness>
-               <witness xml:id="Z">Epternacensis sive Parisinus bibl. nat. lat. 10.314 saec.
-                  X.</witness>
+               <witness xml:id="Z">Epternacensis sive Parisinus bibl. nat. lat. 10.314 <date when="0900">saec.
+                  X</date>.</witness>
                <witness xml:id="Z1">primitiva lectio correcta in vulgatam</witness>
                <witness xml:id="z">Varia lectio in eidem codici a manu secunda.</witness>
-               <witness xml:id="P">Colbertinus sive Parisinus bibl. nat. lat. 7502 saec.
-                  X.</witness>
+               <witness xml:id="P">Colbertinus sive Parisinus bibl. nat. lat. 7502 <date when="0900">saec.
+                  X</date>.</witness>
                <witness xml:id="p">Varia lectio in eidem codici a manu secunda.</witness>
                <witness xml:id="P1">primitiva lectio correcta in vulgatam</witness>
-               <witness xml:id="U">Vossianus alter XIX f. 63 saec. x.</witness>
+               <witness xml:id="U">Vossianus alter XIX f. 63 <date when="0900">saec. x</date>.</witness>
                <witness xml:id="U1">primitiva lectio correcta in vulgatam (sic M1, A1, rell.).</witness>
                <witness xml:id="Ua"> commentum vel adnotationes in codici U.</witness>
-               <witness xml:id="G">Gemblacensis sive Bruxellensis bibl. Burgundicae 5330 saec. X aut
-                  XI.</witness>
-               <witness xml:id="&#937;">consensus codicum VMZPUG.</witness><!-- omega -->
-               <witness xml:id="S">Sangermanensis sive Parisinus bibl. nat. lat. 13045 saec.
-                  X.</witness>
-               <witness xml:id="Q">Puteanus sive Parisinus bibl. nat. 7900 A seac X.</witness>
-               <witness xml:id="C">lemmata codicis Bernensis 370 saec X [Ca prius lemma ; Cb alterum
+               <witness xml:id="G">Gemblacensis sive Bruxellensis bibl. Burgundicae 5330<date notBefore="0900" notAfter="1100"> saec. X aut
+                  XI</date>.</witness>
+               <witness xml:id="&#937;">consensus codicum VMZPUG.</witness><!-- &#937; = omega -->
+               <witness xml:id="S">Sangermanensis sive Parisinus bibl. nat. lat. 13045 <date when="0900">saec.
+                  X</date>.</witness>
+               <witness xml:id="Q">Puteanus sive Parisinus bibl. nat. 7900 A <date when="0900">saec X</date>.</witness>
+               <witness xml:id="C">lemmata codicis Bernensis 370 <date when="0900">saec X</date> [Ca prius lemma ; Cb alterum
                   lemma eiusdem loci, cum discrepant].</witness>
                <witness xml:id="A1">primitiva lectio correcta in vulgatam (sic M1, U1, rell.).</witness>
                <!-- Compendia -->
