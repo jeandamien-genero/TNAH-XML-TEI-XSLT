@@ -24,14 +24,15 @@
 1. Je suis dans mon fichier ODD (.xml).
 2. J'applique une feuille de transofmration : menu document > transformation > configurer un scénario (raccourci : "clef à molette" rouge).
 3. Je sélectionne le scénario "TEI ODD to RELAX NG XML" (pour le faire apparaitre, utiliser le filtre "ODD").
-4. J'applique mon scénario à mon ODD : un fichier RELAX NG est créé automatiquement. 
+4. J'applique mon scénario à mon ODD : un fichier .rng est créé automatiquement dans un nouveau dossier "out". 
 
 ### 2.2 Association du schéma RELAX NG au fichier XML-TEI
 1. Je suis sur mon fichier XML-TEI.
 2. Je vais dans document > schéma > associer un schéma (ou la punaise rouge).
 3. Paramètre : je ne conserve pas les anciens liens avec les schémas TEI ; le type de schéma est "Syntaxe XML RELAX NG".
-4. Je clique sur OK : **c'est bon !**
-5. Après une modification de mon odd, je ne suis pas obligé de faire à nouveau l'association de l'ODD avec le RELAX NG. Je peux simplement appuyer sur le grand "play" rouge depuis mon fichier ODD.
+4. Sur la ligne URL, j'associe le fichier .rng (cliquer sur le dossier jaune pour afficher l'interface graphique ou renseigner directement le chemin absolu).
+5. Je clique sur OK : **c'est bon !**
+6. Après une modification de mon odd, je ne suis pas obligé de faire à nouveau l'association de l'ODD avec le RELAX NG. Je peux simplement appuyer sur le grand "play" rouge depuis mon fichier ODD.
 
 ---
 ## 3. Vocabulaire
