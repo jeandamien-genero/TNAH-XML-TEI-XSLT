@@ -40,7 +40,7 @@
 
 * La fléche rouge play permet de **transformer**
 
-* Le XML-TEI (.xml) est **transformée** via le scénario oddbyexample (.xsl) en une ODD (.xml).
+* Le XML-TEI (.xml) est **générée** via le scénario oddbyexample (.xsl) en une ODD (.xml).
 
 * L'ODD (.xml) est **transformée** à un document RELAX NG (.rng).
 
