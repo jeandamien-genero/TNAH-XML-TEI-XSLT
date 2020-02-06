@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="short">Guide relatif à l'encodage de l'édition de la deuxième partie de la
+               Vie de saint Brice (BnF, ms. fr. 411)</title>
+            <author>
+               <forename>Jean-Damien</forename>
+               <surname>Généro</surname>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Master 2 Technologies numériques appliquées à l'histoire, École nationale des
+               chartes</publisher>
+            <pubPlace>Paris</pubPlace>
+            <date when="2020-01">Janvier 2020</date>
+            <availability>
+               <p>Ce guide et l'encodage sont réalisés pour une évaluation du cours d'XML-TEI du M2
+                  TNAH de l'École nationale des chartes.</p>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Derived from <ref
+                  target="https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">base
+                  odd</ref> after an analysis of 1 files in
+               file:/Users/jdgenero/Desktop/Devoir_TEI/Devoir_St_Brice/</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div1>
+            <head>Guide d'encodage</head>
+            <p>Ce guide entend décrire et expliquer les choix effectués lors de l'encodage de la
+               deuxième partie de la <hi rend="italic">Vie de saint Brice</hi>, qui pourraient être
+               appliqués à l'ensemble du manuscrit français 411.</p>
+            <p>Une première partie a pour but d'exposer le projet d'édition et ses exploitations
+               possibles. La deuxième et la troisième partie porteront quant à elles sur les deux
+               grandes parties structurantes de l'encodage. Un document TEI repose en effet sur un
+               élément racine <tag>TEI</tag> qui possède, dans le cas présent, deux &#171; enfants
+               &#187;. Le premier est l'élément <tag>teiHeader</tag> : il contient les métadonnées
+               décrivant le texte (deuxième partie) ; le second est l'élément <tag>text</tag>, qui
+               contient une représentation du texte (troisième partie).</p>
+            <div2>
+               <head>Projet d'édition et exploitations possibles</head>
+               <div3>
+                  <head>Contexte de l'édition</head>
+                  <p>Cette édition et son encodage sont entrepris dans le cadre d’une évaluation du
+                     cours d’XML-TEI du Master &#171; Technologies numériques appliquées à
+                     l’histoire &#187; de l’École nationale des chartes. Elle est basée sur la
+                     numérisation du microfilm noir et blanc du manuscrit français 411 de la
+                     Bibliothèque nationale de France, intitulé <hi rend="italic">La Vie de pluseurs
+                        seins et seintes</hi> (<ref
+                        target="https://gallica.bnf.fr/ark:/12148/btv1b107209247">voir sur
+                        Gallica</ref>). L’édition porte plus précisément sur la deuxième partie de
+                     la vie de saint Brice, successeur de saint Martin à l'évêché de Tours de 397 à
+                     444, depuis le folio 169 verso (à partir de la treizième ligne de la deuxième
+                     colonne) jusqu’au folio 170 recto.</p>
+                  <p>Dans la première partie, saint Brice succède à saint Martin sur le siège
+                     épiscopal de Tours. Néanmoins, au bout de trente ans d'épiscopat, les
+                     Tourangeaux le soupçonnent d'avoir eu un enfant avec une femme. La deuxième
+                     partie commence au moment où l'enfant est sommé de dire si saint Brice est son
+                     père ; il répond négativement. Les Tourangeaux exigent alors de leur évêque
+                     qu'il demande à l'enfant de révéler l'identité de son père, mais saint Brice
+                     s'y refuse et provoque la colère des Tourangeaux qui le chassent de la cité en
+                     dépit d'une ordalie réussie. Saint Brice s'en va faire pénitence à Rome et
+                     Justinien devient évêque de Tours. Au bout d'un certain temps, l'usurpateur est
+                     envoyé quérir sait Brice par les Tourangeaux, qui avaient eu vent de son état
+                     de piété retrouvée. Mais il meurt, et Armenses est élu pour lui succéder. Le
+                     pape renvoie finalement saint Brice à Tours après sept années (430-437). En
+                     chemin, il apprend par une vision la mort d'Armenses : il se hâte et arrive à
+                     Tours le jour de l'enterrement de celui-ci. Il se réinstalle sur son siège
+                     épiscopal et nul ne lui conteste sa dignité ; il meurt sept ans plus tard (444)
+                     et saint Eustoche lui succède.</p>
+               </div3>
+               <div3>
+                  <head>Projet d'édition</head>
+                  <p>L’encodage proposé a pour but de réaliser une édition critique du texte de la
+                     vie de saint Brice, et de permettre sa compréhension tant par un chercheur,
+                     qu’un étudiant ou un individu n’ayant aucun lien avec le monde de la recherche
+                     et souhaitant consulter directement une source.</p>
+                  <p>Pour cela, de nombreuses interventions ont été menées au niveau de la
+                     structuration du texte. L’organisation en lignes réparties entre deux colonnes
+                     a été supprimée en apparence et le texte a été agencé en quatre paragraphes, en
+                     fonction des grandes divisions du manuscrit d’origine, signifiées par des
+                     retraits prévus pour accueillir des lettrines. Une seconde intervention a
+                     consisté à modifier la ponctuation existante en ajoutant ou en supprimant des
+                     majuscules et des points, et en ajoutant divers signes (virgules, double point,
+                     guillemets, etc) afin de rendre le texte intelligible à un lecteur
+                     contemporain.</p>
+                  <p>L’organisation d’origine en pages, colonnes et lignes n’a pas pour autant été
+                     totalement supprimée. Trois éléments TEI ont en effet permis de <hi rend="bold"
+                        >décrire</hi> cette structure sans pour autant la faire apparaitre dans
+                     l’édition finale : <tag>pb</tag>, <tag>cb</tag>, <tag>lb</tag>. Ces trois
+                     balises, signalant respectivement un changement de page, de colonne et de
+                     ligne, permettent au chercheur de se représenter la disposition d'origine du
+                     texte grâce à des attributs de numérotation <att>n</att> (et donc de le
+                     réutiliser et de le citer). Ainsi, <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples">
+                        <pb n="169"/>
+                        <cb n="169_2"/>
+                        <lb n="169_2_13"/>
+                     </egXML> désignent respectivement la page 169, la deuxième colonne de cette
+                     page, la treizième ligne de cette colonne.</p>
+                  <p>L'orthographe du texte n'a pas été modernisée, mais des notes viennent définir
+                     les mots qui ne sont plus en usage aujourd'hui et dont le sens pourrait manquer
+                     de clarté. Les abréviations ont été restituées dans la balise <tag>abbr</tag>
+                     et développées au sein de <tag>expan</tag>. Le but est ici de faire cohabiter
+                     un niveau de lecture accessible tant au chercheur (les abréviations) qu'à celui
+                     qui ne l'est pas (leurs résolutions).</p>
+                  <p>Cette édition n'a donc aucun but pédagogique (c'est la raison pour laquelle il
+                     n'y a pas de lien avec l'image des pages) ; il s'agit, dans l'esprit de
+                     l'XML-TEI, de mettre un texte à la disposition du plus grand nombre tout en
+                     décrivant la façon dont il a été écrit et structuré sur son support physique,
+                     de manière à palier l'absence ou la perte éventuelle de celui-ci.</p>
+               </div3>
+            </div2>
+            <div2>
+               <head>Les métadonnées : le <tag>teiHeader</tag></head>
+               <p>Le <tag>teiHeader</tag> contient des métadonnées décrivant le texte.
+                  L'organisation retenue pour la présente édition contient trois grandes
+                  subdivisions : <specList>
+                     <specDesc key="fileDesc"/>
+                     <specDesc key="encodingDesc"/>
+                     <specDesc key="profileDesc"/>
+                  </specList></p>
+               <div3>
+                  <head>Le <tag>fileDesc</tag> : descritpion du fichier</head>
+                  <p>Cette première partie est elle-même subdivisée en quatre sections : <specList>
+                        <specDesc key="titleStmt"/>
+                        <specDesc key="publicationStmt"/>
+                        <specDesc key="notesStmt"/>
+                        <specDesc key="sourceDesc"/>
+                     </specList></p>
+                  <div4>
+                     <head>Le <tag>titleStmt</tag></head>
+                     <p>Le <tag>titleStmt</tag> contient les informations bibliographiques
+                        essentielles du manuscrit au sein des éléments <tag>title</tag> et
+                           <tag>author</tag> et une mention de responsabilité au sein du
+                           <tag>respStmt</tag>.</p>
+                     <p><specList>
+                           <specDesc key="title"/>
+                           <specDesc key="author"/>
+                           <specDesc key="respStmt"/>
+                        </specList></p>
+                     <p>Deux éléments <tag>title</tag> se succèdent : pour les distinguer,
+                        l'attribut <att>level</att> vient indiquer que le premier est le titre du
+                        manuscrit par la valeur <val>m</val> (<hi rend="italic">monographic</hi>) et
+                        que le second est celui de la <hi rend="italic">Vita</hi> en tant que partie
+                        de l'ensemble avec la valeur <val>a</val> (<hi rend="italic"
+                        >analytic</hi>).</p>
+                  </div4>
+                  <div4>
+                     <head>Le <tag>publicationStmt</tag></head>
+                     <p>La TEI destine cette section à recevoir des informations sur la distribution
+                        ou la publication du texte. S'agissant ici d'un manuscrit médiéval, les
+                        notions d'éditeur ou de lieu de publication ne s'appliquent pas. En
+                        conséquence, seul un rappel du contexte universitaire de l'édition a été
+                        placé à cet endroit au sein d'un élément <tag>p</tag>.</p>
+                  </div4>
+                  <div4>
+                     <head>Le <tag>notesStmt</tag></head>
+                     <p>La graphie étant d'une bonne qualité, il n'a pas été nécessaire d'ajouter
+                        des notes paléographiques. Néanmoins, des notes critiques viennent éclaircir
+                        le sens de plusieurs passages de l'ancien français pouvant paraitre
+                        obscures. Pour cela, le <tag>notesStmt</tag> se compose d'un ensemble
+                        d'éléments <tag>note</tag> contenant des explicitations sur le déroulé du
+                        récit ou certaines formulations, ainsi que les définitions de certains mots.
+                        L'attributs <att>n</att> permet de les numéroter et un <att>xml:id</att>
+                        vient les identifier. Ce dernier permet de relier le texte de la note au
+                        sein du <tag>notesStmt</tag> avec son appel au sein du <tag>text</tag>,
+                        réalisé grâce à l'attribut <att>target</att> de l'élément
+                        <tag>ref</tag>.</p>
+                     <p>Les définitions proviennent du <hi rend="italic"><ref
+                              target="http://www.atilf.fr/dmf/">Dictionnaire du Moyen
+                           Français</ref></hi> (DMF), dont l'URL se trouve au sein de l'attribut
+                           <att>source</att>.</p>
+                     <p><specList>
+                           <specDesc key="note"/>
+                        </specList></p>
+                  </div4>
+                  <div4>
+                     <head>Le <tag>sourceDesc</tag> et le <tag>msDesc</tag></head>
+                     <p>Le <tag>msDesc</tag> est le seul élément &#171; enfant &#187; du
+                           <tag>sourceDesc</tag>, dernière division du <tag>fileDesc</tag>. Destiné
+                        à réaliser la description du manuscrit, il compte lui-même six subdivisions
+                        : <specList>
+                           <specDesc key="msIdentifier"/>
+                           <specDesc key="head"/>
+                           <specDesc key="msContents"/>
+                           <specDesc key="physDesc"/>
+                           <specDesc key="history"/>
+                           <specDesc key="additional"/>
+                        </specList> Les informations qui ont permis de compléter cette section sont
+                        tirées de la <ref
+                           target="http://jonas.irht.cnrs.fr/consulter/manuscrit/detail_manuscrit.php?projet=71287#Association%E2%80%89"
+                           >base Jonas de l'IRHT</ref> ainsi que d'une fiche dactylographiée de
+                        l'IRHT de 1966, <ref
+                           target="https://gallica.bnf.fr/ark:/12148/bpt6k140542t/">numérisée sur
+                           Gallica</ref>.</p>
+                     <div5>
+                        <head>Le <tag>msIdentifier</tag></head>
+                        <p>Le <tag>msIdentifier</tag> regroupe les informations relatives à
+                           l'identification du manuscrit. Sa cote physique (français 411) a été
+                           indiquée au sein de l'élément <tag>idno</tag>, &#171; enfant &#187;
+                           direct de <tag>msIdentifier</tag>. D'autres identifications ont été mises
+                           dans des <tag>idno</tag> &#171; enfant &#187; d'<tag>altIdentifier</tag>
+                           et suivis par l'élément <tag>note</tag>. Il s'agit de l'ancienne cote,
+                           des cotes du microfilm et de sa matrice. Enfin, l'identifiant ark de la
+                           numérisation du microfilm sur le site gallica.bnf.fr a également été
+                           ajouté.</p>
+                        <p><specList>
+                              <specDesc key="idno"/>
+                              <specDesc key="altIdentifier"/>
+                           </specList></p>
+                     </div5>
+                     <div5>
+                        <head>Le <tag>head</tag></head>
+                        <p>Le <tag>head</tag> reprend les éléments d'en-tête du manuscrit, avec à
+                           nouveau les deux niveaux de titre utilisés dans le <tag>titleStmt</tag>
+                           du <tag>fileDesc</tag>. L'élément <tag>origDate</tag> indique pour sa
+                           part la datation du manuscrit au XIVe siècle, telle qu'elle est établie
+                           sur la fiche du manuscrit de la <ref
+                              target="http://jonas.irht.cnrs.fr/consulter/manuscrit/detail_manuscrit.php?projet=71287#Association%E2%80%89"
+                              >base Jonas de l'IRHT</ref>. Néanmoins, cette base contient également
+                           une <ref
+                              target="http://jonas.irht.cnrs.fr/consulter/oeuvre/detail_oeuvre.php?oeuvre=1743"
+                              >fiche concernant le passage de la vie de saint Brice</ref>, qui la
+                           date du XIIIe siècle. Cette contradiction est relevée au sein d'un
+                           élément <tag>note</tag>.</p>
+                        <p><specList>
+                              <specDesc key="origDate"/>
+                           </specList></p>
+                     </div5>
+                     <div5>
+                        <head>Le <tag>msContents</tag></head>
+                        <p>Le <tag>msContents</tag> contient une description structurée au sein de
+                           l'élément <tag>msItemStruc</tag>. Le choix a été fait de ne décrire que
+                           la partie éditée et non l'ensemble du manuscrit, comme l'indique
+                           l'emplacement désigné par l'élément <tag>locus</tag> (fol.169d - fol.
+                           170b) et le niveau de titre (<val>a</val> pour <hi rend="italic"
+                              >analytic</hi>). Trois graphies du nom de l'auteur ont été relevées au
+                           sein de l'élément <tag>author</tag>, avec un attribut <att>xml:lang</att>
+                           spécifiant que deux sont françaises (<val>fr</val>) et une issue de la
+                           langue d'oïl (<val>fro</val>).</p>
+                        <p><specList>
+                              <specDesc key="msItemStruct"/>
+                              <specDesc key="locus"/>
+                           </specList></p>
+                     </div5>
+                     <div5>
+                        <head>Le <tag>physDesc</tag></head>
+                        <p>L'élément <tag>physDesc</tag> contient une description physique du
+                           manuscrit scindée en cinq éléments :</p>
+                        <p><specList>
+                              <specDesc key="objectDesc"/>
+                              <specDesc key="handDesc"/>
+                              <specDesc key="scriptDesc"/>
+                              <specDesc key="decoDesc"/>
+                              <specDesc key="bindingDesc"/>
+                           </specList></p>
+                        <p><list type="ordered">
+                              <item>Les caractéristiques de l'objet-manuscrit sont exposées dans les
+                                 deux parties de l'<tag>objectDesc</tag>, le <tag>supportDesc</tag>
+                                 et le <tag>layoutDesc</tag>. <specList>
+                                    <specDesc key="supportDesc"/>
+                                    <specDesc key="layoutDesc"/>
+                                 </specList></item>
+                              <item>La main ayant écrit le texte et son écriture sont ensuite
+                                 décrites dans le <tag>handDesc</tag> et le <tag>scriptDesc</tag>.
+                                 Peu d'information étant disponibles à ce sujet, il est juste fait
+                                 état de leur datation. Ces deux parties sont reliées par
+                                    l'<att>xml:id</att>
+                                 <val>#mainhand</val>.</item>
+                              <item>Le <tag>decoDesc</tag> contient des descriptions de la
+                                 décoration du manuscrit au sein d'éléments <tag>decoNote</tag>.
+                                 Deux ont été complétées, l'une se rapportant aux lettrines
+                                 manquantes et l'autre aux majuscules ornées. <specList>
+                                    <specDesc key="decoNote"/>
+                                 </specList></item>
+                              <item>La reliure est enfin décrite au sein du
+                                 <tag>bindingDesc</tag>.</item>
+                           </list></p>
+                     </div5>
+                     <div5>
+                        <head><tag>History</tag></head>
+                        <p><tag>history</tag> tente d'apporter des informations sur la provenance du
+                           manuscrit au sein de l'élément <tag>provenance</tag>. Très parcellaires,
+                           il ne s'agit que d'un relevé de signatures et de tampons entourés des
+                           éléments <tag>signatures</tag> et <tag>stamp</tag>.</p>
+                        <p><specList>
+                              <specDesc key="provenance"/>
+                              <specDesc key="signatures"/>
+                              <specDesc key="stamp"/>
+                           </specList></p>
+                     </div5>
+                     <div5>
+                        <p><tag>additional</tag> contient enfin la liste des reproductions
+                           (microfilm et numérisation) dans <tag>surrogates</tag> et trois
+                           références bibliographiques au sein de l'élément <tag>biblStruct</tag>.
+                           Les reproductions déjà citées dans le <tag>msIdentifier</tag> sont
+                           référencées par un <att>xml:id</att>.</p>
+                        <p><specList>
+                              <specDesc key="surrogates"/>
+                              <specDesc key="biblStruct"/>
+                              <specDesc key="msIdentifier"/>
+                           </specList></p>
+                     </div5>
+                  </div4>
+               </div3>
+               <div3>
+                  <head>L'<tag>encodingDesc</tag></head>
+                  <p>Cette section documente la &#171; relation d'un texte électronique avec sa ou
+                     ses sources &#187;. Dans la mesure où le présent guide poursuit un objectif
+                     similaire, elle a été complétée de façon extrêmement sommaire par un bref
+                     rappel du contexte de l'édition et de son étendue au sein du manuscrit à l'aide
+                     d'un élément <tag>projectDesc</tag>.</p>
+                  <p><specList>
+                        <specDesc key="projectDesc"/>
+                     </specList></p>
+               </div3>
+               <div3>
+                  <head>Le <tag>profileDesc</tag></head>
+                  <p>Le <tag>profileDesc</tag> contient trois subdivisions : <specList>
+                        <specDesc key="langUsage"/>
+                        <specDesc key="settingDesc"/>
+                        <specDesc key="particDesc"/>
+                     </specList></p>
+                  <div4>
+                     <head><tag>langUsage</tag></head>
+                     <p>La langue du texte (langue d'oïl) est indiquée au sein de l'élément
+                           <tag>language</tag> avec un attribut <att>ident</att> contenant son code
+                        d'identification (<val>fro</val>).</p>
+                     <p><specList>
+                           <specDesc key="language"/>
+                        </specList></p>
+                  </div4>
+                  <div4>
+                     <head><tag>settingDesc</tag> : <hi rend="italic">index locorum</hi></head>
+                     <p>Le <tag>settingDesc</tag> contient un index des noms de lieux, répartis par
+                        nationalité au sein de deux <tag>listPlace</tag> (lieux français et
+                        italiens).</p>
+                     <p>Les informations toponymiques sont données au sein de l'élément
+                           <tag>place</tag>, dans <tag>placeName</tag> et <tag>location</tag>. Le
+                        premier regroupe des données sur le pays, la région (de <att>type</att>
+                        <val>diocèse</val> ou <val>province</val>) et le nom du toponyme, qui est
+                        indiqué en français et en langue d'oïl lorsque les orthographes diffèrent.
+                        L'élément <tag>location</tag> donne quant à lui les coordonnées
+                        géographiques des villes au sein de <tag>geo</tag>, avec un lien vers la
+                        page Wikipédia où l'information a été prise dans l'attribut
+                           <att>source</att>.</p>
+                     <p>Des <att>xml:id</att> permettent de référencer les différents lieux et de
+                        pointer vers leur index lorsqu'ils sont cités dans le <tag>text</tag>.</p>
+                     <p><specList>
+                           <specDesc key="listPlace"/>
+                           <specDesc key="place"/>
+                           <specDesc key="placeName"/>
+                           <specDesc key="location"/>
+                           <specDesc key="geo"/>
+                        </specList></p>
+                  </div4>
+                  <div4>
+                     <head>Le <tag>particDesc</tag> : <hi rend="italic">index nominum</hi></head>
+                     <p>Le <tag>particDesc</tag> contient un index des noms de personnes. Les
+                        individus nommés dans le texte sont tous des évêques de Tours (saint Martin,
+                        saint Brice, saint Eustoche, Justinien et Armenses). Ils ne sont néanmoins
+                        pas les seuls à intervenir dans le récit, qui compte également l'enfant,
+                        interrogé dans le premier paragraphe, les Tourangeaux, qui font et défont
+                        leur évêque, et le pape qui accueille saint Brice pénitent et finit par le
+                        renvoyer à Tours. Cependant, cette édition ayant pour but de servir de
+                        matrice pour l'ensemble du manuscrit français 411, seul les individus nommés
+                        (et donc les évêques de Tours dans le cas présent) ont été intégrés au
+                           <tag>particDesc</tag>, avec l'idée qu'un index portant sur plusieurs
+                        textes ne pourrait pas accepter des entrée telles que l'&#171; enfant &#187;
+                        ou le &#171; pape &#187;.</p>
+                     <p>Pour signifier la possibilité de rassembler les entrées d'index dans des
+                        listes thématiques, l'élément <tag>listPerson</tag> a été utilisé, bien que
+                        cet index ne compte qu'une seule liste. L'attribut <att>type</att> permet de
+                        préciser la caractéristique qui a présidé à la constitution de la liste
+                        (dans l'exemple, <val>eveques_Tours</val>) et d'accéder plus rapidement à
+                        celle-ci via un chemin XPath (dans l'exemple,
+                        //particDesc/listPerson[@type="eveques_Tours"]).</p>
+                     <p>Deux types d'entrée sont à distinguer. Le premier concerne les individus
+                        pour lesquels l'information biographique est abondante (saint Martin, saint
+                        Brice) et le second ceux dont la vie est peu connue (Justinien et
+                        Armenses).</p>
+                     <p>Tous possèdent des informations patronymiques minimales : leurs nom, surnom,
+                        statut, parfois dans plusieurs langues. Ainsi : <egXML
+                           xmlns="http://www.tei-c.org/ns/Examples">
+                           <persName>
+                              <roleName>êvèque</roleName>
+                              <addName full="yes">saint</addName>
+                              <addName full="abb">st</addName>
+                              <forename full="yes" xml:lang="fr">Eustoche</forename>
+                              <forename full="yes" xml:lang="lat">Eustochius</forename>
+                              <surname full="yes" ref="#Tours">de Tours</surname>
+                           </persName>
+                        </egXML></p>
+                     <p>Les éléments <tag>birth</tag> et <tag>death</tag> ont ensuite été utilisé
+                        uniquement lorsque ces informations été connues. De même,
+                           <tag>residence</tag> n'est présent que dans l'entrée de saint Brice dans
+                        la mesure où c'est le seul individu cité pour lequel les localisations
+                        successives peuvent être établies (Tours, Rome et Tours à nouveau).</p>
+                     <p>A l'instar du <tag>settingDesc</tag>, des <att>xml:id</att> permettent de
+                        référencer les anthroponymes et de pointer vers leurs index lorsqu'ils sont
+                        cités dans le <tag>text</tag>.</p>
+                  </div4>
+               </div3>
+            </div2>
+            <div2>
+               <head>Le texte</head>
+               <p>L'édition est présentée au sein de l'élément <tag>text</tag>, qui contient le
+                     <tag>body</tag>, où se trouve le texte. Le titre est rappelé dans l'élément
+                     <tag>head</tag>, puis les paragraphes sont placés dans des <tag>div</tag>. La
+                  nature de ces dernières est précisée par l'attribut <att>type</att> et leur place
+                  dans l'enchaînement du récit par <att>n</att>. Le texte en lui-même se trouve
+                  dans un élément <tag>p</tag>. La structuration globale est donc la suivante :
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples"><TEI>
+                        <text>
+                           <body>
+                              <head>Titre de l'édition</head>
+                              <div type="paragaph" n="N">
+                                 <p>Texte du paragraphe</p>
+                              </div>
+                           </body>
+                        </text>
+                     </TEI></egXML></p>
+               <div3>
+                  <head>Structuration générale du texte</head>
+                  <p>Comme il a été indiqué dans l'introduction de ce guide, l'encodage structure la
+                     présente édition autour de quatre paragraphes homogènes. La disposition
+                     originale par pages, colonnes et lignes du manuscrit est précisée par trois
+                     éléments : <specList>
+                        <specDesc key="lb" atts="n"/>
+                        <specDesc key="cb" atts="n"/>
+                        <specDesc key="pb" atts="n"/>
+                     </specList> L'attribut <att>n</att> indique le numéro de l'élément ; il est
+                     composé d'un nombre unique dans le cas de l'élément <tag>lb</tag>, du numéro de
+                     la page suivi de celui de la colonne pour <tag>cb</tag>, et enfin des numéros
+                     de la page, de la colonne et de la ligne pour <tag>lb</tag>.</p>
+                  <p>Ces éléments et leur attribut permettent, selon les choix faits lors de la
+                     transformation du document XML-TEI vers un autre format, de faire apparaitre ou
+                     non les numéros des pages, colonnes et lignes et donc de rappeler la
+                     structuration du manuscrit.</p>
+               </div3>
+               <div3>
+                  <head>Lettrines manquantes et majuscules</head>
+                  <p>Le cas des lettrines manquantes à chaque début de paragraphe a été traité avec
+                     des éléments <tag>add</tag>. Ils soulignent, avec l'attribut <att>type</att> de
+                     valeur <val>missing_lettrine</val>, qu'elles ne sont pas présentes dans le
+                     manuscrit mais ajoutées par l'éditeur. Ces décorations étaient prévues pour
+                     occuper trois lignes.</p>
+                  <p>Des majuscules sont présentes dans l'ensemble du texte manuscrit. Dans la
+                     majorité des cas, elles signalent ce qui peut être considéré comme une nouvelle
+                     phrase, selon un usage proche du nôtre. Elles sont agrémentées de décors sous
+                     forme de motifs géométriques, probablement colorés (la numérisation est en noir
+                     et blanc). Pour signifier cela, l'élément <tag>hi</tag> a été utilisé avec
+                     l'attribut <att>rend</att> de valeur <val>capital_letter</val>. Les majuscules
+                     de début de paragraphe, d'un module plus grand, sont signalées de la même façon
+                     mais avec la valeur <val>initial</val>.</p>
+                  <p>L'ajout de points en fin de phrase (28 occurrences) a nécessité le remplacement
+                     des minuscules qui suivaient par des majuscules. Pour cela, l'élément
+                        <tag>choice</tag> contient la majuscule d'origine dans <tag>orig</tag> et la
+                     régularisation en minuscule dans <tag>reg</tag> : <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples"><choice><orig>minuscule ou
+                              majuscule du manuscrit</orig><reg>régularisation de
+                           l'édition</reg></choice></egXML></p>
+               </div3>
+               <div3>
+                  <head>Ponctuation</head>
+                  <p>Le choix a été fait de revoir entièrement la ponctuation du texte afin de le
+                     rendre claire et compréhensible pour le lecteur contemporain, ainsi qu'il a été
+                     indiqué plus haut. Elle n'était présente dans le manuscrit que sous la forme de
+                     points, qui ont été transformés en virgules à quatre reprises de cette manière
+                     : <egXML xmlns="http://www.tei-c.org/ns/Examples"><choice>
+                           <orig>.</orig>
+                           <reg>,</reg>
+                        </choice></egXML></p>
+                  <p>Dans le cas où un signe de ponctuation a été ajouté, c'est la balise
+                        <tag>add</tag> qui a été utilisée. Elle possède obligatoirement l'attribut
+                        <att>type</att> avec une liste de valeurs imposées en fonction du signe
+                     concerné (<val>begin_quotechar</val>, <val>end_quotechar</val>,
+                     <val>coma</val>, <val>full_stop</val>, <val>semicolon</val>, <val>dash</val>,
+                        <val>colon</val>).</p>
+               </div3>
+               <div3>
+                  <head>Abréviations</head>
+                  <p>L'édition fait cohabiter les abréviations (<tag>abbr</tag>) et leurs
+                     résolutions (<tag>expan</tag>) au sein d'un élément <tag>choice</tag>. Par
+                     exemple, pour &#171; par &#187; : <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples"><choice><abbr type="brevigraph"
+                              >&#42833;</abbr><expan>par</expan></choice></egXML></p>
+                  <p>L'élément <tag>abbr</tag> contient l'attribut obligatoire <att>type</att> afin
+                     de renseigner la nature de l'abréviation.</p>
+               </div3>
+               <div3>
+                  <head>Les entités décimales : DTD</head>
+                  <p>Pour ne pas surcharger le texte avec une succession d'éléments
+                        <tag>choice</tag>, ces derniers sont appelés à l'aide d'entités décimales.
+                     Elles sont définies au sein d'une DTD qui est placée au début fichier, mais qui
+                     pourrait tout autant être dans un fichier séparé.</p>
+                  <p>Les entités renvoyant à des abréviations (élément <tag>abbr</tag> suivi de
+                        <tag>expan</tag>) se trouvent au début de la DTD, avec les voyelles en
+                     premier et les consonnes ensuite. Le code décimal provient de la convertion
+                     d'un caractère MUFI.</p>
+                  <p>Les entités qui concernent les remplacements de majuscules par des minuscules,
+                     ou inversement (éléments <tag>orig</tag> et <tag>reg</tag>), suivent.</p>
+               </div3>
+            </div2>
+         </div1>
+         <div1>
+            <head>Spécifications de l'encodage</head>
+            <schemaSpec ident="oddbyexample" start="TEI ">
+               <moduleRef key="tei"/>
+               <!--Checking module textcrit-->
+               <classRef key="att.textCritical"/>
+               <classRef key="model.rdgLike"/>
+               <classRef key="model.rdgPart"/>
+               <classSpec ident="att.textCritical" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="cause" mode="delete"/>
+                     <attDef ident="varSeq" mode="delete"/>
+                     <attDef ident="require" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <!--Checking module msdescription-->
+               <classRef key="model.physDescPart"/>
+               <moduleRef key="msdescription"
+                  include="msDesc height width locus origDate signatures stamp msIdentifier repository collection altIdentifier explicit incipit msContents msItemStruct physDesc objectDesc supportDesc support material foliation condition layoutDesc layout handDesc scriptDesc decoDesc decoNote bindingDesc history provenance acquisition additional surrogates"/>
+               <elementSpec ident="msDesc" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="locus" mode="change">
+                  <attList>
+                     <attDef ident="scheme" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="from" mode="change" usage="req"/>
+                     <!-- ajout de l'attribut @from obligatoire -->
+                     <attDef ident="to" mode="change" usage="req"/>
+                     <!-- ajout de l'attribut @to obligatoire -->
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="origDate" mode="change">
+                  <attList>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="notBefore" mode="add" usage="req"/>
+                     <!-- attribut @notBefore obligatoire -->
+                     <attDef ident="notAfter" mode="add" usage="req"/>
+                     <!-- attribut @notAfter obligatoire -->
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="unit" mode="change" usage="req">
+                        <!-- attribut @unit obligatoire -->
+                        <valList type="closed">
+                           <!-- ajout de trois possibles valeurs pour @unit : year, century, interval -->
+                           <valItem ident="century" mode="add"/>
+                           <valItem ident="year" mode="add"/>
+                           <valItem ident="interval" mode="add"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="source" mode="change"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="stamp" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="when" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="repository" mode="change">
+                  <attList>
+                     <attDef ident="ref" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="collection" mode="change"/>
+               <elementSpec ident="altIdentifier" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                     <!-- attribut @type supprimé pour altIdentifier, je le mets au niveau de <idno> -->
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="explicit" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="defective" mode="change" usage="req"/>
+                     <!-- attribut @defective obligatoire -->
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="incipit" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="defective" mode="change" usage="req"/>
+                     <!-- attribut @defective obligatoire -->
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="supportDesc" mode="change">
+                  <attList>
+                     <attDef ident="material" mode="change" usage="opt"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="layout" mode="change">
+                  <attList>
+                     <attDef ident="streams" mode="delete"/>
+                     <attDef ident="ruledLines" mode="delete"/>
+                     <attDef ident="columns" mode="change" usage="req"/>
+                     <!-- attribut @columns obligatoire -->
+                     <attDef ident="writtenLines" mode="change" usage="req"/>
+                     <!-- attribut @writtenLines obligatoire -->
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="decoNote" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="provenance" mode="change">
+                  <attList>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="acquisition" mode="delete"/>
+               <!-- <acquisition> supprimée -->
+               <elementSpec ident="scriptDesc" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="add" usage="req"/>
+                  </attList>
+               </elementSpec>
+
+               <!--Checking module namesdates-->
+               <classRef key="model.persNamePart"/>
+               <moduleRef key="namesdates"
+                  include="persName surname forename addName roleName placeName country region settlement listPerson listPlace listRelation person place birth death residence occupation relation location geo"/>
+               <elementSpec ident="geo" mode="change">
+                  <!-- ajout de <geo> avec @source obligatoire -->
+                  <attList>
+                     <attDef ident="source" mode="change" usage="req"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="persName" mode="change">
+                  <attList>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="full" mode="delete">
+                        <!-- @full supprimé
+                        <valList mode="add" type="closed">
+                           <valItem ident="yes"/>
+                        </valList>-->
+                     </attDef>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="surname" mode="change">
+                  <attList>
+                     <attDef ident="full" mode="change" usage="req">
+                        <!-- @full obligatoire -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="yes"/>
+                           <valItem ident="abb"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="ref" mode="change" usage="rec"/>
+                     <!-- changement de delete en change -->
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="forename" mode="change">
+                  <attList>
+                     <attDef ident="full" mode="change" usage="req">
+                        <!-- @full obligatoire -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="yes"/>
+                           <valItem ident="abb"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="addName" mode="change">
+                  <attList>
+                     <attDef ident="full" mode="change" usage="req">
+                        <!-- @full obligatoire -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="yes"/>
+                           <valItem ident="abb"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="roleName" mode="change">
+                  <attList>
+                     <attDef ident="full" mode="delete">
+                        <!-- @full supprimé -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="yes"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="placeName" mode="change">
+                  <attList>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="full" mode="delete">
+                        <valList mode="add" type="closed">
+                           <valItem ident="yes"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="country" mode="change">
+                  <attList>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="when" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="region" mode="change">
+                  <attList>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="type" mode="change">
+                        <valList mode="add" type="open">
+                           <valItem ident="diocese"/>
+                           <valItem ident="province"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="when" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="settlement" mode="change">
+                  <!-- ne pas enelever, il est dans le msIdentifier -->
+                  <attList>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="when" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="listPerson" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <valList mode="add" type="open">
+                           <valItem ident="eveques_Tours"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="default" mode="delete">
+                        <!-- changement de change en delete -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="listPlace" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <valList mode="add" type="open">
+                           <!-- ajout de deux valeurs d'attribut, liste toujours ouverte -->
+                           <valItem ident="françaises"/>
+                           <valItem ident="italiennes"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="default" mode="delete">
+                        <!-- @default deleted -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="person" mode="change">
+                  <attList>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="age" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="residence" mode="change">
+                  <attList>
+                     <attDef ident="from" mode="change" usage="opt"/>
+                     <attDef ident="to" mode="change" usage="opt"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="occupation" mode="change">
+                  <attList>
+                     <attDef ident="from" mode="change" usage="opt"/>
+                     <attDef ident="to" mode="change" usage="opt"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="place" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <!--Checking module dictionaries-->
+               <classRef key="att.lexicographic"/>
+               <classRef key="model.entryLike"/>
+               <classRef key="model.formPart"/>
+               <classRef key="model.gramPart"/>
+               <classRef key="model.lexicalRefinement"/>
+               <classRef key="model.morphLike"/>
+               <classRef key="model.ptrLike.form"/>
+               <classSpec ident="att.lexicographic" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <!-- delete -->
+                     <attDef ident="expand" mode="delete"/>
+                     <attDef ident="norm" mode="delete"/>
+                     <attDef ident="split" mode="delete"/>
+                     <attDef ident="value" mode="delete"/>
+                     <attDef ident="orig" mode="delete"/>
+                     <attDef ident="location" mode="delete"/>
+                     <attDef ident="mergedIn" mode="delete"/>
+                     <attDef ident="opt" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <!--Checking module tagdocs-->
+               <classRef key="att.combinable"/>
+               <classRef key="att.identified"/>
+               <classRef key="model.contentPart"/>
+               <classSpec ident="att.combinable" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <attDef ident="mode" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.identified" type="atts" mode="change">
+                  <!-- contient ident -->
+                  <attList>
+                     <attDef ident="ident" mode="change"/>
+                     <attDef ident="predeclare" mode="delete"/>
+                     <attDef ident="module" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.ascribed.directed" type="atts" mode="change">
+                  <attList>
+                     <!-- utilisé dans said -->
+                     <attDef ident="toWhom" mode="change"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.ascribed" type="atts" mode="change">
+                  <attList>
+                     <!-- utilisé dans said -->
+                     <attDef ident="who" mode="change"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.canonical" type="atts" mode="change">
+                  <!-- contient ref -->
+                  <attList>
+                     <attDef ident="key" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.dimensions" type="atts" mode="change">
+                  <!-- contient unit -->
+                  <attList>
+                     <attDef ident="quantity" mode="delete"/>
+                     <attDef ident="extent" mode="delete"/>
+                     <attDef ident="precision" mode="delete"/>
+                     <attDef ident="scope" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.damaged" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <attDef ident="agent" mode="delete"/>
+                     <attDef ident="degree" mode="delete"/>
+                     <attDef ident="group" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.datable.w3c" type="atts" mode="change">
+                  <!-- change : dates -->
+                  <attList>
+                     <attDef ident="notBefore" mode="delete"/>
+                     <!-- notBefore supprimé de cette classe, requis plus haut pour origDate -->
+                     <attDef ident="notAfter" mode="delete"/>
+                     <!-- notAfter supprimé de cette classe, requis plus haut pour origDate -->
+                     <attDef ident="from" mode="change"/>
+                     <attDef ident="to" mode="change"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.datable" type="atts" mode="change">
+                  <!-- change : dates (contient le précédent) -->
+                  <attList>
+                     <attDef ident="calendar" mode="delete"/>
+                     <attDef ident="period" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.editLike" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <attDef ident="evidence" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.media" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <attDef ident="width" mode="delete"/>
+                     <attDef ident="height" mode="delete"/>
+                     <attDef ident="scale" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.naming" type="atts" mode="change">
+                  <!-- contient att.canonical = @ref -->
+                  <attList>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="nymRef" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.typed" type="atts" mode="change">
+                  <!-- contient type -->
+                  <attList>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.pointing.group" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <attDef ident="domains" mode="delete"/>
+                     <attDef ident="targFunc" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.segLike" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <attDef ident="function" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.timed" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <attDef ident="start" mode="delete"/>
+                     <attDef ident="end" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.global.linking" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="change"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.transcriptional" type="atts" mode="delete">
+                  <!-- delete -->
+                  <attList>
+                     <attDef ident="cause" mode="delete"/>
+                     <attDef ident="seq" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.personal" type="atts" mode="change">
+                  <!-- contient full -->
+                  <attList>
+                     <attDef ident="sort" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <!--Checking module core-->
+               <moduleRef key="core"
+                  include="p hi said choice reg orig add name date abbr expan head note pb lb cb monogr author title imprint biblScope biblStruct listBibl textLang num ref respStmt resp bibl"/>
+               <elementSpec ident="p" mode="change">
+                  <attList>
+                     <attDef ident="part" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="N"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="said" mode="change">
+                  <attList>
+                     <!-- suppression des attributs et ajout de @who recommandé -->
+                     <attDef ident="who" mode="change" usage="rec"/>
+                     <attDef ident="aloud" mode="delete"/>
+                     <attDef ident="direct" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="ref" mode="change">
+                  <attList>
+                     <attDef ident="ref" mode="change"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="num" mode="change">
+                  <!-- ajout de num -->
+                  <attList>
+                     <attDef ident="type" mode="change" usage="rec">
+                        <!-- attribut @type recommandé -->
+                        <valList mode="add" type="closed">
+                           <!-- liste close de valeurs pour type -->
+                           <valItem ident="cardinal"/>
+                           <valItem ident="ordinal"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="value" mode="change" usage="req"/>
+                     <!-- attribut @value obligatoire -->
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="reg" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="add" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <!-- @type est un attribut obligatoire de <add> -->
+                        <valList mode="add" type="closed">
+                           <!-- ajout de la liste de valeurs close -->
+                           <valItem ident="begin_quotechar"/>
+                           <valItem ident="end_quotechar"/>
+                           <valItem ident="coma"/>
+                           <valItem ident="full_stop"/>
+                           <valItem ident="semicolon"/>
+                           <valItem ident="dash"/>
+                           <valItem ident="colon"/>
+                           <valItem ident="missing_lettrine"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="unit" mode="change">
+                        <valList mode="add" type="open">
+                           <!-- ajout de la valeur char, liste laissée ouverte -->
+                           <valItem ident="char"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="name" mode="change">
+                  <attList>
+                     <attDef ident="full" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="yes"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="date" mode="change">
+                  <!-- utilisé dans listBibl -->
+                  <attList>
+                     <attDef ident="when" mode="change" usage="rec"/>
+                     <!-- ajout de l'attribut when recommandé -->
+                     <attDef ident="scope" mode="add" usage="opt"/>
+                     <!-- ajout de l'attribut scope when optionnel -->
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="unit" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="abbr" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="head" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="note" mode="change">
+                  <attList>
+                     <attDef ident="targetEnd" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="source" mode="change"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="pb" mode="change">
+                  <attList>
+                     <!-- attribut @n déjà prévu par le modèle, pas nécessaire de l'ajouter -->
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="lb" mode="change">
+                  <attList>
+                     <!-- attribut @n déjà prévu par le modèle, pas nécessaire de l'ajouter -->
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="cb" mode="change">
+                  <attList>
+                     <!-- attribut @n déjà prévu par le modèle, pas nécessaire de l'ajouter -->
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="author" mode="change">
+                  <attList>
+                     <attDef ident="ref" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="title" mode="change">
+                  <attList>
+                     <attDef ident="level" mode="change" usage="rec">
+                        <!-- l'attribut @level est obligatoire -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="a"/>
+                           <!-- section d'un ouvrage (analytic) -->
+                           <valItem ident="j"/>
+                           <!-- journal = revue -->
+                           <valItem ident="m"/>
+                           <!-- monographic =  manuscrit -->
+                        </valList>
+                     </attDef>
+                     <attDef ident="type" mode="change" usage="opt"/>
+                     <!-- attribut @type : usage optionnel -->
+                     <attDef ident="ref" mode="change"/>
+                     <attDef ident="when" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="biblStruct" mode="change">
+                  <attList>
+                     <attDef ident="default" mode="delete">
+                        <!-- delete -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="listBibl" mode="change">
+                  <attList>
+                     <attDef ident="default" mode="delete">
+                        <!-- delete -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="textLang" mode="change">
+                  <attList>
+                     <attDef ident="otherLangs" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <!--Checking module figures-->
+               <!--Checking module header-->
+               <moduleRef key="header"
+                  include="teiHeader fileDesc titleStmt extent publicationStmt notesStmt note idno sourceDesc profileDesc handNote scriptNote langUsage language encodingDesc projectDesc respStmt resp"/>
+               <elementSpec ident="idno" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <!-- élément @type obligatoire pour idno -->
+                        <valList mode="add" type="closed">
+                           <!-- ajout de la liste de valeurs fermée de l'attribut @type -->
+                           <valItem ident="BNF"/>
+                           <valItem ident="ISSN"/>
+                           <valItem ident="ancienne_cote"/>
+                           <valItem ident="matrice"/>
+                           <valItem ident="microfilm"/>
+                           <valItem ident="cote"/>
+                           <valItem ident="Gallica"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="when" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="sourceDesc" mode="change">
+                  <attList>
+                     <attDef ident="default" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="notesStmt" mode="change"/>
+               <!-- ajout du notesStmt -->
+               <elementSpec ident="langUsage" mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="default" mode="delete">
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="language" mode="change">
+                  <attList>
+                     <attDef ident="usage" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="respStmt" mode="change"/>
+               <elementSpec ident="resp" mode="change"/>
+               <!--Checking module verse-->
+               <!--Checking module transcr-->
+               <!--Checking module linking-->
+               <!--Checking module analysis-->
+               <!--Checking module textstructure-->
+               <moduleRef key="textstructure" include="TEI text body div"/>
+               <elementSpec ident="TEI" mode="change">
+                  <attList>
+                     <attDef ident="version" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="text" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="body" mode="change">
+                  <content>
+                     <sequence preserveOrder="true">
+                        <elementRef key="head" minOccurs="1" maxOccurs="1"/>
+                        <elementRef key="div" minOccurs="1" maxOccurs="unbounded"/>
+                        <!-- Le <body> contient obligatoirement un seul <head> en premier, puis une succession de <div> -->
+                     </sequence>
+                  </content>
+               </elementSpec>
+               <elementSpec ident="div" mode="change">
+                  <attList>
+                     <attDef ident="org" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="uniform"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="sample" mode="delete">
+                        <valList mode="add" type="closed">
+                           <valItem ident="complete"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="part" mode="delete">
+                     </attDef>
+                     <attDef ident="type" mode="change" usage="req">
+                        <!-- l'attribut @type est obligatoire dans <div>, sa valeur est forcément paragraph -->
+                        <valList mode="add" type="closed">
+                           <valItem ident="paragraph"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="n" mode="change" usage="req"/>
+                  </attList>
+               </elementSpec>
+               <!--Checking module corpus-->
+               <moduleRef key="corpus" include="particDesc settingDesc"/>
+               <elementSpec ident="particDesc" mode="change">
+                  <attList>
+                     <attDef ident="default" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="settingDesc" mode="change">
+                  <attList>
+                     <attDef ident="default" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="false"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+            </schemaSpec>
+         </div1>
+      </body>
+   </text>
+</TEI>

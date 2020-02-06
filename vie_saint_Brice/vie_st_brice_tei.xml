@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD : déclaration des entités décimales -->
+<!DOCTYPE text [
+
+<!-- Entités : voyelles abrégées -->
+<!ENTITY an '<choice><abbr type="contraction">&#257;</abbr><expan>an</expan></choice>' >
+<!ENTITY en '<choice><abbr type="contraction">&#275;</abbr><expan>en</expan></choice>' >
+<!ENTITY in '<choice><abbr type="contraction">&#299;</abbr><expan>in</expan></choice>' >
+<!ENTITY on '<choice><abbr type="contraction">&#333;</abbr><expan>on</expan></choice>' >
+<!ENTITY om '<choice><abbr type="contraction">&#243;</abbr><expan>om</expan></choice>' >
+<!ENTITY ostr '<choice><abbr type="contraction">&#341;</abbr><expan>ostr</expan></choice>' >
+<!ENTITY ous '<choice><abbr type="contraction">&#8313;</abbr><expan>ous</expan></choice>'> <!-- pour vous -->
+<!ENTITY us '<choice><abbr type="contraction">&#42863;</abbr><expan>us</expan></choice>'> <!-- pour plus -->
+
+<!-- Entités : consonnes abrégées -->
+<!ENTITY ber '<choice><abbr type="contraction">b&#702;</abbr><expan>ber</expan></choice>'>
+<!ENTITY bie '<choice><abbr type="contraction">b&#702;</abbr><expan>bie</expan></choice>'>
+<!ENTITY com '<choice><abbr type="brevigraph">&#42863;</abbr><expan>com</expan></choice>'>
+<!ENTITY con '<choice><abbr type="brevigraph">&#42863;</abbr><expan>con</expan></choice>'>
+<!ENTITY Cri '<choice><abbr type="contraction">&#263;</abbr><expan>Cri</expan></choice>'>
+<!ENTITY hes '<choice><abbr type="brevigraph">&#295;</abbr><expan>hes</expan></choice>' >
+<!ENTITY par '<choice><abbr type="brevigraph">&#42833;</abbr><expan>par</expan></choice>' >
+<!ENTITY per '<choice><abbr type="brevigraph">&#42833;</abbr><expan>per</expan></choice>'>
+<!ENTITY pre '<choice><abbr type="brevigraph">&#7765;</abbr><expan>pre</expan></choice>'>
+<!ENTITY pri '<choice><abbr type="brevigraph">&#7765;</abbr><expan>pri</expan></choice>'>
+<!ENTITY que '<choice><abbr type="brevigraph">&#59009;</abbr><expan>que</expan></choice>'>
+<!ENTITY qui '<choice><abbr type="brevigraph">&#42839;</abbr><expan>qui</expan></choice>'>
+<!ENTITY tur '<choice><abbr type="contraction">&#357;</abbr><expan>tur</expan></choice>'>
+<!ENTITY ver '<choice><abbr type="contraction">&#363;</abbr><expan>ver</expan></choice>'>
+<!ENTITY Van '<choice><abbr type="contraction">&#363;</abbr><expan>Van</expan></choice>'>
+
+<!-- Entités : majuscules -->
+<!ENTITY A-maj '<choice><orig>a</orig><reg>A</reg></choice>'>
+<!ENTITY B-maj '<choice><orig>b</orig><reg>B</reg></choice>'>
+<!ENTITY C-maj '<choice><orig>c</orig><reg>C</reg></choice>'>
+<!ENTITY E-maj '<choice><orig>e</orig><reg>E</reg></choice>'>
+<!ENTITY D-maj '<choice><orig>d</orig><reg>D</reg></choice>'>
+<!ENTITY Et-maj '<choice><abbr type="brevigraph">&amp;</abbr><expan>Et</expan></choice>'>
+<!ENTITY J-maj '<choice><orig>i</orig><reg>J</reg></choice>'>
+<!ENTITY L-maj '<choice><orig>l</orig><reg>L</reg></choice>'>
+<!ENTITY M-maj '<choice><orig>m</orig><reg>M</reg></choice>'>
+<!ENTITY R-maj '<choice><orig>r</orig><reg>R</reg></choice>'>
+<!ENTITY S-maj '<choice><orig>s</orig><reg>S</reg></choice>'>
+<!ENTITY T-maj '<choice><orig>t</orig><reg>T</reg></choice>'>
+
+<!-- Entités : minuscules -->
+<!ENTITY c-min '<choice><orig>C</orig><reg>c</reg></choice>'>
+<!ENTITY c-cedille '<choice><orig>c</orig><reg>ç</reg></choice>'>
+<!ENTITY d-min '<choice><orig>D</orig><reg>d</reg></choice>'>
+<!ENTITY e-accent '<choice><orig>e</orig><reg>é</reg></choice>' >
+<!ENTITY et-min '<choice><abbr type="brevigraph">&amp;</abbr><expan>et</expan></choice>'>
+<!ENTITY i-min '<choice><orig>I</orig><reg>i</reg></choice>'>
+<!ENTITY i-trema '<choice><orig>i</orig><reg>ï</reg></choice>'>
+<!ENTITY j-min '<choice><orig>i</orig><reg>j</reg></choice>'>
+<!ENTITY p-min '<choice><orig>P</orig><reg>p</reg></choice>'>
+<!ENTITY s-min '<choice><orig>S</orig><reg>s</reg></choice>'>
+
+]>
+
+<!-- Schéma RNG -->
+<?xml-model href="out/vie_st_brice_odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <!-- teiHeader : voir le guide d'encodage dans le fichier ODD pour les explications sur sa constitution -->
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="m">La Vie de pluseurs seins et seintes</title>
+            <title level="a">Vie de saint Brice, deuxième partie</title>
+            <author>
+               <forename>Wauchier</forename>
+               <surname>de Denain</surname>
+            </author>
+            <respStmt>
+               <resp>Encodage réalisé en janvier 2020 pour l'évaluation du cours d'XML-TEI du Master
+                  TNAH de l'École nationale des chartes.</resp>
+               <persName>
+                  <forename>Jean-Damien</forename>
+                  <surname>Généro</surname>
+               </persName>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Texte édité en janvier 2020 dans la cadre d'une évaluation du cours d'XML-TEI à
+               l'École nationale des chartes.</p>
+         </publicationStmt>
+         <notesStmt>
+            <note xml:id="note1" n="1">Dans la première partie du texte, saint Brice succède à saint
+               Martin sur le siège épiscopal de Tours. Il est accusé par les Tourangeaux d'avoir eu
+               un enfant avec une femme. La deuxième partie commence au moment où il se défend et
+               demande à l'enfant de dire s'il est son père.</note>
+            <note xml:id="note2" n="2" source="http://www.atilf.fr/dmf/"><hi rend="italic"
+                  >Atarjance</hi> : retard.</note>
+            <note xml:id="note3" n="3" source="http://www.atilf.fr/dmf/"><hi rend="italic"
+                  >Noient</hi> : néant, rien. </note>
+            <note xml:id="note4" n="4">Saint Brice réalise ici une ordalie pour prouver sa bonne foi
+               ; s'il était coupable, les charbons l'auraient brulé.</note>
+            <note xml:id="note5" n="5" source="http://www.atilf.fr/dmf/"><hi rend="italic"
+                  >Maumis</hi> : de <hi rend="italic">malmettre</hi>, &#171; subir un dommage,
+               s'abîmer &#187;.</note>
+            <note xml:id="note6" n="6" source="http://www.atilf.fr/dmf/"><hi rend="italic"
+                  >Trestrent</hi> : de <hi rend="italic">traire</hi>, &#171; lancer un projectile à
+               quelqu'un, le transpercer d'un projectile &#187;.</note>
+            <note xml:id="note7" n="7">Les paragraphes 1, 2 et 4 s'achèvent par un signe "n", 
+               également utilisé dans les chancelleries médiévales.</note>
+            <note xml:id="note8" n="8"><hi rend="italic" source="http://www.atilf.fr/dmf/"
+                  >Apostoille</hi> : le pape.</note>
+            <note xml:id="note9" n="9"><hi rend="italic">Le sot seint Brices par avision</hi> : <hi
+                  rend="italic">saint Brice le sut par une vision</hi>.</note>
+            <note xml:id="note10" n="10"><hi rend="italic">Si dist a ses compaignons qi ensemble o
+                  lui estoient</hi> : <hi rend="italic">il dit à ses compagnons qui étaient [là] où
+                  lui était</hi>.</note>
+            <note xml:id="note11" n="11" source="http://www.atilf.fr/dmf/"><hi rend="italic"
+                  >Sus</hi> : &#171; en haut, vers le haut ; dessus ; au-dessus&#187;.</note>
+            <note xml:id="note12" n="12" source="http://www.atilf.fr/dmf/"><hi rend="italic"
+                  >Isnelement</hi> : &#171; sans perdre de temps, sur le champ &#187;.</note>
+            <note xml:id="note13" n="13"><hi rend="italic">Li arcevesqes fu en tors</hi> : <hi
+                  rend="italic">l'archevêque fut en terre</hi>.</note>
+            <note xml:id="note14" n="14" source="http://www.atilf.fr/dmf/"><hi rend="italic"
+                  >Parçonier</hi> : de <hi rend="italic">parçonner</hi>, &#171; partager, répartir
+               quelque chose &#187;.</note>
+         </notesStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <country>France</country>
+                  <settlement>Paris</settlement>
+                  <repository xml:id="Bnf">Bibliothèque nationale de France</repository>
+                  <collection>Département des manuscrits</collection>
+                  <idno type="cote">français 411</idno>
+                  <altIdentifier>
+                     <idno type="ancienne_cote">Anc. 7019</idno>
+                     <note>Ancienne cote.</note>
+                  </altIdentifier>
+                  <altIdentifier>
+                     <idno type="microfilm" xml:id="microfilm">MF 16080</idno>
+                     <note>Cote du microfilm (noir et blanc).</note>
+                  </altIdentifier>
+                  <altIdentifier>
+                     <idno type="matrice">R 29400</idno>
+                     <note>Cote de la matrice du microfilm.</note>
+                  </altIdentifier>
+                  <altIdentifier>
+                     <idno type="Gallica" xml:id="Gallica">ark:/12148/btv1b107209247/</idno>
+                     <note>Identifiant ark de la numérisation du microfilm sur le site
+                        gallica.bnf.fr.</note>
+                  </altIdentifier>
+               </msIdentifier>
+               <head>
+                  <title level="m">La Vie de pluseurs seins et seintes</title>
+                  <title level="a">Vie de saint Brice, deuxième partie</title>
+                  <origDate notBefore="1301-01-01" notAfter="1400-12-31" unit="century"
+                     source="http://jonas.irht.cnrs.fr/consulter/manuscrit/detail_manuscrit.php?projet=71287#Association%E2%80%89"
+                     >XIVe siècle</origDate>
+                  <note
+                     source="http://jonas.irht.cnrs.fr/consulter/oeuvre/detail_oeuvre.php?oeuvre=1743"
+                     >La base Jonas de l'IRHT date le manuscrit du XIIIe siècle.</note>
+               </head>
+               <msContents>
+                  <msItemStruct>
+                     <locus from="169d" to="170b">fol.169d - fol. 170b</locus>
+                     <author xml:lang="fr">Gauchier de Doudain</author>
+                     <author xml:lang="fr">Wauchier de Denain</author>
+                     <author xml:lang="fro">Wauchiers de Denaing</author>
+                     <title level="a">Vie de saint Brice</title>
+                     <incipit defective="false">Enfes je te conjur de part nostre seignor</incipit>
+                     <explicit defective="false">par tot les siecles des siecles. Amen.</explicit>
+                     <textLang mainLang="fro">oil-français</textLang>
+                  </msItemStruct>
+               </msContents>
+               <physDesc>
+                  <objectDesc form="codex">
+                     <supportDesc material="parch">
+                        <support>
+                           <material>Parchemin</material>
+                           <material>Vélin</material>
+                        </support>
+                        <extent>
+                           <width unit="mm">345</width>
+                           <height unit="mm">250</height>
+                        </extent>
+                        <foliation>
+                           <p>36 quaternions réguliers à réclame, 287 feuillets.</p>
+                           <p>Foliotation ancienne en romain, par feuillet, en haut à droite du
+                              recto.</p>
+                        </foliation>
+                        <condition>Le dernier cahier est amputé d'un feuillet.</condition>
+                     </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="40">
+                           <height unit="mm">230</height>
+                           <width unit="mm">70</width>
+                           <note>Entrecolonne : 23mm.</note>
+                        </layout>
+                     </layoutDesc>
+                  </objectDesc>
+                  <handDesc hands="1">
+                     <handNote xml:id="mainhand">
+                        <p><locus from="f169" to="f170"/>Main du XIVe siècle</p>
+                     </handNote>
+                  </handDesc>
+                  <scriptDesc corresp="#mainhand">
+                     <scriptNote>Écriture du XIVe siècle.</scriptNote>
+                  </scriptDesc>
+                  <decoDesc>
+                     <decoNote>
+                        <p>Ce manuscrit n'est décoré que du <locus from="17" to="17">f. 17</locus>
+                           au <locus from="24" to="24">f. 24v</locus>. Dans les folios concernés par
+                           cette édition, les emplacements réservés à la décoration sont restés en
+                           blanc. Ils ménagent un retrait pour les trois premières lignes de chaque
+                           paragraphe.</p>
+                     </decoNote>
+                     <decoNote>
+                        <p>La lettre venant immédiatement après les lettrines manquantes est
+                           toujours une majuscule dont l'intérieur est orné de motifs géométriques,
+                           peut-être colorés (la numérisatione est en noir et blanc).</p>
+                        <p>Des majuscules du même type se trouvent à l'intérieur des
+                           paragraphes.</p>
+                     </decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <p>Reliure en maroquin bordeaux sur carton, du XVIIIe siècle. Sur les plats,
+                        armes royales. Au dos, sept cases à décor de fleurs de lys. Dans la 2e, le
+                        titre: "VIE DES SAINTS".</p>
+                  </bindingDesc>
+               </physDesc>
+               <history>
+                  <provenance>
+                     <p>Sur le feuillet de garde en parchemin du début, essais de plume, ainsi
+                        qu'une signature (?) : "<signatures>Arlene</signatures>". F. 1 et f. 287v :
+                           <stamp n="1 287v">tampon rouge de la Bibliothèque royale</stamp>. En
+                        haut, à droite, ancienne cote : "7019". F. 76, dans le blanc laissé par la
+                        miniature : une signature : "<signatures n="76">Co-enge</signatures>" (?) ou
+                           "<signatures n="76">Tomrenge</signatures>" (?). F. 156v. : essais de
+                        plume.</p>
+                  </provenance>
+               </history>
+               <additional>
+                  <surrogates>
+                     <bibl>
+                        <title ref="#microfilm">microfilm</title>
+                        <idno type="microfilm">MF 16080</idno>
+                     </bibl>
+                     <bibl>
+                        <title ref="#Gallica">numérisation du microfilm 16080</title>
+                        <idno type="Gallica">ark:/12148/btv1b107209247/</idno>
+                     </bibl>
+                  </surrogates>
+                  <listBibl>
+                     <biblStruct>
+                        <monogr>
+                           <author>
+                              <persName>
+                                 <forename>Paul</forename>
+                                 <surname full="yes">Meyer</surname>
+                              </persName>
+                           </author>
+                           <title level="a">Wauchier de Denain</title>
+                           <title level="j">Romania</title>
+                           <idno type="ISSN">0035-8029</idno>
+                           <imprint>
+                              <biblScope unit="volume">32</biblScope>
+                              <biblScope unit="page" from="583" to="585">583-585</biblScope>
+                              <date when="1903">1903</date>
+                           </imprint>
+                        </monogr>
+                     </biblStruct>
+                     <biblStruct>
+                        <monogr>
+                           <author>
+                              <persName>
+                                 <forename>Paul</forename>
+                                 <surname full="yes">Meyer</surname>
+                              </persName>
+                           </author>
+                           <title level="a">Versions en vers et en prose des Vies des Pères</title>
+                           <title level="j">Histoire littéraire de la France</title>
+                           <idno type="BNF">FRBNF34294743</idno>
+                           <imprint>
+                              <biblScope unit="volume">33</biblScope>
+                              <biblScope unit="page" from="254" to="328">254-328</biblScope>
+                              <date when="1908">1908</date>
+                           </imprint>
+                        </monogr>
+                     </biblStruct>
+                     <biblStruct>
+                        <monogr>
+                           <title level="a">Notice du ms. Paris, Bibl. nat., fr. 411</title>
+                           <title level="m">Extrait des notices réalisées par la section romane de
+                              l'Institut de recherche et d'histoire des textes entre 1960 et
+                              1990</title>
+                           <imprint>
+                              <biblScope unit="page" from="475" to="538">475-538</biblScope>
+                              <date when="1966">1966</date>
+                           </imprint>
+                        </monogr>
+                     </biblStruct>
+                  </listBibl>
+               </additional>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Cet encodage porte sur la deuxième partie de la <hi rend="italic">Vie de saint
+                  Brice</hi>, issue du ms. fr. 411 de la Bibliothèque nationale de France, intitulé
+                  <hi rend="italic">La Vie de pluseurs seins et seintes</hi> (folio 169 verso, à
+               partir de la treizième ligne de la deuxième colonnes, et folio 170 recto). Il est
+               réalisé par Jean-Damien Généro dans le cadre du cours d'XML-TEI de l'École nationale
+               des chartes.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="fro">Langue d'oïl</language>
+         </langUsage>
+         <settingDesc>
+            <listPlace type="françaises">
+               <place xml:id="Loudun">
+                  <placeName>
+                     <country>France</country>
+                     <name full="yes" xml:lang="fro">Lodun</name>
+                     <name full="yes" xml:lang="fr">Loudun</name>
+                  </placeName>
+                  <location>
+                     <geo source="https://fr.wikipedia.org/wiki/Loudun">47° 00′ 38″ nord, 0° 05′ 04″
+                        est</geo>
+                  </location>
+                  <note>Identification contemporaine incertaine.</note>
+               </place>
+               <place xml:id="Tours">
+                  <placeName>
+                     <country>France</country>
+                     <region type="diocese">Diocèse de Tours</region>
+                     <name full="yes" xml:lang="fro">Tors</name>
+                     <name full="yes" xml:lang="fr">Tours</name>
+                  </placeName>
+                  <location>
+                     <geo source="https://fr.wikipedia.org/wiki/Tours"> 47° 23′ 37″ nord, 0° 41′ 21″
+                        est</geo>
+                  </location>
+               </place>
+            </listPlace>
+            <listPlace type="italiennes">
+               <place xml:id="Lombardie">
+                  <placeName>
+                     <country>Italie</country>
+                     <region type="province">Lombardie</region>
+                     <name full="yes" xml:lang="fr">Lombardie</name>
+                  </placeName>
+               </place>
+               <place xml:id="Rome">
+                  <placeName>
+                     <country>Italie</country>
+                     <region type="diocese">Diocese de Rome</region>
+                     <name full="yes" xml:lang="fr">Rome</name>
+                  </placeName>
+                  <location>
+                     <geo source="https://fr.wikipedia.org/wiki/Rome">41° 53′ 19″ nord, 12° 29′ 12″
+                        est</geo>
+                  </location>
+               </place>
+               <place xml:id="Vanziaux">
+                  <placeName>
+                     <country>Italie</country>
+                     <region type="province">Lombardie</region>
+                     <name full="yes" xml:lang="fro">Vanziaux</name>
+                  </placeName>
+                  <note>Toponyme actuel correspondant non-localisé.</note>
+               </place>
+            </listPlace>
+         </settingDesc>
+         <particDesc>
+            <listPerson type="eveques_Tours">
+               <person xml:id="Armenses" sex="male">
+                  <persName>
+                     <roleName>êvèque</roleName>
+                     <forename full="yes">Armenses</forename>
+                     <surname full="yes" ref="#Tours">de Tours</surname>
+                  </persName>
+                  <occupation type="primary">êvéque</occupation>
+                  <note>Evêque de Tours entre ca. 430 et ca. 437, successeur de Justinien et
+                     prédecesseur de saint Brice.</note>
+               </person>
+               <person xml:id="st_Brice" sex="male">
+                  <persName>
+                     <roleName>êvèque</roleName>
+                     <addName full="yes">saint</addName>
+                     <addName full="abb">st</addName>
+                     <forename full="yes">Brice</forename>
+                     <surname full="yes" ref="#Tours">de Tours</surname>
+                  </persName>
+                  <birth>
+                     <date when="0377" scope="Circa">377</date>
+                     <country>France</country>
+                     <region type="province">Tourraine</region>
+                  </birth>
+                  <death>
+                     <date when="0444">444</date>
+                     <country>France</country>
+                     <placeName ref="#Tours">Tours</placeName>
+                  </death>
+                  <residence type="temporary" from="0377" to="0430">
+                     <placeName ref="#Tours">
+                        <country>France</country>
+                        <settlement>Tours</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" from="0430" to="0437">
+                     <placeName ref="#Rome">
+                        <country>Italie</country>
+                        <settlement>Rome</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" from="0437" to="0444">
+                     <placeName ref="#Tours">
+                        <country>France</country>
+                        <settlement>Tours</settlement>
+                     </placeName>
+                  </residence>
+                  <occupation type="primary" from="0397" to="0444">êvéque</occupation>
+                  <note>Évêque de Tours de 397 à 444.</note>
+               </person>
+               <person xml:id="st_Eustoche" sex="male">
+                  <persName>
+                     <roleName>êvèque</roleName>
+                     <addName full="yes">saint</addName>
+                     <addName full="abb">st</addName>
+                     <forename full="yes" xml:lang="fr">Eustoche</forename>
+                     <forename full="yes" xml:lang="lat">Eustochius</forename>
+                     <surname full="yes" ref="#Tours">de Tours</surname>
+                  </persName>
+                  <death>
+                     <date when="0461">461</date>
+                  </death>
+                  <occupation type="primary" from="0444" to="0460">êvéque</occupation>
+                  <note>Évêque de Tours de 444 à l'hiver 459/460.</note>
+               </person>
+               <person xml:id="Justinien" sex="male">
+                  <persName>
+                     <roleName>êvèque</roleName>
+                     <forename full="yes">Justinien</forename>
+                     <surname full="yes" ref="#Tours">de Tours</surname>
+                  </persName>
+                  <occupation type="primary">êvéque</occupation>
+                  <note>Evêque de Tours entre ca. 430 et ca. 437, successeur de saint Brice et
+                     prédecesseur d'Armand.</note>
+               </person>
+               <person xml:id="st_Martin" sex="male">
+                  <persName>
+                     <roleName>êvèque</roleName>
+                     <addName full="yes">saint</addName>
+                     <addName full="abb">st</addName>
+                     <forename full="yes">Martin</forename>
+                     <surname full="yes" ref="#Tours">de Tours</surname>
+                  </persName>
+                  <birth>
+                     <date when="0316">316</date>
+                     <country>Hongrie</country>
+                     <placeName>Szombathely</placeName>
+                  </birth>
+                  <death>
+                     <date when="0397-11-08">8 novembre 397</date>
+                     <country>France</country>
+                     <placeName>Candes-Saint-Martin</placeName>
+                  </death>
+                  <occupation type="primary" from="0371" to="0397">évêque</occupation>
+                  <note>Évêque de Tours de 371 à 397.</note>
+               </person>
+               <listRelation>
+                  <relation name="eveque_successeur" passive="#st_Martin" active="#st_Brice"/>
+                  <relation name="eveque_successeur" passive="#st_Brice" active="#Justinien"/>
+                  <relation name="eveque_successeur" passive="#Justinien" active="#Armenses"/>
+                  <relation name="eveque_successeur" passive="#Armenses" active="#st_Brice"/>
+                  <relation name="eveque_successeur" passive="#Brice" active="#st_Eustoche"/>
+               </listRelation>
+            </listPerson>
+         </particDesc>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <head>Vie de saint Brice, deuxième partie</head>
+
+         <!-- PREMIER PARAGRAPHE -->
+         <div type="paragraph" n="1">
+            <p><pb n="169"/><cb n="169_2"/><lb n="169_2_13"/><add unit="char" type="begin_quotechar"
+                  >&#171;</add>
+               <said who="#st_Brice"><add type="missing_lettrine">E</add><hi rend="initial"
+                     >n</hi>fes<ref type="note" n="1" target="#note1"/> je te &con;&j-min;ur de
+                  &par;t nostre <lb n="169_2_14"/>seignor &J-maj;&hes;u &C-maj;rist le fils
+                  &D-maj;eu, qi <lb n="169_2_15"/>est puissans seur tote cria&tur;e, <lb
+                     n="169_2_16"/>qe tu dies dev&an;t toz ceuls qi ci sont as<lb n="169_2_17"
+                  />semblez a &par;tem&en;t et sanz atarj&an;ce<ref type="note" n="2"
+                     target="#note2"/> se <lb n="169_2_18"/>ge t'eng&en;dre<add unit="char"
+                     type="full_stop">.</add></said>
+               <add unit="char" type="end_quotechar">&#187;</add>
+               <hi rend="capital_letter">T</hi>uit cil qi la estoi&en;t se <lb n="169_2_19"
+                  />tur&en;t<add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t li enfes resp&on;di par la volet&e-accent; <lb
+                  n="169_2_20"/>n&ostr;e seignor a se&in;t <persName ref="#st_Brice"
+                  >&B-maj;rice</persName> et li dist <add unit="char" type="colon">:</add>
+               <add unit="char" type="begin_quotechar">&#171;</add>
+               <said toWhom="#st_Brice"><hi rend="capital_letter">T</hi>u n'es mie <lb n="169_2_21"
+                  />m&on; pere<add unit="char" type="full_stop">.</add></said>
+               <add unit="char" type="end_quotechar">&#187;</add>
+               <hi rend="capital_letter">D</hi>ont &com;m&en;&c-cedille;a toz li pueples a cri<lb
+                  n="169_2_22"/>er a se&in;t <persName ref="#st_Brice">&B-maj;rice</persName> et a
+               dire q'il li demandast <lb n="169_2_23"/>qi son &per;e estoit<add unit="char"
+                  type="full_stop">.</add>
+               <hi rend="capital_letter">S</hi>e&in;z <persName ref="#st_Brice"
+                  >&B-maj;rices</persName> lor resp&on;di <lb n="169_2_24"/>&et-min; dist <add
+                  unit="char" type="colon">:</add>
+               <add unit="char" type="begin_quotechar">&#171;</add>
+               <said who="#st_Brice"><hi rend="capital_letter">A</hi> moi n'&en; tient rien de ce
+                  demander <lb n="169_2_25"/>ne en&qui;re. <hi rend="capital_letter">C</hi>e q'a moi
+                  en apartient ici le <lb n="169_2_26"/>ai<add unit="char" type="dash">-</add>ge
+                  demand&e-accent;. &Et-maj; se vo&us; en voulez autre <lb n="169_2_27"/>chose
+                     savoir<add unit="char" type="coma">,</add> si le dem&an;dez<add unit="char"
+                     type="full_stop">.</add></said>
+               <add unit="char" type="end_quotechar">&#187;</add>
+               <hi rend="capital_letter">D</hi>ont dist li <lb n="169_2_28"/>pueples &que; se
+                  avoit<add unit="char" type="dash">-</add>il fet par ench&an;te<lb n="169_2_29"
+                  />rie<add unit="char" type="coma">,</add> ne pl&us; ne seroit lor pastor ne lor
+                  eves<lb n="169_2_30"/>qe<add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">S</hi>einz <persName ref="#st_Brice"
+                  >&B-maj;rices</persName><add unit="char" type="coma">,</add> qi molt estoit en
+               gr&an;t <lb n="169_2_31"/>angoisse de ce &que; li pueples le demenoit <lb
+                  n="169_2_32"/>en tel maniere<choice>
+                  <orig>.</orig>
+                  <reg>,</reg>
+               </choice> &pri;st charbons toz ard&an;z <lb n="169_2_33"/>dev&an;t lui en sa
+               vesteure. &S-maj;i les enporta <lb n="169_2_34"/>tresqa la seputure se&in;t <persName
+                  ref="#st_Martin">&M-maj;artin</persName> dev&an;t <lb n="169_2_35"/>lui &bie;n
+                  estreinz<add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t qu&an;t il parvint il les <lb n="169_2_36"/>geta
+                  <add unit="char" type="colon">:</add> vis ne on&que;s la vesteure ne fu de <lb
+                  n="169_2_37"/>noi&en;t<ref type="note" n="3" target="#note3"/> brullee<ref
+                  type="note" n="4" target="#note4"/><add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">L</hi>ors parla li evesques au <lb n="169_2_38"/>pueple
+               &et-min; si lor dist <add unit="char" type="colon">:</add>
+               <add unit="char" type="begin_quotechar">&#171;</add>
+               <said who="#st_Brice"><hi rend="capital_letter">B</hi>iaus seignors sa<lb
+                     n="169_2_39"/>chiez &que; noi&en;t<ref type="note" n="3" target="#note3"/>
+                  pl&us; que cist dras est empi<lb n="169_2_40"/>riez ne maumis<ref type="note"
+                     n="5" target="#note5"/> par le feu ne par la <pb n="170"/><cb n="170_1"/><lb
+                     n="170_1_1"/>flamb&e-accent; qi a lui a esté a&j-min;ostee si com v&ous; <lb
+                     n="170_1_2"/>aves o&i-trema; et veu<add unit="char" type="full_stop">.</add>
+                  <hi rend="capital_letter">N</hi>oi&en;t<ref type="note" n="3" target="#note3"/>
+                  pl&us; n'est m&on; cors <lb n="170_1_3"/>couchiez ne atouchiez par l'atouchem&en;t
+                     <lb n="170_1_4"/>de ceste feme<add unit="char" type="full_stop">.</add></said>
+               <add unit="char" type="end_quotechar">&#187;</add>
+               <hi rend="capital_letter">C</hi>'il ne l'en vouloi&en;t croire <lb n="170_1_5"/>por
+               q'en q'il auoi&en;t veu<choice>
+                  <orig>.</orig>
+                  <reg>,</reg>
+               </choice> einz le trestr&en;t<ref type="note" n="6" target="#note6"/>
+               <lb n="170_1_6"/>et &j-min;eter&en;t hors de la cit&e-accent;<add unit="char"
+                  type="full_stop">.</add><ref type="note" n="7" target="#note7"/></p>
+         </div>
+
+         <!-- DEUXIEME PARAGRAPHE -->
+         <div type="paragraph" n="2">
+            <p><lb n="170_1_7"/><add type="missing_lettrine">A</add><hi rend="initial">i</hi>nsint
+               fu acomplie la parole <lb n="170_1_8"/>se&in;t <persName ref="#st_Martin"
+                  >&M-maj;artin</persName><choice>
+                  <orig>.</orig>
+                  <reg>,</reg>
+               </choice>
+               <said who="#st_Martin">qi li dist q'il auro<lb n="170_1_9"/>it molt de peines
+                  &et-min; de ad&ver;sitez <lb n="170_1_10"/>en l'eveschi&e-accent; &et-min; en la
+                     seignorie<add unit="char" type="full_stop">.</add></said>
+               <hi rend="capital_letter">Q</hi>u&an;t se&in;t <lb n="170_1_11"/><persName
+                  ref="#st_Brice">&B-maj;rices</persName> fu eins&in;t gitez de la citez de
+                  <placeName ref="#Tours">&T-maj;ors</placeName>
+               <lb n="170_1_12"/>&et-min; chaciez<add unit="char" type="coma">,</add> li
+               cito&i-trema;enz fir&en;t arcevesqe de <lb n="170_1_13"/><persName ref="#Justinien"
+                  >&J-maj;ustinien</persName><add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t se&in;z <persName ref="#st_Brice"
+                  >&B-maj;rices</persName> s'en ala a <placeName ref="#Rome">&R-maj;ome</placeName>
+               <lb n="170_1_14"/>a l'apostoille<ref type="note" n="8" target="#note8"/>
+               <add unit="char" type="semicolon">;</add>
+               <said who="#st_Brice">si li c&on;ta tot en plor&an;t c&om;<lb n="170_1_15"/>ment
+                  lueure de lui estoit alee &et-min; si li dist <lb n="170_1_16"/>&que; ce estoit a
+                  bon droit q'il avoit cest tra<lb n="170_1_17"/>vaill &et-min; ceste peine<add
+                     unit="char" type="coma">,</add>
+                  <hi rend="capital_letter">&c-min;</hi>ar il avoit molt <lb n="170_1_18"
+                  />pechi&e-accent; en&ver;s se&in;t <persName ref="#st_Martin"
+                     >&M-maj;artin</persName> le se&in;t home <lb n="170_1_19"/>&et-min; dites
+                  meintes paroles qi li gre&ver;ent <lb n="170_1_20"/>&et-min; la ou il avoit veues
+                  ses &ver;tuz ne les a<lb n="170_1_21"/>voit<add unit="char" type="dash">-</add>il
+                  mie creues<add unit="char" type="full_stop">.</add></said>
+               <hi rend="capital_letter">Q</hi>ant cil de <placeName ref="#Tours"
+                  >&T-maj;ors</placeName> so<lb n="170_1_22"/>rent &que; se&in;t <persName
+                  ref="#st_Brice">&B-maj;rices</persName> estoit eins&in;t a <placeName ref="#Rome"
+                  >&R-maj;ome</placeName>
+               <lb n="170_1_23"/>alez<add unit="char" type="coma">,</add>
+               <hi rend="capital_letter">&i-min;</hi>l trestr&en;t<ref type="note" n="6"
+                  target="#note6"/> a <persName ref="#Justinien">&J-maj;ustinien</persName> lor
+                  arceves<lb n="170_1_24"/>qe &et-min; <said toWhom="#Justinien">si li distr&en;t
+                  q'il s'en alast a&pre;s se&in;t <lb n="170_1_25"/><persName ref="#st_Brice"
+                     >&B-maj;rice</persName> a <placeName ref="#Rome">&R-maj;ome</placeName><add
+                     unit="char" type="full_stop">.</add></said>
+               <hi rend="capital_letter">S</hi>i fust enc&on;tre lui del tot <lb n="170_1_26"/>si
+               com por lui meismes<choice>
+                  <orig>.</orig>
+                  <reg>,</reg>
+               </choice> &et-min; s'il ce ne fesoit <lb n="170_1_27"/>&bie;n s'eust q'il le
+                  desposeroi&en;t<add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">D</hi>ont eissi <lb n="170_1_28"/><persName
+                  ref="#Justinien">&J-maj;ustinien</persName> de la cit&e-accent; de <placeName
+                  ref="#Tours">&T-maj;ors</placeName> &et-min; ala t&an;t q'il <lb n="170_1_29"
+               />vint a <placeName ref="#Vanziaux">&Van;ziaus</placeName> en <placeName
+                  ref="#Lombardie">&L-maj;ombardie</placeName> &et-min; la atou<lb n="170_1_30"
+                  />cha<add unit="char" type="dash">-</add>il malades si morut par la vol&en;<lb
+                  n="170_1_31"/>t&e-accent; n&ostr;e seigneur<add unit="char" type="full_stop"
+                  >.</add><ref type="note" n="7" target="#note7"/></p>
+         </div>
+
+         <!-- TROISIEME PARAGRAPHE -->
+         <div type="paragraph" n="3">
+            <p><lb n="170_1_32"/><add type="missing_lettrine">Q</add><hi rend="initial">u</hi>and
+               cil de <placeName ref="#Tours">&T-maj;ors</placeName> sor&en;t la no<lb n="170_1_33"
+               />vele de <persName ref="#Justinien">&J-maj;ustinien</persName> qi morz estoit<add
+                  unit="char" type="coma">,</add>
+               <lb n="170_1_34"/><hi rend="capital_letter">&i-min;</hi>l ne deguerpir&en;t mie lor
+               gr&an;t <lb n="170_1_35"/>felonie einz remistr&en;t <persName ref="#Armenses"
+                  >&A-maj;rmense</persName> en la cha<lb n="170_1_36"/>iere &et-min; en la
+                  seignorie<add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t se&in;z <persName ref="#st_Brice"
+                  >&B-maj;rices</persName> qi <lb n="170_1_37"/>en <placeName ref="#Rome"
+                  >&R-maj;ome</placeName> estoit ch&an;toit messe en la cit&e-accent; <lb
+                  n="170_1_38"/>&et-min; ploroit por les meffez q'il avoit fez en<lb n="170_1_39"
+               />vers se&in;t <persName ref="#st_Martin">&M-maj;artin</persName><add unit="char"
+                  type="full_stop">.</add>
+               <hi rend="capital_letter">Q</hi>u&an;t vint au <num type="ordinal" value="7">septi<lb
+                     n="170_1_40"/>esme</num> an il s'en repara par la volent&e-accent; <cb
+                  n="170_2"/><lb n="170_2_1"/>del apostoille<ref type="note" n="8" target="#note8"/>
+               &et-min; par l'autorit&e-accent; a la cit&e-accent; <lb n="170_2_2"/>de <placeName
+                  ref="#Tours">&T-maj;ors</placeName><add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t ala t&an;t q'il vint au chas<lb n="170_2_3"/>tel de
+                  <placeName ref="#Loudun">&L-maj;odun</placeName> si se he&ber;&j-min;a une
+                  nuit<add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t <lb n="170_2_4"/>adonc estoit <persName
+                  ref="#Armenses">&A-maj;rm&en;ses</persName> maledes de molt <lb n="170_2_5"
+               />cruieles fievres si q'il rendi l'ame a <lb n="170_2_6"/>mienuit<add unit="char"
+                  type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t meimten&an;t q'il fu morz le <lb n="170_2_7"/>sot
+               se&in;t <persName ref="#st_Brice">&B-maj;rices</persName> par avision<ref type="note"
+                  n="9" target="#note9"/><add unit="char" type="coma">,</add> si dist a ses <lb
+                  n="170_2_8"/>c&om;paignons qi ensemble o lui estoi&en;t<ref type="note" n="10"
+                  target="#note10"/>
+               <lb n="170_2_9"/><add unit="char" type="begin_quotechar">&#171;</add>
+               <said who="#st_Brice"><hi rend="capital_letter">L</hi>evez sus<ref type="note" n="11" target="#note11"/>
+                  isnelem&en;t<ref type="note" n="12" target="note12"/> si &que; nos puissi&on;s <lb
+                  n="170_2_10"/>venir a tens alentort del arcevesqe de <lb n="170_2_11"/><placeName
+                  ref="#Tours">&T-maj;ors</placeName></said>
+               <add unit="char" type="end_quotechar">&#187;</add><add unit="char" type="full_stop"
+                  >.</add>
+               <hi rend="capital_letter">L</hi>ors s'esmur&en;t &et-min; qu&an;t il vindr&en;t a la
+                  <lb n="170_2_12"/>porte de <placeName ref="#Tours">&T-maj;ors</placeName> si
+               entrer&en;t dedenz &et-min; a cele <lb n="170_2_13"/>heure droit emportoit len
+               l'arcevesqe <lb n="170_2_14"/>en soir qi morz estoit <hi rend="capital_letter"
+                  >&p-min;</hi>ar l'autre por<lb n="170_2_15"/>te de la cit&e-accent; &et-min; molt
+               de clers &et-min; d'autres <lb n="170_2_16"/>genz aloi&en;t a&pre;s alentort<add
+                  unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t qant <persName ref="#Armenses"
+                  >&A-maj;r</persName><lb n="170_2_17"/>menses li arcevesqes fu en tors<ref
+                  type="note" n="13" target="note13"/>
+               <hi rend="capital_letter">&s-min;</hi>e&in;tz <lb n="170_2_18"/><persName
+                  ref="#st_Brice">&B-maj;rices</persName> se rasist en sa chaere empes s&an;z <lb
+                  n="170_2_19"/>ce &que; nus li contredeist en nule maniere.</p>
+         </div>
+
+         <!-- QUATRIEME PARAGRAPHE -->
+         <div type="paragraph" n="4">
+            <p><lb n="170_2_20"/><add type="missing_lettrine">A</add><hi rend="initial">p</hi>res ce
+               vesqi seinz <persName ref="#st_Brice">&B-maj;rices</persName>
+               <lb n="170_2_21"/><num type="ordinal" value="7">VII</num> anz molt preudom et de <lb
+                  n="170_2_22"/>molt seinte vie<add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">E</hi>t qant il <lb n="170_2_23"/>morut si avoit<add
+                  unit="char" type="dash">-</add>il est&e-accent; <num type="cardinal" value="47"
+                  >XLVII</num> anz arceves<lb n="170_2_24"/>ques<add unit="char" type="coma">,</add>
+               encore eust<add unit="char" type="dash">-</add>il ci<add unit="char" type="dash"
+                  >-</add>dedenz eues les &per;<lb n="170_2_25"/>secutions et les peines qe je vous
+               ai c&on;<lb n="170_2_26"/>tees et dites<add unit="char" type="full_stop">.</add>
+               <hi rend="capital_letter">A</hi>pres se&in;t <persName ref="#st_Brice"
+                  >&B-maj;rice</persName> fu arce<lb n="170_2_27"/>vesqes de <placeName ref="#Tours"
+                  >&T-maj;ors</placeName> seinz <persName ref="#st_Eustoche"
+                  >&E-maj;ustochies</persName> qi molt <lb n="170_2_28"/>fu preudom et de grant
+               seintee et me<lb n="170_2_29"/>intint l'arcevechi&e-accent; et la seignorie et <lb
+                  n="170_2_30"/>son pueple bien et honestament a la <lb n="170_2_31"/>loi et a
+               l'amor nostre seigneur &J-maj;&hes;u &Cri;st<add unit="char" type="coma">,</add>
+               <lb n="170_2_32"/><hi rend="capital_letter">&d-min;</hi>e la cui gloire nos puissions
+               tuit <lb n="170_2_33"/>estre par&c-cedille;onier<ref type="note" n="14"
+                  target="#note14"/><add unit="char" type="coma">,</add>
+               <hi rend="capital_letter">&c-min;</hi>e nos otroit cil qi <lb n="170_2_34"/>vit et
+               reigne par tot les siecles des <lb n="170_2_35"/>siecles<add unit="char"
+                  type="full_stop">.</add>
+               <hi rend="capital_letter">A</hi>men<add unit="char" type="full_stop">.</add><ref
+                  type="note" n="7" target="#note7"/></p>
+         </div>
+      </body>
+   </text>
+</TEI>
