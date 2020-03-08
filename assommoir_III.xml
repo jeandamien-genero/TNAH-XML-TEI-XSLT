@@ -1,3 +1,15 @@
+<!--
+   Proposer une structuration XML TEI pour le texte suivant :
+   Emile Zola, L’Assommoir, 1877, Charpentier, 1879 (chapitre 3, p. 78-119) (https://fr.wikisource.org/wiki/L’Assommoir/Chapitre_III).
+
+   Les éléments suivants sont attendus :
+      - Mise en place d’un teiHeader renseigné ;
+      - Structuration du texte ;
+      - Balisage des noms de personnage et des noms de lieux ;
+      - Mise en place d’un index des noms de personnages et des noms de lieux.
+-->
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"

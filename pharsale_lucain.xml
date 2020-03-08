@@ -1,3 +1,10 @@
+<!--
+   - Structurer le texte du chant I, v.183-222 de la Pharsale de Lucain;
+   - Déclarer dans le teiHeader les différents témoins de la tradition du texte de Lucain à l'aide de la table des sigles;
+   - Encoder l'apparat critique;
+   - Utiliser la TEI Critical Apparatus toolbox (http://teicat.huma-num.fr) pour visualiser votre encodage (rubriques "check my encoding" - "display parallel versions" - "Print an edition").
+-->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
