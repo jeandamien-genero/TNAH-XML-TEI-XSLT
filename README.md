@@ -13,10 +13,12 @@ Texte choisi : [Suite de la Vie de saint Brice, fol.169d-fol170b : « Enfes je t
 * Structurer le texte en ```XML-TEI``` en vue d’une édition et en respectant le genre littéraire auquel il appartient ;
 * Compléter de la manière la plus précise possible le teiHeader de l'édition, en fonction des éléments nécessaires à son établissement et à la compréhension du texte ;
 * Écrire un schéma ```ODD``` adapté à l'encodage et documenté.
-  - Générer une ODD à partir de oddbyexample et associer le schéma rng correspondant au fichier ```XML```.
+  - Générer une ```ODD``` à partir de oddbyexample et associer le schéma rng correspondant au fichier ```XML```.
 	- À partir de l'```ODD```, générer la documentation ```HTML``` du projet.
 		- Présenter en introduction le projet et ses exploitations possibles ;
 		- Documenter le fonctionnement de l'encodage et le choix des balises.
+* Créer une feuille de transformation simple ;
+* Maîtriser ```XPath```et ses fonctions de base ;
 
 ---
 
