@@ -1,4 +1,4 @@
-# Devoir d'XML-TEI
+# Devoir d'XML-TEI et XSLT
 
 École nationale des chartes, M2 TNAH, cours de [@ArianePinche](https://github.com/ArianePinche), 2020.
 
@@ -38,6 +38,6 @@ Texte choisi : Suite de la Vie de saint Brice, fol.169d-fol170b : « Enfes je te
 * Mettre en place une structure d'accueil en ```HTML``` ;
 * Rédiger des règles simples avec un ```XPath``` valide pour insérer des informations du document source dans le document de sortie ;
 * Créer une ou des règles avec des conditions ;
-* Utiliser une ou des règles avec ```<xsl:for-each>`` *(uniquement si cela est nécessaire)*
+* Utiliser une ou des règles avec ```<xsl:for-each>``` *(uniquement si cela est nécessaire)*
 * Proposer un code facile à lire et commenté ;
 * Simplifier le plus possible ses règles ```XSL```.
