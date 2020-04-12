@@ -1,10 +1,8 @@
 # Devoir d'XML-TEI et XSLT
 
-École nationale des chartes, M2 TNAH, cours de [@ArianePinche](https://github.com/ArianePinche), 2020.
-
----
-
 ## Édition à visée paléographique : Récits hagiographiques du manuscrit 411 de la Bibliothèque nationale de France.
+
+École nationale des chartes, M2 TNAH, cours de [@ArianePinche](https://github.com/ArianePinche), 2020.
 
 Texte choisi : [Suite de la Vie de saint Brice, fol.169d-fol170b : « Enfes je te conjur de part nostre seignor »](https://gallica.bnf.fr/ark:/12148/btv1b107209247/f175.item.zoom).
 
