@@ -6,6 +6,8 @@
 
 Texte choisi : [Suite de la Vie de saint Brice, fol.169d-fol170b : « Enfes je te conjur de part nostre seignor »](https://gallica.bnf.fr/ark:/12148/btv1b107209247/f175.item.zoom).
 
+---
+
 ### Consignes générales
 
 * Structurer le texte en ```XML-TEI``` en vue d’une édition et en respectant le genre littéraire auquel il appartient ;
