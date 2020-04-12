@@ -43,3 +43,5 @@ Texte choisi : [Suite de la Vie de saint Brice, fol.169d-fol170b : « Enfes je t
 * Utiliser une ou des règles avec ```<xsl:for-each>``` *(uniquement si cela est nécessaire)*
 * Proposer un code facile à lire et commenté ;
 * Simplifier le plus possible ses règles ```XSL```.
+
+---
