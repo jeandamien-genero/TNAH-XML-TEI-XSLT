@@ -377,9 +377,12 @@
                <person xml:id="Armenses" sex="male">
                   <persName>
                      <roleName>êvèque</roleName>
-                     <forename full="yes">Armenses</forename>
+                     <forename full="yes" xml:lang="fr">Armenses</forename>
                      <surname full="yes" ref="#Tours">de Tours</surname>
                   </persName>
+                  <death>
+                     <date>ca. 437</date>
+                  </death>
                   <occupation type="primary">êvéque</occupation>
                   <note>Evêque de Tours entre ca. 430 et ca. 437, successeur de Justinien et
                      prédecesseur de saint Brice.</note>
@@ -389,7 +392,7 @@
                      <roleName>êvèque</roleName>
                      <addName full="yes">saint</addName>
                      <addName full="abb">st</addName>
-                     <forename full="yes">Brice</forename>
+                     <forename full="yes" xml:lang="fr">Brice</forename>
                      <surname full="yes" ref="#Tours">de Tours</surname>
                   </persName>
                   <birth>
@@ -441,9 +444,12 @@
                <person xml:id="Justinien" sex="male">
                   <persName>
                      <roleName>êvèque</roleName>
-                     <forename full="yes">Justinien</forename>
+                     <forename full="yes" xml:lang="fr">Justinien</forename>
                      <surname full="yes" ref="#Tours">de Tours</surname>
                   </persName>
+                  <death>
+                     <date>ca. 437</date>
+                  </death>
                   <occupation type="primary">êvéque</occupation>
                   <note>Evêque de Tours entre ca. 430 et ca. 437, successeur de saint Brice et
                      prédecesseur d'Armand.</note>
@@ -453,7 +459,7 @@
                      <roleName>êvèque</roleName>
                      <addName full="yes">saint</addName>
                      <addName full="abb">st</addName>
-                     <forename full="yes">Martin</forename>
+                     <forename full="yes" xml:lang="fr">Martin</forename>
                      <surname full="yes" ref="#Tours">de Tours</surname>
                   </persName>
                   <birth>

@@ -11,20 +11,93 @@
                 <title>Vie de saiint Brice</title>
             </head>
             <body>
-                <xsl:element name="div">
-                    <xsl:element name="div">
-                        <xsl:element name="h1">
-                            <xsl:value-of select="//titleStmt/title[@level='a']"/>
-                        </xsl:element>
-                        <xsl:element name="h2">
-                            <xsl:value-of select="//author/forename"/><xsl:text> </xsl:text><xsl:value-of select="//author/surname"/>
-                        </xsl:element>
-                        <xsl:element name="p">
-                            <xsl:value-of select="//resp"/><xsl:text> par </xsl:text><xsl:value-of select="//respStmt/persName/forename"/><xsl:text> </xsl:text><xsl:value-of select="//respStmt/persName/surname"/><xsl:text>.</xsl:text>
-                        </xsl:element>
-                    </xsl:element>
-                </xsl:element>
+                <xsl:apply-templates/>
+                <div>notes
+                </div>
+                <div>
+                    <xsl:call-template name="noms"/>
+                </div>
             </body>
         </html>
+    </xsl:template>
+    <xsl:template match="teiHeader">
+        <div>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="fileDesc">
+        <h1>
+            <xsl:value-of select="//titleStmt/title[@level='a']"/>
+        </h1>
+        <h1>
+            <xsl:value-of select="//author/forename"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="//author/surname"/>
+        </h1>
+    </xsl:template>
+    <xsl:template match="notesStmt"/>
+    <xsl:template match="sourceDesc"/>
+    <xsl:template match="encodingDesc/projectDesc/p">
+        <p>
+            <xsl:value-of select="."/>
+        </p>
+    </xsl:template>
+    <xsl:template match="profileDesc"/>
+    <xsl:template match="body">
+        <div>
+            <xsl:for-each select="div[@type='paragraph']">
+                <div1>
+                    <xsl:apply-templates/>
+                </div1>
+            </xsl:for-each>
+        </div>
+    </xsl:template>
+    <!-- INDEX DES NOMS DE PERSONNES -->
+    <xsl:template name="noms">
+        <xsl:element name="div">
+            <h2>Index des noms de personnes</h2>
+            <xsl:element name="div">
+                <xsl:attribute name="style">
+                    <xsl:text>column-count: 2;</xsl:text>
+                </xsl:attribute>
+                <xsl:for-each select="//listPerson//persName">
+                    <xsl:sort select="/forename[@xml:lang='fr']" order="ascending"/>
+                    <xsl:element name="p">
+                        <xsl:element name="b">
+                            <xsl:value-of select="forename[@xml:lang='fr']"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select="surname[@full='yes']"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:text>(</xsl:text>
+                            <xsl:if test="addName[@full='yes']">
+                                <xsl:value-of select="addName[@full='yes']"/>
+                                <xsl:text>, </xsl:text>
+                            </xsl:if>
+                            <xsl:choose>
+                                <xsl:when test="ancestor::person/birth/date and ancestor::person/death/date">
+                                    <xsl:value-of select="ancestor::person/birth/date"/>
+                                    <xsl:text>-</xsl:text>
+                                    <xsl:value-of select="ancestor::person/death/date"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:text>†</xsl:text>
+                                    <xsl:value-of select="ancestor::person/death/date"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            <xsl:text>)</xsl:text>
+                        </xsl:element>
+                        <xsl:variable name="idPerson">
+                            <xsl:value-of select="parent::person/@xml:id"/>
+                        </xsl:variable>
+                        <xsl:text> : </xsl:text>
+                        <xsl:for-each select="ancestor::TEI//body//persName[translate(@ref, '#','')=$idPerson][1]">
+                            <xsl:value-of select="ancestor::div/@n"/>
+                            <xsl:if test="position()!= last()">, </xsl:if>
+                            <xsl:if test="position() = last()">.</xsl:if>
+                        </xsl:for-each>
+                    </xsl:element>
+                </xsl:for-each>
+            </xsl:element>
+        </xsl:element>
     </xsl:template>
 </xsl:stylesheet>
