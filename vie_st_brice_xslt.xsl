@@ -90,7 +90,7 @@
                             <xsl:value-of select="parent::person/@xml:id"/>
                         </xsl:variable>
                         <xsl:text> : </xsl:text>
-                        <xsl:for-each select="ancestor::TEI//body//persName[translate(@ref, '#','')=$idPerson][1]">
+                        <xsl:for-each select="ancestor::TEI//body//persName[not(@ref = preceding-sibling::persName/@ref)][translate(@ref, '#','')=$idPerson]">
                             <xsl:value-of select="ancestor::div/@n"/>
                             <xsl:if test="position()!= last()">, </xsl:if>
                             <xsl:if test="position() = last()">.</xsl:if>
