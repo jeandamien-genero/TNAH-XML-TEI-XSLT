@@ -17,6 +17,9 @@
                 <div>
                     <xsl:call-template name="noms"/>
                 </div>
+                <div>
+                    <xsl:call-template name="lieux"/>
+                </div>
             </body>
         </html>
     </xsl:template>
@@ -57,9 +60,6 @@
         <xsl:element name="div">
             <h2>Index des noms de personnes</h2>
             <xsl:element name="div">
-                <xsl:attribute name="style">
-                    <xsl:text>column-count: 2;</xsl:text>
-                </xsl:attribute>
                 <xsl:for-each select="//listPerson//persName">
                     <xsl:sort select="/forename[@xml:lang='fr']" order="ascending"/>
                     <xsl:element name="p">
@@ -90,11 +90,38 @@
                             <xsl:value-of select="parent::person/@xml:id"/>
                         </xsl:variable>
                         <xsl:text> : </xsl:text>
-                        <xsl:for-each select="ancestor::TEI//body//persName[not(@ref = preceding-sibling::persName/@ref)][translate(@ref, '#','')=$idPerson]">
+                        <xsl:for-each-group select="ancestor::TEI//body//persName[translate(@ref, '#','')=$idPerson]" group-by="ancestor::div/@n">
                             <xsl:value-of select="ancestor::div/@n"/>
                             <xsl:if test="position()!= last()">, </xsl:if>
                             <xsl:if test="position() = last()">.</xsl:if>
-                        </xsl:for-each>
+                        </xsl:for-each-group>
+                    </xsl:element>
+                </xsl:for-each>
+            </xsl:element>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template name="lieux">
+        <xsl:element name="div">
+            <h2>Index des noms de lieux</h2>
+            <xsl:element name="div">
+                <xsl:for-each select="//place//name[@xml:lang='fr']">
+                    <xsl:sort select="." order="ascending"/>
+                    <xsl:element name="p">
+                        <xsl:element name="b">
+                            <xsl:value-of select="."/>
+                        <xsl:text> (</xsl:text>
+                        <xsl:value-of select="preceding-sibling::country"/>
+                            <xsl:text>)</xsl:text>
+                        </xsl:element>
+                        <xsl:variable name="Placeid">
+                            <xsl:value-of select="ancestor::place/@xml:id"/>
+                        </xsl:variable>
+                        <xsl:text> : </xsl:text>
+                        <xsl:for-each-group select="ancestor::TEI//body//placeName[translate(@ref, '#','')=$Placeid]" group-by="ancestor::div/@n">
+                            <xsl:value-of select="ancestor::div/@n"/>
+                            <xsl:if test="position()!= last()">, </xsl:if>
+                            <xsl:if test="position() = last()">.</xsl:if>
+                        </xsl:for-each-group>
                     </xsl:element>
                 </xsl:for-each>
             </xsl:element>
