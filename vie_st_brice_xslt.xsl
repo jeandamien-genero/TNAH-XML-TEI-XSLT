@@ -55,6 +55,7 @@
             </xsl:for-each>
         </div>
     </xsl:template>
+    <!-- NOTES -->
     <!-- INDEX DES NOMS DE PERSONNES -->
     <xsl:template name="noms">
         <xsl:element name="div">
@@ -100,6 +101,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
+    <!-- INDEX DES NOMS DE LIEUX -->
     <xsl:template name="lieux">
         <xsl:element name="div">
             <h2>Index des noms de lieux</h2>
