@@ -8,7 +8,9 @@
         <html>
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-                <title>Vie de saiint Brice</title>
+                <title>
+                    <xsl:value-of select="//titleStmt/title[@level='a']"/>
+                </title>
             </head>
             <body>
                 <xsl:apply-templates/>
@@ -48,12 +50,28 @@
     <xsl:template match="profileDesc"/>
     <xsl:template match="body">
         <div>
-            <xsl:for-each select="div[@type='paragraph']">
-                <div1>
-                    <xsl:apply-templates/>
-                </div1>
-            </xsl:for-each>
+            <xsl:apply-templates/>
         </div>
+    </xsl:template>
+    <xsl:template match="body/head">
+        <h1>
+            <xsl:value-of select="."/>
+        </h1>
+    </xsl:template>
+    <xsl:template match="div[@type='paragraph']">
+        <xsl:apply-templates select="descendant::p" mode="normal"/>
+        <xsl:apply-templates select="descendant::p" mode="orig"/>
+    </xsl:template>
+    <xsl:template match="p" mode="#all">
+        <xsl:element name="div">
+            <xsl:apply-templates mode="#current"/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="choice" mode="orig">
+        <xsl:value-of select="abbr/text() | orig/text()"/>
+    </xsl:template>
+    <xsl:template match="choice" mode="normal">
+        <xsl:value-of select="expan/text() | reg/text()"/>
     </xsl:template>
     <!-- NOTES -->
     <!-- INDEX DES NOMS DE PERSONNES -->
@@ -111,8 +129,8 @@
                     <xsl:element name="p">
                         <xsl:element name="b">
                             <xsl:value-of select="."/>
-                        <xsl:text> (</xsl:text>
-                        <xsl:value-of select="preceding-sibling::country"/>
+                            <xsl:text> (</xsl:text>
+                            <xsl:value-of select="preceding-sibling::country"/>
                             <xsl:text>)</xsl:text>
                         </xsl:element>
                         <xsl:variable name="Placeid">
