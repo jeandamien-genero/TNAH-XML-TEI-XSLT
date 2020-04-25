@@ -73,7 +73,7 @@
     <xsl:template match="choice" mode="normal">
         <xsl:value-of select="expan/text() | reg/text()"/>
     </xsl:template>
-    <!-- NOTES -->
+    <!-- NOTES (faire des id) -->
     <!-- INDEX DES NOMS DE PERSONNES -->
     <xsl:template name="noms">
         <xsl:element name="div">
