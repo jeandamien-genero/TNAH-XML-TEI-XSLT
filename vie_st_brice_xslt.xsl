@@ -52,7 +52,12 @@
             <h3>Identification</h3>
             <ul>
                 <li><strong>Titre du manuscrit : </strong><i><xsl:value-of select=".//head/title[@level='m']"/></i>.</li>
-                <li><strong>Titre de la partie éditée : </strong><i><xsl:value-of select=".//head/title[@level='a']"/></i>.</li>
+                <li><strong>Titre de la partie éditée : </strong><i><xsl:value-of select=".//head/title[@level='a']"/></i>.
+                    <ul>
+                        <li><strong>Incipit : </strong><i><xsl:value-of select=".//msItemStruct/incipit"/></i>...</li>
+                        <li><strong>Explicit : </strong><i><xsl:value-of select=".//msItemStruct/explicit"/></i>...</li>
+                    </ul>
+                </li>
                 <li><strong>Auteur : </strong>
                     <xsl:for-each select=".//msItemStruct/author[@xml:lang='fr']">
                         <xsl:value-of select="."/>
@@ -64,10 +69,10 @@
                 </li>
                 <li><strong>Datation : </strong><xsl:value-of select=".//head/origDate"/>.</li>
                 <li><strong>Langue : </strong><xsl:value-of select=".//msItemStruct/textLang"/>.</li>
-                <li><strong>Incipit : </strong><i><xsl:value-of select=".//msItemStruct/incipit"/></i>...</li>
-                <li><strong>Explicit : </strong><i><xsl:value-of select=".//msItemStruct/explicit"/></i>...</li>
             </ul>
-            <h3>Informations institutionnelles</h3>
+        </div>
+        <div>
+            <h3>Conservation</h3>
             <ul>
                 <li><strong>Localisation : </strong><xsl:value-of select=".//msIdentifier/settlement"/>, <xsl:value-of select=".//msIdentifier/country"/>.</li>
                 <li><strong>Institution : </strong> <xsl:value-of select=".//msIdentifier/repository"/>, <xsl:value-of select=".//msIdentifier/collection"/>.</li>
@@ -77,7 +82,7 @@
                     <ul>
                         <xsl:for-each select=".//msIdentifier/altIdentifier">
                             <li>
-                                <xsl:value-of select="replace(./note,'\.',' : ')"/><xsl:value-of select="./idno"/>
+                                <strong><xsl:value-of select="replace(./note,'\.',' : ')"/></strong><xsl:value-of select="./idno"/>
                                 <xsl:if test="position()!= last()"> ;</xsl:if>
                                 <xsl:if test="position() = last()">.</xsl:if>
                             </li>
@@ -85,9 +90,50 @@
                     </ul>
                 </li>
             </ul>
+        </div>
+        <div>
             <h3>Description matérielle</h3>
             <ul>
-                
+                <li>
+                    <strong>Supports : </strong>
+                    <xsl:for-each select=".//material">
+                        <xsl:value-of select="lower-case(.)"/>
+                        <xsl:if test="position()!= last()">, </xsl:if>
+                        <xsl:if test="position() = last()">.</xsl:if>
+                    </xsl:for-each>
+                </li>
+                <li><strong>Dimensions : </strong>
+                    <xsl:value-of select="//extent/width"/>
+                    <xsl:text>mm. x </xsl:text>
+                    <xsl:value-of select="//extent/height"/>
+                    <xsl:text>mm.</xsl:text>
+                </li>
+                <li><strong>Foliotation : </strong> <xsl:value-of select="//foliation/p"/></li>
+                <li><strong>État de conservation : </strong> <xsl:value-of select="//condition"/></li>
+                <li><strong>Mise en page :</strong>
+                    <ul>
+                        <li><strong>Nombre de colonnes par folio : </strong><xsl:value-of select="//layout/@columns"/>.</li>
+                        <li><strong>Hauteur de colonne : </strong><xsl:value-of select="//layoutDesc//height"/> mm.</li>
+                        <li><strong>Largeur de colonne : </strong><xsl:value-of select="//layoutDesc//width"/> mm.</li>
+                        <li><strong>Largeur de l'entrecolonne : </strong><xsl:value-of select="replace(//layout/note,'Entrecolonne : ','')"/></li>
+                        <li><strong>Nombre de lignes par colonnes : </strong><xsl:value-of select="//layout/@writtenLines"/>.</li>
+                    </ul>
+                </li>
+                <li><strong>Écriture : </strong> <xsl:value-of select="//handNote//p"/>.</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Décoration et marques</h3>
+            <ul>
+                <li><strong>Décoration :</strong>
+                    <ul>
+                        <xsl:for-each select="//decoNote/p">
+                            <li><xsl:value-of select="."/></li>
+                        </xsl:for-each>
+                    </ul>
+                </li>
+                <li><strong>Reliure : </strong><xsl:value-of select="//bindingDesc/p"/></li>
+                <li><strong>Marques : </strong><xsl:value-of select="//provenance"/></li>
             </ul>
         </div>
     </xsl:template>
@@ -110,7 +156,7 @@
     </xsl:template>
     <xsl:template match="p" mode="#all">
         <xsl:element name="p">
-            <xsl:text>[§</xsl:text>
+            <xsl:text>[</xsl:text>
             <xsl:number count="div[@type='paragraph']" format="1" level="single"/>
             <xsl:text>] </xsl:text>
             <xsl:apply-templates mode="#current"/>
