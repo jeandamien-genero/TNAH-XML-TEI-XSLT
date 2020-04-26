@@ -14,7 +14,8 @@
             </head>
             <body>
                 <xsl:apply-templates/>
-                <div>notes
+                <div>
+                    <h1>Notes</h1>
                 </div>
                 <div>
                     <xsl:call-template name="noms"/>
@@ -49,21 +50,20 @@
     </xsl:template>
     <xsl:template match="profileDesc"/>
     <xsl:template match="body">
+        <h1>
+            <xsl:value-of select="./head"/>
+        </h1>
         <div>
-            <xsl:apply-templates/>
+            <h2>Texte original</h2>
+            <xsl:apply-templates select="descendant::p" mode="orig"/>
+        </div>
+        <div>
+            <h2>Texte normalisé</h2>
+            <xsl:apply-templates select="descendant::p" mode="normal"/>
         </div>
     </xsl:template>
-    <xsl:template match="body/head">
-        <h1>
-            <xsl:value-of select="."/>
-        </h1>
-    </xsl:template>
-    <xsl:template match="div[@type='paragraph']">
-        <xsl:apply-templates select="descendant::p" mode="normal"/>
-        <xsl:apply-templates select="descendant::p" mode="orig"/>
-    </xsl:template>
     <xsl:template match="p" mode="#all">
-        <xsl:element name="div">
+        <xsl:element name="p">
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
     </xsl:template>
@@ -72,6 +72,16 @@
     </xsl:template>
     <xsl:template match="choice" mode="normal">
         <xsl:value-of select="expan/text() | reg/text()"/>
+    </xsl:template>
+    <xsl:template match="add[@unit='char']" mode="#all">
+       <xsl:choose>
+           <xsl:when test=".[@type='dash']">
+               <xsl:value-of select="."/>
+           </xsl:when>
+           <xsl:otherwise>
+               <xsl:value-of select="."/><xsl:text> </xsl:text>
+           </xsl:otherwise>
+       </xsl:choose>
     </xsl:template>
     <!-- NOTES (faire des id) -->
     <!-- INDEX DES NOMS DE PERSONNES -->
