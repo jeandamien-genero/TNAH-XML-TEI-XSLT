@@ -4,10 +4,6 @@
     version="2.0">
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
     <xsl:preserve-space elements="*"/>
-    <xsl:variable name="newline">
-        <xsl:text>
-        </xsl:text>
-    </xsl:variable>
     <xsl:template match="/">
         <html>
             <head>
@@ -19,7 +15,7 @@
             <body>
                 <xsl:apply-templates/>
                 <div>
-                    <h1>Notes</h1>
+                    <h2>Notes</h2>
                 </div>
                 <div>
                     <xsl:call-template name="noms"/>
@@ -32,38 +28,84 @@
     </xsl:template>
     <xsl:template match="teiHeader">
         <div>
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="/fileDesc"/>
+        </div>
+        <div>
+            <xsl:apply-templates select="//sourceDesc"/>
         </div>
     </xsl:template>
     <xsl:template match="fileDesc">
         <h1>
-            <xsl:value-of select="//titleStmt/title[@level='a']"/>
+            <xsl:value-of select="./titleStmt/title[@level='m']"/>
         </h1>
         <h1>
-            <xsl:value-of select="//author/forename"/>
+            <xsl:value-of select=".//author/forename"/>
             <xsl:text> </xsl:text>
-            <xsl:value-of select="//author/surname"/>
+            <xsl:value-of select=".//author/surname"/>
         </h1>
+        <p><xsl:value-of select="ancestor::teiHeader/encodingDesc/projectDesc/p"/></p>
     </xsl:template>
     <xsl:template match="notesStmt"/>
-    <xsl:template match="sourceDesc"/>
-    <xsl:template match="encodingDesc/projectDesc/p">
-        <p>
-            <xsl:value-of select="."/>
-        </p>
+    <xsl:template match="sourceDesc">
+        <h2>Le manuscrit</h2>
+        <div>
+            <h3>Identification</h3>
+            <ul>
+                <li><strong>Titre du manuscrit : </strong><i><xsl:value-of select=".//head/title[@level='m']"/></i>.</li>
+                <li><strong>Titre de la partie éditée : </strong><i><xsl:value-of select=".//head/title[@level='a']"/></i>.</li>
+                <li><strong>Auteur : </strong>
+                    <xsl:for-each select=".//msItemStruct/author[@xml:lang='fr']">
+                        <xsl:value-of select="."/>
+                        <xsl:if test="position()!= last()"> ou </xsl:if>
+                    </xsl:for-each>
+                    <xsl:text> (</xsl:text>
+                    <i><xsl:value-of select=".//msItemStruct/author[@xml:lang='fro']"/></i>
+                    <xsl:text> en langue d'oïl).</xsl:text>
+                </li>
+                <li><strong>Datation : </strong><xsl:value-of select=".//head/origDate"/>.</li>
+                <li><strong>Langue : </strong><xsl:value-of select=".//msItemStruct/textLang"/>.</li>
+                <li><strong>Incipit : </strong><i><xsl:value-of select=".//msItemStruct/incipit"/></i>...</li>
+                <li><strong>Explicit : </strong><i><xsl:value-of select=".//msItemStruct/explicit"/></i>...</li>
+            </ul>
+            <h3>Informations institutionnelles</h3>
+            <ul>
+                <li><strong>Localisation : </strong><xsl:value-of select=".//msIdentifier/settlement"/>, <xsl:value-of select=".//msIdentifier/country"/>.</li>
+                <li><strong>Institution : </strong> <xsl:value-of select=".//msIdentifier/repository"/>, <xsl:value-of select=".//msIdentifier/collection"/>.</li>
+                <li><strong>Cote : </strong><xsl:value-of select=".//msIdentifier/idno"/></li>
+                <li>
+                    <strong>Autres identifiants :</strong>
+                    <ul>
+                        <xsl:for-each select=".//msIdentifier/altIdentifier">
+                            <li>
+                                <xsl:value-of select="replace(./note,'\.',' : ')"/><xsl:value-of select="./idno"/>
+                                <xsl:if test="position()!= last()"> ;</xsl:if>
+                                <xsl:if test="position() = last()">.</xsl:if>
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Description matérielle</h3>
+            <ul>
+                
+            </ul>
+        </div>
     </xsl:template>
+    <xsl:template match="encodingDesc/projectDesc/p"/>
     <xsl:template match="profileDesc"/>
     <xsl:template match="body">
-        <h1>
-            <xsl:value-of select="./head"/>
-        </h1>
         <div>
-            <h2>Texte original</h2>
-            <xsl:apply-templates select="descendant::p" mode="orig"/>
-        </div>
-        <div>
-            <h2>Texte normalisé</h2>
-            <xsl:apply-templates select="descendant::p" mode="normal"/>
+            <h2>
+                <xsl:text>Édition</xsl:text>
+            </h2>
+            <div1>
+                <h3>Texte original</h3>
+                <xsl:apply-templates select="descendant::p" mode="orig"/>
+            </div1>
+            <div1>
+                <h3>Texte normalisé</h3>
+                <xsl:apply-templates select="descendant::p" mode="normal"/>
+            </div1>
         </div>
     </xsl:template>
     <xsl:template match="p" mode="#all">
