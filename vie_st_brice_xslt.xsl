@@ -16,6 +16,7 @@
                 <xsl:apply-templates/>
                 <div>
                     <h2>Notes</h2>
+                    <xsl:call-template name="notes"/>
                 </div>
                 <div>
                     <xsl:call-template name="noms"/>
@@ -55,7 +56,7 @@
                 <li><strong>Titre de la partie éditée : </strong><i><xsl:value-of select=".//head/title[@level='a']"/></i>.
                     <ul>
                         <li><strong>Incipit : </strong><i><xsl:value-of select=".//msItemStruct/incipit"/></i>...</li>
-                        <li><strong>Explicit : </strong><i><xsl:value-of select=".//msItemStruct/explicit"/></i>...</li>
+                        <li><strong>Explicit : </strong><i>...<xsl:value-of select=".//msItemStruct/explicit"/></i>.</li>
                     </ul>
                 </li>
                 <li><strong>Auteur : </strong>
@@ -136,6 +137,56 @@
                 <li><strong>Marques : </strong><xsl:value-of select="//provenance"/></li>
             </ul>
         </div>
+        <div>
+            <h3>Indications bibliographiques</h3>
+            <ul>
+                <xsl:for-each select="//monogr">
+                    <li>
+                        <xsl:if test=".//forename">
+                            <xsl:value-of select=".//forename"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select=".//surname"/>
+                            <xsl:text>, </xsl:text>
+                        </xsl:if>
+                        <xsl:text>&#171; </xsl:text>
+                        <xsl:value-of select=".//title[@level='a']"/>
+                        <xsl:text> &#187;</xsl:text>
+                        <xsl:choose>
+                            <xsl:when test=".//title[@level='j']">
+                                <xsl:text> dans </xsl:text>
+                                <i><xsl:value-of select=".//title[@level='j']"/></i>
+                                <xsl:text> </xsl:text>
+                                <xsl:choose>
+                                    <xsl:when test=".//idno[@type='ISSN']">
+                                        <xsl:text>(ISSN </xsl:text>
+                                        <xsl:value-of select=".//idno[@type='ISSN']"/>
+                                        <xsl:text>), </xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>(</xsl:text>
+                                        <xsl:value-of select=".//idno"/>
+                                        <xsl:text>), </xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <xsl:text>vol. </xsl:text>
+                                <xsl:value-of select=".//biblScope[@unit='volume']"/>
+                            </xsl:when>
+                            <xsl:when test=".//title[@level='m']">
+                                <xsl:text>, </xsl:text>
+                                <xsl:value-of select=".//title[@level='m']"/>
+                            </xsl:when>
+                        </xsl:choose>
+                        <xsl:text>, </xsl:text>
+                        <xsl:value-of select=".//date"/>
+                        <xsl:text>, p. </xsl:text>
+                        <xsl:value-of select=".//biblScope[@unit='page']/@from"/>
+                        <xsl:text>-</xsl:text>
+                        <xsl:value-of select=".//biblScope[@unit='page']/@to"/>
+                        <xsl:text>.</xsl:text>
+                    </li>
+                </xsl:for-each>
+            </ul>
+        </div>
     </xsl:template>
     <xsl:template match="encodingDesc/projectDesc/p"/>
     <xsl:template match="profileDesc"/>
@@ -168,11 +219,55 @@
     <xsl:template match="choice" mode="normal">
         <xsl:value-of select="expan/text() | reg/text()"/>
     </xsl:template>
-    <!-- NOTES (faire des id) -->
+    <!-- NOTES -->
+    <xsl:template match="ref[@type='note']" mode="#all">
+        <xsl:element name="sup">
+            <xsl:element name="a">
+                <xsl:attribute name="href">
+                    <xsl:text>#</xsl:text>
+                    <xsl:value-of select="./@n"/>
+                </xsl:attribute>
+                <xsl:value-of select="./@n"/>
+            </xsl:element>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template name="notes">
+        <xsl:for-each select="//notesStmt/note">
+            <xsl:element name="p">
+                <xsl:attribute name="id">
+                    <xsl:value-of select="./@n"/>
+                </xsl:attribute>
+                <xsl:value-of select="./@n"/>
+                <xsl:text>. </xsl:text>
+                <xsl:apply-templates/>
+                <xsl:if test="./@source">
+                    <xsl:text> </xsl:text>
+                    <xsl:text>(</xsl:text>
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="./@source"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_blank</xsl:text>
+                        </xsl:attribute>
+                        <xsl:text>DMF</xsl:text>
+                    </xsl:element>
+                    <xsl:text>)</xsl:text>
+                </xsl:if>
+                <xsl:text>.</xsl:text>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+    <xsl:template match="hi[@rend='italic']">
+        <xsl:element name="i">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
     <!-- INDEX DES NOMS DE PERSONNES -->
     <xsl:template name="noms">
         <xsl:element name="div">
             <h2>Index des noms de personnes</h2>
+            <p><i>Les numéros renvoivent aux paragraphes.</i></p>
             <xsl:element name="div">
                 <xsl:for-each select="//listPerson//persName">
                     <xsl:sort select="/forename[@xml:lang='fr']" order="ascending"/>
@@ -218,6 +313,7 @@
     <xsl:template name="lieux">
         <xsl:element name="div">
             <h2>Index des noms de lieux</h2>
+            <p><i>Les numéros renvoivent aux paragraphes.</i></p>
             <xsl:element name="div">
                 <xsl:for-each select="//place//name[@xml:lang='fr']">
                     <xsl:sort select="." order="ascending"/>
