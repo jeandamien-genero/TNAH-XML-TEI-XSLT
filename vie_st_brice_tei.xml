@@ -192,13 +192,13 @@
                         <layout columns="2" writtenLines="40">
                            <height unit="mm">230</height>
                            <width unit="mm">70</width>
-                           <note>Entrecolonne : 23mm.</note>
+                           <note>Entrecolonne : 23 mm.</note>
                         </layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc hands="1">
                      <handNote xml:id="mainhand">
-                        <p><locus from="f169" to="f170"/>Main du XIVe siècle</p>
+                        <p><locus from="f169" to="f170"/>main du XIVe siècle</p>
                      </handNote>
                   </handDesc>
                   <scriptDesc corresp="#mainhand">
