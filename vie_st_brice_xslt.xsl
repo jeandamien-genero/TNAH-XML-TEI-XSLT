@@ -3,7 +3,11 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs tei"
     version="2.0">
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
-    <xsl:strip-space elements="*"/>
+    <xsl:preserve-space elements="*"/>
+    <xsl:variable name="newline">
+        <xsl:text>
+        </xsl:text>
+    </xsl:variable>
     <xsl:template match="/">
         <html>
             <head>
@@ -64,6 +68,9 @@
     </xsl:template>
     <xsl:template match="p" mode="#all">
         <xsl:element name="p">
+            <xsl:text>[§</xsl:text>
+            <xsl:number count="div[@type='paragraph']" format="1" level="single"/>
+            <xsl:text>] </xsl:text>
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
     </xsl:template>
@@ -72,16 +79,6 @@
     </xsl:template>
     <xsl:template match="choice" mode="normal">
         <xsl:value-of select="expan/text() | reg/text()"/>
-    </xsl:template>
-    <xsl:template match="add[@unit='char']" mode="#all">
-       <xsl:choose>
-           <xsl:when test=".[@type='dash']">
-               <xsl:value-of select="."/>
-           </xsl:when>
-           <xsl:otherwise>
-               <xsl:value-of select="."/><xsl:text> </xsl:text>
-           </xsl:otherwise>
-       </xsl:choose>
     </xsl:template>
     <!-- NOTES (faire des id) -->
     <!-- INDEX DES NOMS DE PERSONNES -->
