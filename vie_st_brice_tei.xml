@@ -145,7 +145,7 @@
                   <altIdentifier>
                      <idno type="Gallica" xml:id="Gallica">ark:/12148/btv1b107209247/</idno>
                      <note>Identifiant ark de la numérisation du microfilm sur le site
-                        gallica.bnf.fr.</note>
+                        Gallica.</note>
                   </altIdentifier>
                </msIdentifier>
                <head>
@@ -166,7 +166,7 @@
                      <author xml:lang="fro">Wauchiers de Denaing</author>
                      <title level="a">Vie de saint Brice</title>
                      <incipit defective="false">Enfes je te conjur de part nostre seignor</incipit>
-                     <explicit defective="false">par tot les siecles des siecles. Amen.</explicit>
+                     <explicit defective="false">par tot les siecles des siecles. Amen</explicit>
                      <textLang mainLang="fro">oil-français</textLang>
                   </msItemStruct>
                </msContents>
