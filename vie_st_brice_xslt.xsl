@@ -178,7 +178,7 @@
                         </xsl:choose>
                         <xsl:text>, </xsl:text>
                         <xsl:value-of select=".//date"/>
-                        <xsl:text>, p. </xsl:text>
+                        <xsl:text>, pp. </xsl:text>
                         <xsl:value-of select=".//biblScope[@unit='page']/@from"/>
                         <xsl:text>-</xsl:text>
                         <xsl:value-of select=".//biblScope[@unit='page']/@to"/>
