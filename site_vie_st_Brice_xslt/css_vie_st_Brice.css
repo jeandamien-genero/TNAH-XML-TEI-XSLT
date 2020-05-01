@@ -1,0 +1,306 @@
+/*
+    ============================================
+                    LIENS
+    ============================================
+*/
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover, a:active {
+    text-decoration: none;
+    color: #B1B0B0;
+}
+
+/*
+    ============================================
+                 FONT GOOGLE
+    ============================================
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Lato:300i,400|Source+Sans+Pro:300|Goudy+Bookletter+1911&display=swap');
+
+/*
+    ============================================
+                    NAVBAR
+    Source dropdown :
+    https://www.w3schools.com/howto/howto_css_dropdown.asp
+    ============================================
+*/
+.nav-global {
+  display: flex;
+  flex-direction: row;
+  background: #f8f9fa;
+  padding: 1.25%;
+  margin: auto;
+  margin-bottom: none;
+  flex-wrap: wrap;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: none;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: none;
+}
+
+.nav-item > li {
+  margin-right: 5%;
+  margin-left: 5%;
+  list-style: none;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.dropbtn {
+  background-color: inherit;
+  color: black;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f8f9fa;
+  text-decoration: none;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #DBDBDB;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+/*
+    ============================================
+                    HEADER
+    ============================================
+*/
+.header-global {
+  display: flex;
+  flex-direction: row;
+  background-color: #f8f9fa;
+  padding-left: 3%;
+  margin-top: 3%;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 3%;
+}
+
+.header-global > div > h1 {
+  font-variant: small-caps;
+}
+
+.header-global > div > h2 {
+  font-style: italic;
+}
+
+.header-global > div > h3 {
+  font-size: 10pt;
+}
+
+/*
+    ============================================
+                    FOOTER
+    ============================================
+*/
+.bloc-footer {
+    background: #f8f9fa;
+}
+
+.global-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2%;
+    width: 80%;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.name-footer-global {
+    display: flex;
+    flex-direction: row;"
+}
+
+.name-footer {
+    font-size: small;
+    width: 70%;
+    height: auto;
+}
+
+.text-footer {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+}
+
+.credit-footer {
+    font-size: x-small;
+    text-align: justify;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+.box-img-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+
+.img-footer {
+    width: 100%;
+    height: auto;
+}
+
+/*
+    ============================================
+                    CONTENEUR
+    ============================================
+*/
+.arriere_plan {
+    background-color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*
+    ============================================
+                    ACCUEIL
+    ============================================
+*/
+.global_home {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+.p_home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    width: 100%;
+    height: auto;
+}
+
+.div_img {
+  width: 90%;
+  height: auto;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
+
+/*
+    ============================================
+                    PAGES
+    ============================================
+*/
+.page-global {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.page-global > h1 {
+  text-align: center;
+}
+
+.page-global > h2 {
+
+}
+
+.page-global > div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 60%;
+  height: auto;
+  margin-top: 2%;
+  text-align: justify;
+}
+
+li {
+  margin-top: 0.75%;
+  line-height: 1.75;
+}
+
+.notes-p {
+  font-size: 11pt;
+  margin-top: 0.75%;
+  margin-bottom: 0.75%;
+}
+
+.index-global {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 4%;
+  margin-bottom: 6%;
+  text-align: justify;
+}
+
+.index {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin-top: 4%;
+}
+
+.index > div {
+  margin-right: 4%;
+  margin-left: 2%;
+}
+
