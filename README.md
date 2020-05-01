@@ -1,10 +1,12 @@
+---
+
 # TNAH-XML-TEI-XSLT
 
 Contenu du repository :
 
 * ```./exercices``` : exercices du cours d'```XML-TEI``` (Master TNAH, École nationale des chartes) ;
 
-* ```./site_vie_st_Brice_xslt``` : rendu du cours d'```XSLT```. Un fichier ```.xsl```, quatre fichiers ```.html``` et un fichier ```.css``` permettant d'afficher une application web de cinq pages, résultant de la transformation du document ```vie_st_brice_tei.xml``` (```../```) ;
+* ```./site_vie_st_Brice_xslt``` : rendu du cours d'```XSLT```. Un fichier ```.xsl```, cinq fichiers ```.html``` et un fichier ```.css``` permettant d'afficher une application web de cinq pages, résultant de la transformation du document ```vie_st_brice_tei.xml``` (```../```) ;
 
 * ```Tuto_TEI_ODD.md``` : tutoriel pour générer une ```ODD``` et l'associer à un document ```XML-TEI``` à partir du scénario ```oddbyexample``` (notes du cours de [@ArianePinche](https://github.com/ArianePinche)) ;
 
