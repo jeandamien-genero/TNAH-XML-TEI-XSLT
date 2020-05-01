@@ -24,7 +24,7 @@
 <!ENTITY per '<choice><abbr type="brevigraph">&#42833;</abbr><expan>per</expan></choice>'>
 <!ENTITY pre '<choice><abbr type="brevigraph">&#7765;</abbr><expan>pre</expan></choice>'>
 <!ENTITY pri '<choice><abbr type="brevigraph">&#7765;</abbr><expan>pri</expan></choice>'>
-<!ENTITY que '<choice><abbr type="brevigraph">&#59009;</abbr><expan>que</expan></choice>'>
+<!ENTITY que '<choice><abbr type="brevigraph">q&#771;</abbr><expan>que</expan></choice>'>
 <!ENTITY qui '<choice><abbr type="brevigraph">&#42839;</abbr><expan>qui</expan></choice>'>
 <!ENTITY tur '<choice><abbr type="contraction">&#357;</abbr><expan>tur</expan></choice>'>
 <!ENTITY ver '<choice><abbr type="contraction">&#363;</abbr><expan>ver</expan></choice>'>
@@ -198,7 +198,7 @@
                   </objectDesc>
                   <handDesc hands="1">
                      <handNote xml:id="mainhand">
-                        <p><locus from="f169" to="f170"/>main du XIVe siècle</p>
+                        <p><locus from="169" to="170"/>main du XIVe siècle</p>
                      </handNote>
                   </handDesc>
                   <scriptDesc corresp="#mainhand">
@@ -543,28 +543,30 @@
                   estreinz<add unit="char" type="full_stop">.</add>
                <hi rend="capital_letter">E</hi>t qu&an;t il parvint il les <lb n="169_2_36"/>geta
                   <add unit="char" type="colon">:</add> vis ne on&que;s la vesteure ne fu de <lb
-                     n="169_2_37"/>no&i-trema;&en;t<ref type="note" n="3" target="#note3"/> brullee<ref
+                  n="169_2_37"/>no&i-trema;&en;t<ref type="note" n="3" target="#note3"/> brullee<ref
                   type="note" n="4" target="#note4"/><add unit="char" type="full_stop">.</add>
                <hi rend="capital_letter">L</hi>ors parla li evesques au <lb n="169_2_38"/>pueple
                &et-min; si lor dist <add unit="char" type="colon">:</add>
                <add unit="char" type="begin_quotechar">&#171;</add>
                <said who="#st_Brice"><hi rend="capital_letter">B</hi>iaus seignors sa<lb
-                  n="169_2_39"/>chiez &que; no&i-trema;&en;t<ref type="note" n="3" target="#note3"/>
-                  pl&us; que cist dras est empi<lb n="169_2_40"/>riez ne maumis<ref type="note"
-                     n="5" target="#note5"/> par le feu ne par la <pb n="170"/><cb n="170_1"/><lb
-                     n="170_1_1"/>flamb&e-accent; qi a lui a esté a&j-min;ostee si com v&ous; <lb
-                     n="170_1_2"/>aves o&i-trema; et veu<add unit="char" type="full_stop">.</add>
-                  <hi rend="capital_letter">N</hi>o&i-trema;&en;t<ref type="note" n="3" target="#note3"/>
-                  pl&us; n'est m&on; cors <lb n="170_1_3"/>couchiez ne atouchiez par l'atouchem&en;t
-                     <lb n="170_1_4"/>de ceste feme<add unit="char" type="full_stop">.</add></said>
+                     n="169_2_39"/>chiez &que; no&i-trema;&en;t<ref type="note" n="3"
+                     target="#note3"/> pl&us; que cist dras est empi<lb n="169_2_40"/>riez ne
+                     maumis<ref type="note" n="5" target="#note5"/> par le feu ne par la <pb n="170"
+                     /><cb n="170_1"/><lb n="170_1_1"/>flamb&e-accent; qi a lui a esté a&j-min;ostee
+                  si com v&ous; <lb n="170_1_2"/>aves o&i-trema; et veu<add unit="char"
+                     type="full_stop">.</add>
+                  <hi rend="capital_letter">N</hi>o&i-trema;&en;t<ref type="note" n="3"
+                     target="#note3"/> pl&us; n'est m&on; cors <lb n="170_1_3"/>couchiez ne
+                  atouchiez par l'atouchem&en;t <lb n="170_1_4"/>de ceste feme<add unit="char"
+                     type="full_stop">.</add></said>
                <add unit="char" type="end_quotechar">&#187;</add>
                <hi rend="capital_letter">C</hi>'il ne l'en vouloi&en;t croire <lb n="170_1_5"/>por
                q'en q'il auoi&en;t veu<choice>
                   <orig>.</orig>
                   <reg>, </reg>
                </choice> einz le trestr&en;t<ref type="note" n="6" target="#note6"/>
-               <lb n="170_1_6"/>et &j-min;eter&en;t hors de la cit&e-accent;<add unit="char"
-                  type="full_stop">.</add><ref type="note" n="7" target="#note7"/></p>
+               <lb n="170_1_6"/>et &j-min;eter&en;t hors de la cit&e-accent;<ref type="note" n="7"
+                  target="#note7"/><add unit="char" type="full_stop">.</add></p>
          </div>
 
          <!-- DEUXIEME PARAGRAPHE -->
@@ -580,7 +582,8 @@
                      seignorie<add unit="char" type="full_stop">.</add></said>
                <hi rend="capital_letter">Q</hi>u&an;t se&in;t <lb n="170_1_11"/><persName
                   ref="#st_Brice">&B-maj;rices</persName> fu eins&in;t gitez de la citez de
-               <placeName ref="#Tours">&T-maj;ors</placeName> <lb n="170_1_12"/>&et-min; chaciez<add unit="char" type="coma">,</add> li
+                  <placeName ref="#Tours">&T-maj;ors</placeName>
+               <lb n="170_1_12"/>&et-min; chaciez<add unit="char" type="coma">,</add> li
                cito&i-trema;enz fir&en;t arcevesqe de <lb n="170_1_13"/><persName ref="#Justinien"
                   >&J-maj;ustinien</persName><add unit="char" type="full_stop">.</add>
                <hi rend="capital_letter">E</hi>t se&in;z <persName ref="#st_Brice"
@@ -620,8 +623,8 @@
                />vint a <placeName ref="#Vanziaux">&Van;ziaus</placeName> en <placeName
                   ref="#Lombardie">&L-maj;ombardie</placeName> &et-min; la atou<lb n="170_1_30"
                   />cha<add unit="char" type="dash">-</add>il malades si morut par la vol&en;<lb
-                  n="170_1_31"/>t&e-accent; n&ostr;e seigneur<add unit="char" type="full_stop"
-                  >.</add><ref type="note" n="7" target="#note7"/></p>
+                  n="170_1_31"/>t&e-accent; n&ostr;e seigneur<ref type="note" n="7" target="#note7"
+                  /><add unit="char" type="full_stop">.</add></p>
          </div>
 
          <!-- TROISIEME PARAGRAPHE -->
@@ -704,8 +707,8 @@
                <hi rend="capital_letter">&c-min;</hi>e nos otroit cil qi <lb n="170_2_34"/>vit et
                reigne par tot les siecles des <lb n="170_2_35"/>siecles<add unit="char"
                   type="full_stop">.</add>
-               <hi rend="capital_letter">A</hi>men<add unit="char" type="full_stop">.</add><ref
-                  type="note" n="7" target="#note7"/></p>
+               <hi rend="capital_letter">A</hi>men<ref type="note" n="7" target="#note7"/><add
+                  unit="char" type="full_stop">.</add></p>
          </div>
       </body>
    </text>
