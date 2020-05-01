@@ -2,13 +2,13 @@
 
 Contenu du repository :
 
-* ```exercices``` : exercices du cours de TEI (Master TNAH, École nationale des chartes) ;
+* ```./exercices``` : exercices du cours d'```XML-TEI``` (Master TNAH, École nationale des chartes) ;
 
-* ```site_vie_st_Brice_xslt``` : rendu du cours d'XLST. Un fichier ```.xsl```, quatre fichiers ```.html``` et un fichier ```.css``` permettant d'afficher une application web de quatre pages, résultant de la transformation du document XML-TEI ```vie_st_brice_tei.xml``` (```../```) ;
+* ```./site_vie_st_Brice_xslt``` : rendu du cours d'```XSLT```. Un fichier ```.xsl```, quatre fichiers ```.html``` et un fichier ```.css``` permettant d'afficher une application web de cinq pages, résultant de la transformation du document ```vie_st_brice_tei.xml``` (```../```) ;
 
-* ```Tuto_TEI_ODD.md``` : tutoriel pour générer une ```ODD``` et l'associer à un document XML-TEI à partir du scénario ```oddbyexample``` (notes du cours de [@ArianePinche](https://github.com/ArianePinche)) ;
+* ```Tuto_TEI_ODD.md``` : tutoriel pour générer une ```ODD``` et l'associer à un document ```XML-TEI``` à partir du scénario ```oddbyexample``` (notes du cours de [@ArianePinche](https://github.com/ArianePinche)) ;
 
-* ```vie_st_brice_tei.xml```, ```vie_st_brice_odd.xml``` *et alii* : rendu du cours d'XML-TEI. Édition XML-TEI et son schéma ```ODD``` de la deuxième partie de la vie de saint Brince (BnF, ms. fr. 411, f. 169-170).
+* ```vie_st_brice_tei.xml```, ```vie_st_brice_odd.xml``` *et alii* : rendu du cours d'```XML-TEI```. Édition ```XML-TEI``` et son schéma ```ODD``` de la deuxième partie de la vie de saint Brice (BnF, ms. fr. 411, f. 169-170).
 
 ---
 
@@ -18,7 +18,7 @@ Contenu du repository :
 
 École nationale des chartes, M2 TNAH, cours de [@ArianePinche](https://github.com/ArianePinche), 2020.
 
-Texte choisi : [Suite de la Vie de saint Brice, fol.169d-fol170b : « Enfes je te conjur de part nostre seignor »](https://gallica.bnf.fr/ark:/12148/btv1b107209247/f175.item.zoom).
+Texte choisi : [Suite de la Vie de saint Brice, fol.169d-fol170b : « Enfes je te conjur de part nostre seignor »](https://gallica.bnf.fr/ark:/12148/btv1b107209247/f175).
 
 ---
 
