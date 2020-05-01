@@ -1,3 +1,17 @@
+# TNAH-XML-TEI-XSLT
+
+Contenu du repository :
+
+* ```exercices``` : exercices du cours de TEI (Master TNAH, École nationale des chartes) ;
+
+* ```site_vie_st_Brice_xslt``` : rendu du cours d'XLST. Un fichier ```.xsl```, quatre fichiers ```.html``` et un fichier ```.css``` permettant d'afficher une application web de quatre pages, résultant de la transformation du document XML-TEI ```vie_st_brice_tei.xml``` (```../```) ;
+
+* ```Tuto_TEI_ODD.md``` : tutoriel pour générer une ```ODD``` et l'associer à un document XML-TEI à partir du scénario ```oddbyexample``` (notes du cours de [@ArianePinche](https://github.com/ArianePinche)) ;
+
+* ```vie_st_brice_tei.xml```, ```vie_st_brice_odd.xml``` *et alii* : rendu du cours d'XML-TEI. Édition XML-TEI et son schéma ```ODD``` de la deuxième partie de la vie de saint Brince (BnF, ms. fr. 411, f. 169-170).
+
+---
+
 # Devoirs d'XML-TEI et XSLT
 
 ## Édition à visée paléographique : Récits hagiographiques du manuscrit 411 de la Bibliothèque nationale de France.
