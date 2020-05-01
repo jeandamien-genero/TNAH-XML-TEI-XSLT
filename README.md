@@ -1,5 +1,3 @@
----
-
 # TNAH-XML-TEI-XSLT
 
 Contenu du repository :
