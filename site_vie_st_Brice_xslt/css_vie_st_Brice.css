@@ -53,19 +53,24 @@ a:hover, a:active {
   margin: none;
 }
 
-.nav-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: none;
+.nav-form {
+  display: inline;
 }
 
-.nav-item > li {
-  margin-right: 5%;
-  margin-left: 5%;
-  list-style: none;
-  width: 100%;
-  flex-wrap: wrap;
+button {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #DBDBDB;
+}
+
+button:active {
+  color: #ffffff;
 }
 
 .dropbtn {
@@ -84,6 +89,7 @@ a:hover, a:active {
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
   background-color: #f8f9fa;
   text-decoration: none;
   min-width: 160px;
@@ -98,9 +104,17 @@ a:hover, a:active {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #DBDBDB;}
+.dropdown-content a:hover {
+  background-color: #DBDBDB;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown-content a:active {
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 /*
     ============================================
