@@ -6,6 +6,8 @@ Contenu du repository :
 
 * ```./site_vie_st_Brice_xslt``` : rendu du cours d'```XSLT```. Un fichier ```.xsl```, cinq fichiers ```.html``` et un fichier ```.css``` permettant d'afficher une application web de cinq pages, résultant de la transformation du document ```vie_st_brice_tei.xml``` (```../```) ;
 
+  * Pour visualiser le site : ```git clone https://github.com/jeandamien-genero/TNAH-XML-TEI-XSLT```et ouvrer le fichier ```./site_vie_st_Brice_xslt/home.html``` ;
+
 * ```Tuto_TEI_ODD.md``` : tutoriel pour générer une ```ODD``` et l'associer à un document ```XML-TEI``` à partir du scénario ```oddbyexample``` (notes du cours de [@ArianePinche](https://github.com/ArianePinche)) ;
 
 * ```vie_st_brice_tei.xml```, ```vie_st_brice_odd.xml``` *et alii* : rendu du cours d'```XML-TEI```. Édition ```XML-TEI``` et son schéma ```ODD``` de la deuxième partie de la vie de saint Brice (BnF, ms. fr. 411, f. 169-170).
