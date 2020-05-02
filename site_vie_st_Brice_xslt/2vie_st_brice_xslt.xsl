@@ -43,27 +43,23 @@
         <xsl:variable name="navheader">
             <!-- variable contenant la navbar et le <header> -->
             <nav class="nav-global fixed-top">
-                <button class="dropbtn" style="margin-right: 3%;">
-                    <a href="{$pathHome}">Accueil</a>
-                </button>
+                <form class="nav-form" action="{$pathHome}" method="get">
+                    <button class="dropbtn" style="margin-right: 3%;">Accueil</button>
+                </form>
                 <div class="nav-list">
-                    <button class="dropbtn">
-                        <a href="{$pathms}">Manuscrit</a>
-                    </button>
-                    <div class="nav-item">
-                        <ul>
-                            <li class="dropdown">
-                                <button class="dropbtn">Éditions</button>
-                                <div class="dropdown-content">
-                                    <a href="{$pathorig}">Texte original</a>
-                                    <a href="{$pathnorm}">Texte normalisé</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <button class="dropbtn">
-                        <a href="{$pathIndex}">Index</a>
-                    </button>
+                    <form class="nav-form" action="{$pathms}" method="get">
+                        <button class="dropbtn">Manuscrit</button>
+                    </form>
+                    <form class="dropdown nav-form">
+                        <button class="dropbtn">Éditions</button>
+                        <div class="dropdown-content">
+                            <a href="{$pathorig}">Texte original</a>
+                            <a href="{$pathnorm}">Texte normalisé</a>
+                        </div>
+                    </form>
+                    <form class="nav-form" action="{$pathIndex}" method="get">
+                        <button class="dropbtn">Index</button>
+                    </form>
                 </div>
             </nav>
             <header class="header-global">
@@ -200,8 +196,8 @@
                                             <li><strong>Nombre de colonnes par folio : </strong><xsl:value-of select="//layout/@columns"/>.</li>
                                             <li><strong>Hauteur de colonne : </strong><xsl:value-of select="//layoutDesc//height"/> mm.</li>
                                             <li><strong>Largeur de colonne : </strong><xsl:value-of select="//layoutDesc//width"/> mm.</li>
+                                            <li><strong>Nombre de lignes par colonne : </strong><xsl:value-of select="//layout/@writtenLines"/>.</li>
                                             <li><strong>Largeur de l'entrecolonne : </strong><xsl:value-of select="replace(//layout/note,'Entrecolonne : ','')"/></li>
-                                            <li><strong>Nombre de lignes par colonnes : </strong><xsl:value-of select="//layout/@writtenLines"/>.</li>
                                         </ul>
                                     </li>
                                     <li><strong>Écriture : </strong> <xsl:value-of select="//handNote//p"/>.</li>
@@ -286,7 +282,7 @@
                     <xsl:copy-of select="$navheader"/>
                     <div class="arriere_plan">
                         <div class="page-global">
-                            <h1>Transcription facsimilaire</h1>
+                            <h1>Transcription fac-similaire</h1>
                             <div>
                                 <xsl:apply-templates select="descendant::body//p" mode="orig"/>
                             </div>
@@ -332,7 +328,7 @@
                         <div class="index-global">
                             <h1>Index</h1>
                             <div>
-                                <p><i>Les numéros renvoivent aux paragraphes.</i></p>
+                                <p><i>Les numéros renvoient aux paragraphes.</i></p>
                             </div>
                             <div class="index">
                                 <div>
@@ -354,9 +350,6 @@
         <xsl:element name="p">
             <xsl:attribute name="style">
                 <xsl:text>line-height: 2; text-indent: 10%;</xsl:text>
-            </xsl:attribute>
-            <xsl:attribute name="id">
-                <xsl:number count="div[@type='paragraph']" format="1" level="single"/>
             </xsl:attribute>
             <xsl:text>[</xsl:text>
             <xsl:number count="div[@type='paragraph']" format="1" level="single"/>
