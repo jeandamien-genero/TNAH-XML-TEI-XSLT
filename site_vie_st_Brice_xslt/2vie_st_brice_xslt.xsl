@@ -51,13 +51,15 @@
                         <a href="{$pathms}">Manuscrit</a>
                     </button>
                     <div class="nav-item">
-                        <li class="dropdown">
-                            <button class="dropbtn">Éditions</button>
-                            <div class="dropdown-content">
-                                <a href="{$pathorig}">Texte original</a>
-                                <a href="{$pathnorm}">Texte normalisé</a>
-                            </div>
-                        </li>
+                        <ul>
+                            <li class="dropdown">
+                                <button class="dropbtn">Éditions</button>
+                                <div class="dropdown-content">
+                                    <a href="{$pathorig}">Texte original</a>
+                                    <a href="{$pathnorm}">Texte normalisé</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <button class="dropbtn">
                         <a href="{$pathIndex}">Index</a>
@@ -99,7 +101,8 @@
         <!-- ÉCRITURE DES PAGES DU SITE -->
         <!-- PAGE D'ACCUEIL -->
         <xsl:result-document href="{$pathHome}" method="html" indent="yes">
-            <html>
+            <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+            <html lang="fr">
                 <xsl:copy-of select="$doc_head"/>
                 <body>
                     <xsl:copy-of select="$navheader"/>
@@ -122,7 +125,8 @@
         </xsl:result-document>
         <!-- PAGE DE PRÉSENTATION DU MANUSCRIT -->
         <xsl:result-document href="{$pathms}" method="html" indent="yes">
-            <html>
+            <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+            <html lang="fr">
                 <xsl:copy-of select="$doc_head"/>
                 <body>
                     <xsl:copy-of select="$navheader"/>
@@ -275,7 +279,8 @@
         </xsl:result-document>
         <!-- PAGE DU TEXTE ORIGINAL -->
         <xsl:result-document href="{$pathorig}" method="html" indent="yes">
-            <html>
+            <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+            <html lang="fr">
                 <xsl:copy-of select="$doc_head"/>
                 <body>
                     <xsl:copy-of select="$navheader"/>
@@ -296,7 +301,8 @@
         </xsl:result-document>
         <!-- PAGE DU TEXTE NORMALISÉ ET DES NOTES -->
         <xsl:result-document href="{$pathnorm}" method="html" indent="yes">
-            <html>
+            <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+            <html lang="fr">
                 <xsl:copy-of select="$doc_head"/>
                 <body>
                     <xsl:copy-of select="$navheader"/>
@@ -317,7 +323,8 @@
         </xsl:result-document>
         <!-- PAGE DES INDEX -->
         <xsl:result-document href="{$pathIndex}" method="html" indent="yes">
-            <html>
+            <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+            <html lang="fr">
                 <xsl:copy-of select="$doc_head"/>
                 <body>
                     <xsl:copy-of select="$navheader"/>
