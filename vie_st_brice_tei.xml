@@ -11,7 +11,7 @@
 <!ENTITY om '<choice><abbr type="contraction">&#243;</abbr><expan>om</expan></choice>' >
 <!ENTITY ostr '<choice><abbr type="contraction">&#341;</abbr><expan>ostr</expan></choice>' >
 <!ENTITY ous '<choice><abbr type="contraction">&#8313;</abbr><expan>ous</expan></choice>'> <!-- pour vous -->
-<!ENTITY us '<choice><abbr type="contraction">&#42863;</abbr><expan>us</expan></choice>'> <!-- pour plus -->
+<!ENTITY us '<choice><abbr type="contraction">&#42863;</abbr><expan>us</expan></choice>'> <!-- pour plus  -->
 
 <!-- Entités : consonnes abrégées -->
 <!ENTITY ber '<choice><abbr type="contraction">b&#702;</abbr><expan>ber</expan></choice>'>
