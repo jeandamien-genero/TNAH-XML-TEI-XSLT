@@ -1,6 +1,6 @@
 # TNAH-XML-TEI-XSLT
 
-Contenu du repository :
+## Dossier :
 
 * ```./exercices``` : exercices du cours d'```XML-TEI``` (Master TNAH, École nationale des chartes) ;
 
