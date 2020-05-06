@@ -65,7 +65,7 @@
             <header class="header-global">
                 <div>
                     <h1><xsl:value-of select="//sourceDesc//head/title[@level='m']"/></h1>
-                    <h2><xsl:value-of select="replace(//sourceDesc//head/title[@level='a'],', deuxième partie','')"/></h2>
+                    <h2 style="font-family: Garamont;"><xsl:value-of select="replace(//sourceDesc//head/title[@level='a'],', deuxième partie','')"/></h2>
                     <h3>(<xsl:value-of select="//sourceDesc//msIdentifier/repository"/>, ms. <xsl:value-of select="replace(//sourceDesc//msIdentifier/idno[@type='cote'],'français','fr.')"/>)</h3>
                 </div>
             </header>
@@ -105,10 +105,10 @@
                     <div class="arriere_plan">
                         <div class="global_home">
                             <figure class="div_img">
-                                <img src="../img-vie-st-brice-f169-170.jpeg" alt="Bnf ms. fr. 411 folios 169-170" class="img"/>
+                                <img src="img-vie-st-brice-f169-170.jpeg" alt="Bnf ms. fr. 411 folios 169-170" class="img"/>
                             </figure>
                             <div class="p_home">
-                                <h1>Bienvenue !</h1>
+                                <h1 style="text-indent: 5%;">Bienvenue !</h1>
                                 <p>Cet espace est dédié à l'édition des folios <xsl:value-of select="//physDesc//handNote//locus/@from"/> et <xsl:value-of select="//physDesc//handNote//locus/@to"/> du manuscrit <xsl:value-of select="//sourceDesc//msIdentifier/idno[@type='cote']"/> de la <xsl:value-of select="//sourceDesc//msIdentifier/repository"/> <i> (image ci-contre)</i>. Ils portent sur la deuxième partie de la <xsl:value-of select="replace(replace(//sourceDesc//head/title[@level='a'],'Vie','vie'),', deuxième partie',' de Tours')"/>.</p>
                                 <p><xsl:value-of select="//notesStmt/note[1]"/>.</p>
                                 <p><xsl:text>Le site est développé par </xsl:text><xsl:value-of select="//respStmt//forename"/><xsl:text> </xsl:text><xsl:value-of select="//respStmt//surname"/><xsl:text> </xsl:text><xsl:value-of select="replace(replace(//respStmt/resp,'Encodage réalisé en janvier 2020','en avril 2020'),'XML-TEI','XSLT')"/></p>

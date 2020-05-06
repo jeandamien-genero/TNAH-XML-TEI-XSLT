@@ -13,12 +13,6 @@ a:hover, a:active {
     color: #B1B0B0;
 }
 
-/*
-    ============================================
-                 FONT GOOGLE
-    ============================================
-*/
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Lato:300i,400|Source+Sans+Pro:300|Goudy+Bookletter+1911&display=swap');
 
 /*
     ============================================
@@ -35,7 +29,7 @@ a:hover, a:active {
   margin: auto;
   margin-bottom: none;
   flex-wrap: wrap;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: Garamont;
 }
 
 .fixed-top {
@@ -129,7 +123,7 @@ button:active {
   margin-top: 3%;
   justify-content: center;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial;
   padding: 3%;
 }
 
@@ -161,7 +155,7 @@ button:active {
     padding: 2%;
     width: 80%;
     margin: auto;
-    font-family: 'Open Sans', sans-serif;
+    font-family: Garamont;
 }
 
 .name-footer-global {
@@ -216,7 +210,7 @@ button:active {
     margin-right: 100px;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: Garamont;
 }
 
 /*
