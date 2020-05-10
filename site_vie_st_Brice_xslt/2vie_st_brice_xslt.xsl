@@ -223,6 +223,7 @@
                                     <xsl:for-each select="//monogr">
                                         <li>
                                             <xsl:if test=".//forename">
+                                                <!-- Une référence bibliographique n'a pas d'auteur (celle de l'IRHT) -->
                                                 <xsl:value-of select=".//forename"/>
                                                 <xsl:text> </xsl:text>
                                                 <xsl:value-of select=".//surname"/>
@@ -232,11 +233,14 @@
                                             <xsl:value-of select=".//title[@level='a']"/>
                                             <xsl:text> &#187;</xsl:text>
                                             <xsl:choose>
+                                                <!-- deux cas : il y a un titre de niveau j (journal, revue) / il y a un titre de niveau m (monography) -->
                                                 <xsl:when test=".//title[@level='j']">
+                                                    <!-- titre de niveau j  -->
                                                     <xsl:text> dans </xsl:text>
                                                     <i><xsl:value-of select=".//title[@level='j']"/></i>
                                                     <xsl:text> </xsl:text>
                                                     <xsl:choose>
+                                                        <!-- deux cas : il y a une ISSN pour la revue (xsl:when), il n'y en a pas (xsl:otherwise) -->
                                                         <xsl:when test=".//idno[@type='ISSN']">
                                                             <xsl:text>(ISSN </xsl:text>
                                                             <xsl:value-of select=".//idno[@type='ISSN']"/>
@@ -252,6 +256,7 @@
                                                     <xsl:value-of select=".//biblScope[@unit='volume']"/>
                                                 </xsl:when>
                                                 <xsl:when test=".//title[@level='m']">
+                                                    <!-- titre de niveau m (notice de l'IRHT) -->
                                                     <xsl:text>, </xsl:text>
                                                     <xsl:value-of select=".//title[@level='m']"/>
                                                 </xsl:when>
@@ -347,50 +352,62 @@
     </xsl:template>
     <!-- RÈGLES POUR LE TEXTE -->
     <xsl:template match="//body//p" mode="#all">
+        <!-- match uniquement sur les <p> du <body> -->
         <xsl:element name="p">
             <xsl:attribute name="style">
                 <xsl:text>line-height: 2; text-indent: 10%;</xsl:text>
             </xsl:attribute>
             <xsl:text>[</xsl:text>
+            <!-- numero du paragraphe mis entre crochets -->
             <xsl:number count="div[@type='paragraph']" format="1" level="single"/>
             <xsl:text>] </xsl:text>
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="choice" mode="orig">
+        <!-- règle pour le texte original : uniquement la valeur de <abbr> et <orig> des <choice> -->
         <xsl:value-of select="abbr/text() | orig/text()"/>
     </xsl:template>
     <xsl:template match="choice" mode="normal">
+        <!-- règle pour le texte normalisé : uniquement la valeur de <expan> et <reg> des <choice> -->
         <xsl:value-of select="expan/text() | reg/text()"/>
     </xsl:template>
     <!-- RÈGLES DES NOTES -->
     <xsl:template match="ref[@type='note']" mode="#all">
+        <!-- Règle pour faire les appels de note en exposant -->
         <xsl:element name="sup">
             <xsl:attribute name="style">
                 <xsl:text>font-size: 10pt;</xsl:text>
             </xsl:attribute>
             <xsl:element name="a">
                 <xsl:attribute name="href">
+                    <!-- @href afin de faire le lien vers le texte de la note, son contenu est le numéro de la note (@n) -->
                     <xsl:text>#</xsl:text>
                     <xsl:value-of select="./@n"/>
                 </xsl:attribute>
+                <!-- texte de l'appel de note : son numéro (@n) -->
                 <xsl:value-of select="./@n"/>
             </xsl:element>
         </xsl:element>
     </xsl:template>
     <xsl:template name="notes">
+        <!-- Règle pour le texte des notes sous le texte -->
         <xsl:for-each select="//notesStmt/note">
             <xsl:element name="p">
                 <xsl:attribute name="id">
+                    <!-- @id = ancre pour le lien de @href établi dans la règle précédente -->
                     <xsl:value-of select="./@n"/>
                 </xsl:attribute>
                 <xsl:attribute name="class">
                     <xsl:text>notes-p</xsl:text>
                 </xsl:attribute>
+                <!-- commence par le numéro de la note (@n) suivi d'un point -->
                 <xsl:value-of select="./@n"/>
                 <xsl:text>. </xsl:text>
+                <!-- texte de la note défini par un apply-templates -->
                 <xsl:apply-templates/>
                 <xsl:if test="./@source">
+                    <!-- s'il y a un attribut source (qui pointe forcément vers le Dictionnaire de moyen français), un lien est fait vers un nouvel onglet -->
                     <xsl:text> </xsl:text>
                     <xsl:text>(</xsl:text>
                     <xsl:element name="a">
@@ -409,6 +426,7 @@
         </xsl:for-each>
     </xsl:template>
     <xsl:template match="hi[@rend='italic']">
+        <!-- règle pour mettre en italique les passages signalées par <hi rend='italic'> -->
         <xsl:element name="i">
             <xsl:apply-templates/>
         </xsl:element>
@@ -419,19 +437,23 @@
             <h2>Personnes</h2>
             <xsl:element name="div">
                 <xsl:for-each select="//listPerson//persName">
+                    <!-- tri de A à Z des entrées d'index -->
                     <xsl:sort select="/forename[@xml:lang='fr']" order="ascending"/>
                     <xsl:element name="p">
                         <xsl:element name="b">
+                            <!-- intitulé de l'entrée d'index en bold : prénom suivi du nom ; -->
                             <xsl:value-of select="forename[@xml:lang='fr']"/>
                             <xsl:text> </xsl:text>
                             <xsl:value-of select="surname[@full='yes']"/>
                             <xsl:text> </xsl:text>
                             <xsl:text>(</xsl:text>
                             <xsl:if test="addName[@full='yes']">
+                                <!-- entre pranthèses : s'il existe, le surnom développé, -->
                                 <xsl:value-of select="addName[@full='yes']"/>
                                 <xsl:text>, </xsl:text>
                             </xsl:if>
                             <xsl:choose>
+                                <!-- puis deux cas : il y a une date de naissance et une date de mort OU il y a uniquement une date de mort -->
                                 <xsl:when test="ancestor::person/birth/date and ancestor::person/death/date">
                                     <xsl:value-of select="ancestor::person/birth/date"/>
                                     <xsl:text>-</xsl:text>
@@ -445,11 +467,15 @@
                             <xsl:text>)</xsl:text>
                         </xsl:element>
                         <xsl:variable name="idPerson">
+                            <!-- variable $idPerson contenant la valeur de l'@xml:id de <person> dans le <particDesc>  -->
                             <xsl:value-of select="parent::person/@xml:id"/>
                         </xsl:variable>
                         <xsl:text> : </xsl:text>
                         <xsl:for-each-group select="ancestor::TEI//body//persName[translate(@ref, '#','')=$idPerson]" group-by="ancestor::div/@n">
+                            <!-- occurence du nom (<persName> dans le <body> dont @ref sans le '#' est équivalent à $idPerson) groupé par paragraphe (<div>) -->
+                            <!-- est affichée le numéro du paragraphe cocnerné (@n de <div>) -->
                             <xsl:value-of select="ancestor::div/@n"/>
+                            <!-- occurence suivie par une virgule si elle n'est pas la dernière, par un point si elle l'est -->
                             <xsl:if test="position()!= last()">, </xsl:if>
                             <xsl:if test="position() = last()">.</xsl:if>
                         </xsl:for-each-group>
@@ -467,17 +493,22 @@
                     <xsl:sort select="." order="ascending"/>
                     <xsl:element name="p">
                         <xsl:element name="b">
+                            <!-- intitulé de l'entrée d'index en bold : le nom du lien en français (name[@xml:lang='fr']) avec le pays (<country>) -->
                             <xsl:value-of select="."/>
                             <xsl:text> (</xsl:text>
                             <xsl:value-of select="preceding-sibling::country"/>
                             <xsl:text>)</xsl:text>
                         </xsl:element>
                         <xsl:variable name="Placeid">
+                            <!-- variable $Placeid contenant la valeur de l'@xml:id de <place> dans le <settingDesc>  -->
                             <xsl:value-of select="ancestor::place/@xml:id"/>
                         </xsl:variable>
                         <xsl:text> : </xsl:text>
                         <xsl:for-each-group select="ancestor::TEI//body//placeName[translate(@ref, '#','')=$Placeid]" group-by="ancestor::div/@n">
+                            <!-- occurence du nom (<placeName> dans le <body> dont @ref sans le '#' est équivalent à $Placeid) groupé par paragraphe (<div> -->
+                            <!-- est affichée le numéro du paragraphe cocnerné (@n de <div>) -->
                             <xsl:value-of select="ancestor::div/@n"/>
+                            <!-- occurence suivie par une virgule si elle n'est pas la dernière, par un point si elle l'est -->
                             <xsl:if test="position()!= last()">, </xsl:if>
                             <xsl:if test="position() = last()">.</xsl:if>
                         </xsl:for-each-group>
