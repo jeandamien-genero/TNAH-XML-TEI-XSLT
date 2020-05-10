@@ -312,3 +312,10 @@ li {
   margin-left: 2%;
 }
 
+p:target {
+  /* pour éviter la surperposition de la navbar et des
+     <p> après avoir cliqué sur les liens de l'index */
+  padding-top: 5em;
+  margin-top: -5em;
+}
+
