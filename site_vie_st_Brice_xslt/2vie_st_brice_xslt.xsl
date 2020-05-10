@@ -333,7 +333,8 @@
                         <div class="index-global">
                             <h1>Index</h1>
                             <div>
-                                <p><i>Les numéros renvoient aux paragraphes.</i></p>
+                                <p style='margin-bottom: 0.25%'><i>Les numéros renvoient aux paragraphes.</i></p>
+                                <p style='margin-top: 0.25%'><i>Les liens conduisent au texte normalisé.</i></p>
                             </div>
                             <div class="index">
                                 <div>
@@ -356,6 +357,11 @@
         <xsl:element name="p">
             <xsl:attribute name="style">
                 <xsl:text>line-height: 2; text-indent: 10%;</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="id">
+                <!-- attributs @id vers lesquels pointeront les liens de l'index (format : id=div\d)  -->
+                <xsl:text>div</xsl:text>
+                <xsl:number count="div[@type='paragraph']" format="1" level="single"/>
             </xsl:attribute>
             <xsl:text>[</xsl:text>
             <!-- numero du paragraphe mis entre crochets -->
@@ -407,7 +413,7 @@
                 <!-- texte de la note défini par un apply-templates -->
                 <xsl:apply-templates/>
                 <xsl:if test="./@source">
-                    <!-- s'il y a un attribut source (qui pointe forcément vers le Dictionnaire de moyen français), un lien est fait vers un nouvel onglet -->
+                    <!-- s'il y a un attribut @source (qui pointe forcément vers le Dictionnaire de moyen français), lien vers le DMF -->
                     <xsl:text> </xsl:text>
                     <xsl:text>(</xsl:text>
                     <xsl:element name="a">
@@ -474,7 +480,14 @@
                         <xsl:for-each-group select="ancestor::TEI//body//persName[translate(@ref, '#','')=$idPerson]" group-by="ancestor::div/@n">
                             <!-- occurence du nom (<persName> dans le <body> dont @ref sans le '#' est équivalent à $idPerson) groupé par paragraphe (<div>) -->
                             <!-- est affichée le numéro du paragraphe cocnerné (@n de <div>) -->
-                            <xsl:value-of select="ancestor::div/@n"/>
+                            <!-- le numéro est un lien qui ne pointe que vers le texte normalisé -->
+                            <xsl:element name="a">
+                                <xsl:attribute name="href">
+                                    <xsl:text>txtnorm.html#div</xsl:text>
+                                    <xsl:value-of select="ancestor::div/@n"/>
+                                </xsl:attribute>
+                                <xsl:value-of select="ancestor::div/@n"/>
+                            </xsl:element>
                             <!-- occurence suivie par une virgule si elle n'est pas la dernière, par un point si elle l'est -->
                             <xsl:if test="position()!= last()">, </xsl:if>
                             <xsl:if test="position() = last()">.</xsl:if>
@@ -507,7 +520,14 @@
                         <xsl:for-each-group select="ancestor::TEI//body//placeName[translate(@ref, '#','')=$Placeid]" group-by="ancestor::div/@n">
                             <!-- occurence du nom (<placeName> dans le <body> dont @ref sans le '#' est équivalent à $Placeid) groupé par paragraphe (<div> -->
                             <!-- est affichée le numéro du paragraphe cocnerné (@n de <div>) -->
-                            <xsl:value-of select="ancestor::div/@n"/>
+                            <!-- le numéro est un lien qui ne pointe que vers le texte normalisé -->
+                            <xsl:element name="a">
+                                <xsl:attribute name="href">
+                                    <xsl:text>txtnorm.html#div</xsl:text>
+                                    <xsl:value-of select="ancestor::div/@n"/>
+                                </xsl:attribute>
+                                <xsl:value-of select="ancestor::div/@n"/>
+                            </xsl:element>
                             <!-- occurence suivie par une virgule si elle n'est pas la dernière, par un point si elle l'est -->
                             <xsl:if test="position()!= last()">, </xsl:if>
                             <xsl:if test="position() = last()">.</xsl:if>
