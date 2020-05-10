@@ -21,11 +21,11 @@
         </xsl:variable>
         <xsl:variable name="pathorig">
             <xsl:value-of select="concat($witfile,'txtorig','.html')"/>
-            <!-- variable pour le contenu de original.html  -->
+            <!-- variable pour le contenu de txtorig.html  -->
         </xsl:variable>
         <xsl:variable name="pathnorm">
             <xsl:value-of select="concat($witfile,'txtnorm','.html')"/>
-            <!-- variable pour le contenu de normalise.html  -->
+            <!-- variable pour le contenu de txtnorm.html  -->
         </xsl:variable>
         <xsl:variable name="pathIndex">
             <xsl:value-of select="concat($witfile,'index','.html')"/>
