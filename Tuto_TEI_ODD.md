@@ -3,9 +3,9 @@
 ---
 
 ## 1. Généer l'ODD
-*pré-requis : avoir installer le scénario oddbyexample*
+*pré-requis : avoir installé le scénario oddbyexample*
 
-1. Je dois m'assuer que mon XML-TEI est dans un **dossier tout seul**.
+1. Je dois m'assurer que mon XML-TEI est dans un **dossier tout seul**.
 2. Je suis sur mon fichier XML-TEI.
 3. Je vais sur la "clef à molette" rouge : un menu s'affiche.
 4. Je choisis le scénario "oddbyexample" (partie "Globales").
