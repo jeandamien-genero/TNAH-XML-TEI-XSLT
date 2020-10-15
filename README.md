@@ -6,7 +6,7 @@
 
 * ```./site_vie_st_Brice_xslt``` : rendu du cours d'```XSLT```. Un fichier ```.xsl```, cinq fichiers ```.html``` et un fichier ```.css``` permettant d'afficher une application web de cinq pages, résultant de la transformation du document ```vie_st_brice_tei.xml``` (```../```) ;
 
-  * Pour visualiser le site : ```git clone https://github.com/jeandamien-genero/TNAH-XML-TEI-XSLT```et ouvrez le fichier ```./site_vie_st_Brice_xslt/home.html``` ;
+  * __Pour visualiser le site : ```git clone https://github.com/jeandamien-genero/TNAH-XML-TEI-XSLT```et ouvrez le fichier ```./site_vie_st_Brice_xslt/home.html```__ ;
 
 * ```Tuto_TEI_ODD.md``` : tutoriel pour générer une ```ODD``` et l'associer à un document ```XML-TEI``` à partir du scénario ```oddbyexample``` (notes du cours de [@ArianePinche](https://github.com/ArianePinche)) ;
 
